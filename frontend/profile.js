@@ -48,7 +48,13 @@ downloadResumeBtn.addEventListener(
 
     }
 
-   window.open(currentResume);
+  const link = document.createElement("a");
+link.href = currentResume;
+link.target = "_blank";
+link.download = "resume.pdf";
+document.body.appendChild(link);
+link.click();
+document.body.removeChild(link);
 
   }
 );

@@ -12,7 +12,12 @@ const authRoutes = require("./routes/auth.routes");
 const app = express();
 
 // MIDDLEWARE
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://scholarhub-one.vercel.app",
+    credentials: true
+  })
+);
 
 app.use(
   express.json({

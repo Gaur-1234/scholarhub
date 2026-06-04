@@ -5,6 +5,7 @@ const jwt = require("jsonwebtoken");
 const axios = require("axios");
 const fs = require("fs");
 const pdfParse = require("pdf-parse");
+const cloudinary = require("../config/cloudinary");
 
 const sendOtp = require("../utils/sendOtp");
 const sendNotificationEmail =
@@ -802,6 +803,15 @@ const updateResume = async (req, res) => {
         req.file.path
       );
 
+const cloudinaryResult =
+  await cloudinary.uploader.upload(
+    req.file.path,
+    {
+      resource_type: "raw",
+      folder: "resumes"
+    }
+  );
+
     const pdfData =
       await pdfParse(
         pdfBuffer
@@ -854,8 +864,8 @@ const updateResume = async (req, res) => {
 
     }
 
-    user.resumeUrl =
-      req.file.filename;
+  user.resumeUrl =
+  cloudinaryResult.secure_url;
 
     user.resumeScore =
       score;
@@ -884,7 +894,7 @@ res.status(200).json({
   req.file.originalname,
 
   resumeUrl:
-  req.file.filename,
+cloudinaryResult.secure_url,
 
   missingSkills
 

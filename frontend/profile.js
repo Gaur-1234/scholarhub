@@ -48,9 +48,7 @@ downloadResumeBtn.addEventListener(
 
     }
 
-    window.open(
-      `https://scholarhub-backend-w94c.onrender.com/uploads/${currentResume}`
-    );
+   window.open(currentResume);
 
   }
 );

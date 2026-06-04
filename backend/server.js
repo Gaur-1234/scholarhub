@@ -6,6 +6,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 
 require("dotenv").config();
+const path = require("path");
 
 const authRoutes = require("./routes/auth.routes");
 
@@ -25,10 +26,15 @@ app.use(
   })
 );
 app.use(helmet());
+
 app.use(
   "/uploads",
-  express.static("uploads")
+  express.static(
+    path.join(__dirname, "uploads")
+  )
 );
+
+app.use("/api/auth", authRoutes);
 // DATABASE
 //console.log("MONGO_URI =", process.env.MONGO_URI);
 mongoose.connect(process.env.MONGO_URI)

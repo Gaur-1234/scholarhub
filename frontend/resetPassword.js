@@ -54,7 +54,7 @@ if(password !== confirmPassword){
     alert(data.message);
 
     if (data.message === "Password Reset Successful") {
-      window.location.href = "login.html";
+      window.location.href = "index.html";
     }
   },
 );

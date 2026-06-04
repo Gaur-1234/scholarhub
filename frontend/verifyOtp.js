@@ -40,7 +40,7 @@ otpForm.addEventListener(
     alert(data.message);
 
     if (data.message === "OTP Verified") {
-      window.location.href = "login.html";
+      window.location.href = "index.html";
     }
   },
 );

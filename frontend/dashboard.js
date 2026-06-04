@@ -5,7 +5,7 @@ const token = localStorage.getItem("token");
 // =========================
 
 if (!token) {
-  window.location.href = "login.html";
+  window.location.href = "index.html";
 }
 
 // =========================
@@ -25,7 +25,7 @@ fetch(
     if (res.status === 401) {
       localStorage.clear();
 
-      window.location.href = "login.html";
+      window.location.href = "index.html";
     }
 
     return res.json();
@@ -251,7 +251,7 @@ logoutBtn.addEventListener(
   () => {
     localStorage.clear();
 
-    window.location.href = "login.html";
+    window.location.href = "index.html";
   },
 );
 
@@ -284,7 +284,7 @@ logoutAllBtn.addEventListener(
 
       localStorage.clear();
 
-      window.location.href = "login.html";
+      window.location.href = "index.html";
     } catch (error) {
       console.log(error);
     }

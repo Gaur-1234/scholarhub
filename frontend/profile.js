@@ -48,7 +48,7 @@ downloadResumeBtn.addEventListener(
     }
 
     window.open(
-      `http://https://scholarhub-backend-w94c.onrender.com/uploads/${currentResume}`
+      `https://scholarhub-backend-w94c.onrender.com/uploads/${currentResume}`
     );
 
   }
@@ -73,7 +73,7 @@ try {
 
   const response =
     await fetch(
-      "http://https://scholarhub-backend-w94c.onrender.com/api/auth/profile",
+      "https://scholarhub-backend-w94c.onrender.com/api/auth/profile",
       {
         headers: {
           Authorization:
@@ -432,7 +432,7 @@ document.getElementById(
 ).src;
       const response =
         await fetch(
-          "http://https://scholarhub-backend-w94c.onrender.com/api/auth/profile",
+          "https://scholarhub-backend-w94c.onrender.com/api/auth/profile",
           {
             method: "PUT",
 
@@ -492,7 +492,7 @@ removePhotoBtn.addEventListener(
 
       const response =
         await fetch(
-          "http://https://scholarhub-backend-w94c.onrender.com/api/auth/remove-profile-photo",
+          "https://scholarhub-backend-w94c.onrender.com/api/auth/remove-profile-photo",
           {
             method: "PUT",
 
@@ -603,7 +603,7 @@ analyzeResumeBtn.addEventListener(
 
       const response =
         await fetch(
-          "http://https://scholarhub-backend-w94c.onrender.com/api/auth/resume",
+          "https://scholarhub-backend-w94c.onrender.com/api/auth/resume",
           {
 
             method: "POST",

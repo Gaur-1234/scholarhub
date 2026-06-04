@@ -47,7 +47,7 @@ if (logoutAllBtn) {
         const response =
         await fetch(
 
-          "http://https://scholarhub-backend-w94c.onrender.com/api/auth/logout-all",
+          "https://scholarhub-backend-w94c.onrender.com/api/auth/logout-all",
 
           {
 

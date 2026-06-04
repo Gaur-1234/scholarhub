@@ -38,7 +38,7 @@ loginForm.addEventListener(
 
     try {
       const response = await fetch(
-        "http://https://scholarhub-backend-w94c.onrender.com/api/auth/login",
+        "https://scholarhub-backend-w94c.onrender.com/api/auth/login",
 
         {
           method: "POST",
@@ -95,7 +95,7 @@ otpLoginBtn.addEventListener(
       }
 
       const response = await fetch(
-        "http://https://scholarhub-backend-w94c.onrender.com/api/auth/send-login-otp",
+        "https://scholarhub-backend-w94c.onrender.com/api/auth/send-login-otp",
 
         {
           method: "POST",

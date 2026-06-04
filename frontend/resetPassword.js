@@ -30,7 +30,7 @@ if(password !== confirmPassword){
 }
 
     const response = await fetch(
-      "http://https://scholarhub-backend-w94c.onrender.com/api/auth/reset-password",
+      "https://scholarhub-backend-w94c.onrender.com/api/auth/reset-password",
 
       {
         method: "POST",

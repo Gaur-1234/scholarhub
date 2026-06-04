@@ -205,7 +205,7 @@ signupForm.addEventListener(
 
     try {
       const response = await fetch(
-        "http://https://scholarhub-backend-w94c.onrender.com/api/auth/signup",
+        "https://scholarhub-backend-w94c.onrender.com/api/auth/signup",
 
         {
           method: "POST",

@@ -19,7 +19,7 @@ otpLoginForm.addEventListener(
     const otp = document.getElementById("otp").value;
 
     const response = await fetch(
-      "http://https://scholarhub-backend-w94c.onrender.com/api/auth/verify-login-otp",
+      "https://scholarhub-backend-w94c.onrender.com/api/auth/verify-login-otp",
 
       {
         method: "POST",
@@ -94,7 +94,7 @@ resendBtn.addEventListener(
     const email = localStorage.getItem("loginEmail");
 
     const response = await fetch(
-      "http://https://scholarhub-backend-w94c.onrender.com/api/auth/send-login-otp",
+      "https://scholarhub-backend-w94c.onrender.com/api/auth/send-login-otp",
 
       {
         method: "POST",

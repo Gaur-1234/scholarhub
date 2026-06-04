@@ -9,7 +9,7 @@ forgotForm.addEventListener(
     const email = document.getElementById("email").value;
 
     const response = await fetch(
-      "http://https://scholarhub-backend-w94c.onrender.com/api/auth/forgot-password",
+      "https://scholarhub-backend-w94c.onrender.com/api/auth/forgot-password",
 
       {
         method: "POST",

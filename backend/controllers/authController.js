@@ -811,7 +811,10 @@ const cloudinaryResult =
       folder: "resumes"
     }
   );
-
+console.log(
+  "CLOUDINARY URL:",
+  cloudinaryResult.secure_url
+);
     const pdfData =
       await pdfParse(
         pdfBuffer

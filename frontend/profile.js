@@ -12,6 +12,11 @@ const downloadResumeBtn =
     "download-resume-btn"
   );
 
+  const missingSkillsElement =
+  document.getElementById(
+    "missing-skills"
+  );
+
 let currentResume = "";
 
 
@@ -561,10 +566,6 @@ const resumeNameElement =
     "resume-name"
   );
 
-  const missingSkillsElement =
-  document.getElementById(
-    "missing-skills"
-  );
 analyzeResumeBtn.addEventListener(
   "click",
 

@@ -1,0 +1,599 @@
+/* =========================================
+SCHOLARHUB SIGNUP
+========================================= */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Inter",sans-serif;
+}
+
+body{
+
+min-height:100vh;
+
+display:flex;
+
+justify-content:center;
+align-items:center;
+
+padding:20px;
+
+background:
+linear-gradient(
+135deg,
+#eef4ff 0%,
+#f8faff 50%,
+#f4f7ff 100%
+);
+
+overflow-x:hidden;
+
+position:relative;
+
+}
+
+/* =========================================
+BACKGROUND ORBS
+========================================= */
+
+.bg-orb{
+
+position:fixed;
+
+border-radius:50%;
+
+filter:blur(100px);
+
+z-index:-1;
+
+pointer-events:none;
+
+animation:
+floatOrb 18s ease-in-out infinite;
+
+}
+
+.orb1{
+
+width:320px;
+height:320px;
+
+background:
+rgba(99,102,241,.18);
+
+top:-50px;
+left:-50px;
+
+}
+
+.orb2{
+
+width:260px;
+height:260px;
+
+background:
+rgba(6,182,212,.15);
+
+right:-60px;
+top:30%;
+
+}
+
+.orb3{
+
+width:260px;
+height:260px;
+
+background:
+rgba(139,92,246,.15);
+
+bottom:-60px;
+left:35%;
+
+}
+
+@keyframes floatOrb{
+
+0%,100%{
+transform:
+translateY(0)
+translateX(0);
+}
+
+50%{
+transform:
+translateY(-30px)
+translateX(30px);
+}
+
+}
+
+/* =========================================
+CONTAINER
+========================================= */
+
+.auth-container{
+
+width:100%;
+
+display:flex;
+
+justify-content:center;
+align-items:center;
+
+}
+
+.auth-card{
+
+width:100%;
+max-width:650px;
+
+padding:40px;
+
+border-radius:30px;
+
+background:
+rgba(255,255,255,.80);
+
+backdrop-filter:
+blur(24px);
+
+border:
+1px solid rgba(
+255,
+255,
+255,
+.9
+);
+
+box-shadow:
+0 25px 60px rgba(
+15,
+23,
+42,
+.10
+);
+
+}
+
+/* =========================================
+HEADER
+========================================= */
+
+.auth-header{
+
+text-align:center;
+
+margin-bottom:30px;
+
+}
+
+.auth-header h1{
+
+font-size:2.5rem;
+
+font-weight:800;
+
+color:#111827;
+
+margin-bottom:10px;
+
+}
+
+.auth-header p{
+
+color:#64748b;
+
+font-size:15px;
+
+}
+
+/* =========================================
+FORM
+========================================= */
+
+.auth-form{
+
+display:flex;
+
+flex-direction:column;
+
+gap:18px;
+
+}
+
+.input-group{
+
+display:flex;
+
+flex-direction:column;
+
+gap:8px;
+
+}
+
+.input-group label{
+
+font-size:14px;
+
+font-weight:600;
+
+color:#334155;
+
+}
+
+.input-group input{
+
+width:100%;
+
+height:56px;
+
+padding:0 16px;
+
+border-radius:16px;
+
+border:
+1px solid #dbe3ef;
+
+background:#fff;
+
+outline:none;
+
+font-size:15px;
+
+transition:.3s;
+
+}
+
+.input-group input:focus{
+
+border-color:#6366f1;
+
+box-shadow:
+0 0 0 4px rgba(
+99,
+102,
+241,
+.10
+);
+
+}
+
+/* =========================================
+PASSWORD
+========================================= */
+
+.password-wrapper{
+
+position:relative;
+
+}
+
+.password-wrapper input{
+
+padding-right:60px;
+
+}
+
+.eye-btn{
+
+position:absolute;
+
+right:15px;
+top:50%;
+
+transform:
+translateY(-50%);
+
+border:none;
+
+background:none;
+
+cursor:pointer;
+
+font-size:18px;
+
+}
+
+/* =========================================
+STRENGTH BAR
+========================================= */
+
+.strength-section{
+
+margin-top:5px;
+
+}
+
+.strength-track{
+
+width:100%;
+
+height:10px;
+
+background:#e2e8f0;
+
+border-radius:999px;
+
+overflow:hidden;
+
+margin-bottom:10px;
+
+}
+
+.strength-bar{
+
+width:0%;
+
+height:100%;
+
+border-radius:999px;
+
+transition:.4s;
+
+background:#ef4444;
+
+}
+
+#strength-text{
+
+font-size:14px;
+
+font-weight:600;
+
+color:#64748b;
+
+}
+
+/* =========================================
+RULES
+========================================= */
+
+.rules-card{
+
+padding:18px;
+
+border-radius:18px;
+
+background:
+rgba(
+99,
+102,
+241,
+.05
+);
+
+border:
+1px solid rgba(
+99,
+102,
+241,
+.08
+);
+
+display:flex;
+
+flex-direction:column;
+
+gap:10px;
+
+}
+
+.rules-card p{
+
+font-size:14px;
+
+font-weight:500;
+
+color:#64748b;
+
+}
+
+/* =========================================
+CAPTCHA
+========================================= */
+
+.captcha-wrapper{
+
+position:relative;
+
+z-index:10;
+
+display:flex;
+
+justify-content:center;
+
+}
+.g-recaptcha{
+
+position:relative;
+
+z-index:10;
+
+}
+/* =========================================
+BUTTON
+========================================= */
+
+.primary-btn{
+
+height:56px;
+
+border:none;
+
+border-radius:16px;
+
+cursor:pointer;
+
+font-size:16px;
+
+font-weight:700;
+
+color:white;
+
+background:
+linear-gradient(
+135deg,
+#6366f1,
+#8b5cf6
+);
+
+transition:.3s;
+
+box-shadow:
+0 12px 25px rgba(
+99,
+102,
+241,
+.20
+);
+
+}
+
+.primary-btn:hover{
+
+transform:
+translateY(-3px);
+
+}
+
+.primary-btn:active{
+
+transform:
+scale(.98);
+
+}
+
+/* =========================================
+FOOTER
+========================================= */
+
+.auth-footer{
+
+text-align:center;
+
+margin-top:5px;
+
+}
+
+.auth-footer p{
+
+font-size:14px;
+
+color:#64748b;
+
+}
+
+.auth-footer a{
+
+text-decoration:none;
+
+font-weight:700;
+
+color:#6366f1;
+
+}
+
+.auth-footer a:hover{
+
+text-decoration:underline;
+
+}
+
+/* =========================================
+TABLET
+========================================= */
+
+@media(max-width:768px){
+
+.auth-card{
+
+padding:32px 24px;
+
+}
+
+.auth-header h1{
+
+font-size:2rem;
+
+}
+
+}
+
+/* =========================================
+MOBILE
+========================================= */
+
+@media(max-width:480px){
+
+body{
+
+padding:15px;
+
+}
+
+.auth-card{
+
+padding:24px 18px;
+
+border-radius:24px;
+
+}
+
+.auth-header h1{
+
+font-size:1.8rem;
+
+}
+
+.auth-header p{
+
+font-size:14px;
+
+}
+
+.input-group input{
+
+height:52px;
+
+font-size:14px;
+
+}
+
+.primary-btn{
+
+height:52px;
+
+font-size:15px;
+
+}
+
+.rules-card{
+
+padding:14px;
+
+}
+
+.rules-card p{
+
+font-size:13px;
+
+}
+
+}
+
+/* =========================================
+SMALL DEVICES
+========================================= */
+
+@media(max-width:360px){
+
+.auth-header h1{
+
+font-size:1.6rem;
+
+}
+
+}

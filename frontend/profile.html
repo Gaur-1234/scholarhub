@@ -1,0 +1,229 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Profile</title>
+
+    <link rel="stylesheet" href="dashboard.css" />
+    <link rel="stylesheet" href="profile.css">
+  </head>
+
+  <body>
+
+    <div class="bg-orb orb1"></div>
+<div class="bg-orb orb2"></div>
+<div class="bg-orb orb3"></div>
+    <div class="sidebar">
+      <div class="sidebar-top">
+        <h2 class="logo">ScholarHub</h2>
+
+        <ul>
+          <li>
+            <a href="dashboard.html"> Dashboard </a>
+          </li>
+
+          <li class="active">
+            <a href="profile.html"> Profile </a>
+          </li>
+
+
+          <li>
+            <a href="notifications.html">
+              Notifications
+            </a>
+          </li>
+
+          <li>
+            <a href="security.html"> Security </a>
+          </li>
+
+          
+      </div>
+
+      <div class="sidebar-bottom">
+        <button id="logout-all-btn">Logout All Devices</button>
+
+        <button id="logout-btn">Logout</button>
+      </div>
+    </div>
+
+    <div class="main-content">
+      <nav class="navbar">
+        <button id="menu-toggle">
+         ☰
+        </button>
+        <h2>Profile</h2>
+      </nav>
+
+     <section class="dashboard">
+
+<div class="profile-grid">
+
+<div class="profile-card">
+
+<img
+id="profile-image"
+src=""
+alt="Profile"
+/>
+
+<h2 id="profile-name">
+Loading...
+</h2>
+
+<p id="profile-role">
+User
+</p>
+
+<label
+for="profile-upload"
+class="upload-btn"
+>
+Change Photo
+</label>
+
+<input
+type="file"
+id="profile-upload"
+accept="image/*"
+hidden
+>
+<button id="remove-photo-btn">
+  Remove Photo
+</button>
+</div>
+
+<div class="info-card">
+
+<h2>
+Account Information
+</h2>
+
+<div class="info-group">
+<label>Username</label>
+<input type="text" id="username">
+</div>
+
+<div class="info-group">
+<label>Email</label>
+<input type="email" id="email">
+</div>
+
+<div class="info-group">
+<label>Role</label>
+<input type="text" id="role" readonly>
+</div>
+
+<div class="info-group">
+<label>Join Date</label>
+<input type="text" id="join-date" readonly>
+</div>
+
+<div class="info-group">
+<label>Last Login</label>
+<input type="text" id="last-login" readonly>
+</div>
+
+<button id="save-profile-btn">
+Save Changes
+</button>
+
+</div>
+
+<div class="activity-summary">
+
+<h2>
+Activity Summary
+</h2>
+
+<p id="login-count">
+Login Count : 0
+</p>
+
+<p id="password-count">
+Password Changes : 0
+</p>
+
+<p id="profile-count">
+Profile Updates : 0
+</p>
+</div>
+
+<div class="resume-card">
+
+<h2>
+Resume Analyzer
+</h2>
+
+
+
+<input
+type="file"
+id="resume-upload"
+accept=".pdf,.doc,.docx"
+hidden
+>
+
+<label
+for="resume-upload"
+class="resume-btn"
+>
+Choose Resume
+</label>
+
+<button id="analyze-resume-btn">
+Analyze Resume
+</button>
+
+<p id="resume-score">
+0 / 100
+</p>
+
+<p id="resume-name">
+No Resume
+</p>
+
+<p id="missing-skills">
+Missing Skills:
+</p>
+
+<div class="resume-suggestions">
+
+  <h3>
+    Improvement Suggestions
+  </h3>
+
+  <ul id="suggestions-list">
+
+  </ul>
+<div class="skill-progress-card">
+
+<h3>Skill Progress</h3>
+
+<div id="skill-progress-list">
+
+</div>
+
+</div>
+</div>
+
+<button id="download-resume-btn">
+Download Resume
+</button>
+
+
+
+</div>
+
+</div>
+
+</section>
+    </div>
+     <script src="sidebar.js"></script>
+     <script src="profile.js"></script>
+  </body>
+</html>

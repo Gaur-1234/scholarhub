@@ -1,0 +1,436 @@
+/* =========================================
+SECURITY PAGE
+========================================= */
+
+.security-grid{
+
+display:grid;
+
+grid-template-columns:
+1fr 1fr;
+
+grid-template-areas:
+"password status"
+"history history"
+"danger danger";
+
+gap:24px;
+
+align-items:start;
+
+}
+
+.password-card{
+grid-area:password;
+}
+
+.security-status-card{
+grid-area:status;
+}
+
+.login-history-card{
+grid-area:history;
+}
+
+.danger-zone-card{
+grid-area:danger;
+}
+
+/* =========================================
+COMMON CARDS
+========================================= */
+
+.password-card,
+.security-status-card,
+.login-history-card,
+.danger-zone-card{
+
+background:
+rgba(255,255,255,.75);
+
+backdrop-filter:
+blur(20px);
+
+border:
+1px solid rgba(
+255,
+255,
+255,
+.8
+);
+
+border-radius:28px;
+
+padding:28px;
+
+box-shadow:
+0 20px 40px rgba(
+15,
+23,
+42,
+.06
+);
+
+transition:.3s;
+
+}
+
+.password-card:hover,
+.security-status-card:hover,
+.login-history-card:hover,
+.danger-zone-card:hover{
+
+transform:
+translateY(-6px);
+
+box-shadow:
+0 25px 50px rgba(
+15,
+23,
+42,
+.12
+);
+
+}
+
+.password-card h2,
+.security-status-card h2,
+.login-history-card h2,
+.danger-zone-card h2{
+
+font-size:1.4rem;
+
+font-weight:800;
+
+margin-bottom:20px;
+
+color:#0f172a;
+
+}
+
+/* =========================================
+PASSWORD FORM
+========================================= */
+
+.password-card{
+
+display:flex;
+
+flex-direction:column;
+
+}
+
+.password-card input{
+
+width:100%;
+
+padding:14px;
+
+margin-bottom:14px;
+
+border-radius:14px;
+
+border:
+1px solid #e2e8f0;
+
+background:#f8fafc;
+
+outline:none;
+
+font-size:15px;
+
+transition:.3s;
+
+}
+
+.password-card input:focus{
+
+border-color:#6366f1;
+
+box-shadow:
+0 0 0 4px rgba(
+99,
+102,
+241,
+.08
+);
+
+}
+
+#update-password-btn{
+
+width:100%;
+
+padding:15px;
+
+border:none;
+
+border-radius:16px;
+
+cursor:pointer;
+
+font-size:15px;
+
+font-weight:700;
+
+color:white;
+
+background:
+linear-gradient(
+135deg,
+#6366f1,
+#8b5cf6
+);
+
+transition:.3s;
+
+}
+
+#update-password-btn:hover{
+
+transform:
+translateY(-3px);
+
+}
+
+/* =========================================
+SECURITY STATUS
+========================================= */
+
+.security-status-card p{
+
+padding:14px;
+
+margin-bottom:12px;
+
+border-radius:16px;
+
+background:
+rgba(
+99,
+102,
+241,
+.05
+);
+
+border:
+1px solid rgba(
+99,
+102,
+241,
+.08
+);
+
+font-weight:600;
+
+color:#334155;
+
+word-break:break-word;
+
+}
+
+/* =========================================
+LOGIN HISTORY
+========================================= */
+
+#login-history-list{
+
+list-style:none;
+
+max-height:400px;
+
+overflow-y:auto;
+
+}
+
+#login-history-list li{
+
+padding:16px;
+
+margin-bottom:12px;
+
+border-radius:16px;
+
+background:
+rgba(
+99,
+102,
+241,
+.05
+);
+
+border:
+1px solid rgba(
+99,
+102,
+241,
+.08
+);
+
+color:#334155;
+
+font-weight:500;
+
+transition:.3s;
+
+word-break:break-word;
+
+}
+
+#login-history-list li:hover{
+
+background:
+rgba(
+99,
+102,
+241,
+.08
+);
+
+}
+
+/* =========================================
+DANGER ZONE
+========================================= */
+
+.danger-zone-card{
+
+border:
+1px solid rgba(
+239,
+68,
+68,
+.15
+);
+
+}
+
+.danger-zone-card p{
+
+margin-bottom:20px;
+
+color:#64748b;
+
+line-height:1.6;
+
+}
+
+#delete-account-btn{
+
+width:100%;
+
+padding:15px;
+
+border:none;
+
+border-radius:16px;
+
+cursor:pointer;
+
+font-size:15px;
+
+font-weight:700;
+
+color:white;
+
+background:
+linear-gradient(
+135deg,
+#ef4444,
+#dc2626
+);
+
+transition:.3s;
+
+}
+
+#delete-account-btn:hover{
+
+transform:
+translateY(-3px);
+
+}
+
+/* =========================================
+RESPONSIVE TABLET
+========================================= */
+
+@media(max-width:1100px){
+
+.security-grid{
+
+grid-template-columns:1fr;
+
+grid-template-areas:
+"password"
+"status"
+"history"
+"danger";
+
+}
+
+}
+
+/* =========================================
+RESPONSIVE MOBILE
+========================================= */
+
+@media(max-width:768px){
+
+.security-grid{
+
+gap:18px;
+
+}
+
+.password-card,
+.security-status-card,
+.login-history-card,
+.danger-zone-card{
+
+padding:20px;
+
+}
+
+.password-card h2,
+.security-status-card h2,
+.login-history-card h2,
+.danger-zone-card h2{
+
+font-size:1.2rem;
+
+}
+
+#update-password-btn,
+#delete-account-btn{
+
+width:100%;
+
+}
+
+}
+
+/* =========================================
+SMALL MOBILE
+========================================= */
+
+@media(max-width:480px){
+
+.password-card,
+.security-status-card,
+.login-history-card,
+.danger-zone-card{
+
+padding:16px;
+
+}
+
+.password-card input{
+
+padding:12px;
+
+font-size:14px;
+
+}
+
+}

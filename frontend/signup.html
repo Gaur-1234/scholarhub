@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+
+>
+
+<title>
+ScholarHub Signup
+</title>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+rel="stylesheet"
+>
+
+<link
+rel="stylesheet"
+href="signup.css"
+>
+
+<script
+src="https://www.google.com/recaptcha/api.js"
+async
+defer
+></script>
+
+</head>
+
+<body>
+
+<div class="bg-orb orb1"></div>
+<div class="bg-orb orb2"></div>
+<div class="bg-orb orb3"></div>
+
+<div class="auth-container">
+
+<div class="auth-card">
+
+<div class="auth-header">
+
+<h1>
+Create Account
+</h1>
+
+<p>
+Join ScholarHub and start building your profile.
+</p>
+
+</div>
+
+<form
+id="signup-form"
+class="auth-form"
+>
+
+<div class="input-group">
+
+<label>
+Username
+</label>
+
+<input
+type="text"
+id="username"
+placeholder="Enter username"
+required
+
+>
+
+</div>
+
+<div class="input-group">
+
+<label>
+Email Address
+</label>
+
+<input
+type="email"
+id="email"
+placeholder="Enter email address"
+required
+
+>
+
+</div>
+
+<div class="input-group">
+
+<label>
+Password
+</label>
+
+<div class="password-wrapper">
+
+<input
+type="password"
+id="password"
+placeholder="Create password"
+required
+
+>
+
+<button
+type="button"
+id="toggle-signup-password"
+class="eye-btn"
+
+>
+
+👁
+
+</button>
+
+</div>
+
+</div>
+
+<div class="input-group">
+
+<label>
+Confirm Password
+</label>
+
+<div class="password-wrapper">
+
+<input
+type="password"
+id="confirm-password"
+placeholder="Confirm password"
+required
+
+>
+
+<button
+type="button"
+id="toggle-confirm-password"
+class="eye-btn"
+
+>
+
+👁
+
+</button>
+
+</div>
+
+</div>
+
+<!-- PASSWORD STRENGTH -->
+
+<div class="strength-section">
+
+<div class="strength-track">
+
+<div
+id="strength-bar"
+class="strength-bar"
+></div>
+
+</div>
+
+<p id="strength-text">
+Password Strength
+</p>
+
+</div>
+
+<!-- PASSWORD RULES -->
+
+<div class="rules-card">
+
+<p id="rule-length">
+❌ 8+ characters
+</p>
+
+<p id="rule-uppercase">
+❌ Uppercase letter
+</p>
+
+<p id="rule-lowercase">
+❌ Lowercase letter
+</p>
+
+<p id="rule-number">
+❌ Number
+</p>
+
+<p id="rule-special">
+❌ Special character
+</p>
+
+</div>
+
+<!-- CAPTCHA -->
+
+<div class="captcha-wrapper">
+
+<div
+class="g-recaptcha"
+data-sitekey="6LeYOf8sAAAAANG8Jl3UNkdN4cn7WO3elGdEcCHq"
+></div>
+
+</div>
+
+<button
+type="submit"
+class="primary-btn"
+
+>
+
+Create Account
+
+</button>
+
+<div class="auth-footer">
+
+<p>
+
+Already have an account?
+
+<a href="login.html">
+
+Login
+
+</a>
+
+</p>
+
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+<script src="signup.js"></script>
+
+</body>
+
+</html>

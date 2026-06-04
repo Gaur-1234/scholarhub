@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+
+>
+
+<title>
+OTP Login
+</title>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+rel="stylesheet"
+>
+
+<link
+rel="stylesheet"
+href="otpLogin.css"
+>
+
+</head>
+
+<body>
+
+<div class="bg-orb orb1"></div>
+<div class="bg-orb orb2"></div>
+<div class="bg-orb orb3"></div>
+
+<div class="auth-container">
+
+<div class="auth-card">
+
+<div class="auth-header">
+
+<h1>
+OTP Login
+</h1>
+
+<p>
+Enter the OTP sent to your registered email address.
+</p>
+
+</div>
+
+<form
+id="otp-login-form"
+class="auth-form"
+>
+
+<div class="input-group">
+
+<label>
+One Time Password
+</label>
+
+<input
+type="text"
+id="otp"
+placeholder="Enter OTP"
+required
+
+>
+
+</div>
+
+<button
+type="submit"
+class="primary-btn"
+
+>
+
+Verify OTP
+
+</button>
+
+<p
+id="timer-text"
+class="timer-text"
+>
+
+Resend OTP in 30s
+
+</p>
+
+<button
+type="button"
+id="resend-btn"
+class="secondary-btn"
+disabled
+
+>
+
+Resend OTP
+
+</button>
+
+<div class="auth-footer">
+
+<p>
+
+Want to use password login?
+
+<a href="login.html">
+
+Back To Login
+
+</a>
+
+</p>
+
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+<script src="otpLogin.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,608 @@
+/* =========================================
+PROFILE GRID
+========================================= */
+
+.profile-grid{
+
+display:grid;
+
+grid-template-columns:
+340px 1fr;
+
+grid-template-areas:
+"profile info"
+"activity resume";
+
+gap:24px;
+
+align-items:start;
+
+}
+
+.profile-card{
+grid-area:profile;
+}
+
+.info-card{
+grid-area:info;
+}
+
+.activity-summary{
+grid-area:activity;
+}
+
+.resume-card{
+grid-area:resume;
+}
+
+/* =========================================
+CARDS
+========================================= */
+
+.profile-card,
+.info-card,
+.activity-summary,
+.resume-card{
+
+background:
+rgba(255,255,255,.75);
+
+backdrop-filter:
+blur(20px);
+
+border:
+1px solid rgba(
+255,
+255,
+255,
+.8
+);
+
+border-radius:28px;
+
+padding:28px;
+
+box-shadow:
+0 20px 40px rgba(
+15,
+23,
+42,
+.06
+);
+
+transition:.35s ease;
+
+animation:
+fadeUp .8s ease;
+
+}
+
+.profile-card:hover,
+.info-card:hover,
+.activity-summary:hover,
+.resume-card:hover{
+
+transform:
+translateY(-8px);
+
+box-shadow:
+0 25px 50px rgba(
+15,
+23,
+42,
+.12
+);
+
+}
+
+/* =========================================
+PROFILE CARD
+========================================= */
+
+.profile-card{
+
+text-align:center;
+
+}
+
+.profile-card img{
+
+width:180px;
+height:180px;
+
+object-fit:cover;
+
+border-radius:50%;
+
+border:
+5px solid #6366f1;
+
+box-shadow:
+0 0 35px rgba(
+99,
+102,
+241,
+.20
+);
+
+margin-bottom:20px;
+
+}
+
+#profile-name{
+
+font-size:1.6rem;
+
+font-weight:800;
+
+margin-bottom:8px;
+
+color:#0f172a;
+
+}
+
+#profile-role{
+
+color:#64748b;
+
+font-weight:600;
+
+margin-bottom:20px;
+
+}
+
+/* =========================================
+BUTTONS
+========================================= */
+
+.upload-btn,
+#remove-photo-btn,
+#save-profile-btn,
+.resume-btn,
+#analyze-resume-btn,
+#download-resume-btn{
+
+display:inline-block;
+
+padding:14px 18px;
+
+border:none;
+
+border-radius:16px;
+
+cursor:pointer;
+
+font-size:15px;
+
+font-weight:700;
+
+text-decoration:none;
+
+color:white;
+
+background:
+linear-gradient(
+135deg,
+#6366f1,
+#8b5cf6
+);
+
+transition:.3s;
+
+box-shadow:
+0 10px 25px rgba(
+99,
+102,
+241,
+.18
+);
+
+}
+
+.upload-btn:hover,
+#remove-photo-btn:hover,
+#save-profile-btn:hover,
+.resume-btn:hover,
+#analyze-resume-btn:hover,
+#download-resume-btn:hover{
+
+transform:
+translateY(-4px);
+
+box-shadow:
+0 18px 35px rgba(
+99,
+102,
+241,
+.28
+);
+
+}
+
+.upload-btn:active,
+#remove-photo-btn:active,
+#save-profile-btn:active,
+.resume-btn:active,
+#analyze-resume-btn:active,
+#download-resume-btn:active{
+
+transform:
+scale(.97);
+
+}
+
+/* =========================================
+INFO CARD
+========================================= */
+
+.info-card h2{
+
+font-size:1.4rem;
+
+margin-bottom:20px;
+
+color:#0f172a;
+
+}
+
+.info-group{
+
+margin-bottom:18px;
+
+}
+
+.info-group label{
+
+display:block;
+
+margin-bottom:8px;
+
+font-size:.95rem;
+
+font-weight:600;
+
+color:#475569;
+
+}
+
+.info-group input{
+
+width:100%;
+
+padding:14px;
+
+border-radius:14px;
+
+border:
+1px solid #e2e8f0;
+
+background:#f8fafc;
+
+color:#1e293b;
+
+outline:none;
+
+transition:.3s;
+
+}
+
+.info-group input:focus{
+
+border-color:#6366f1;
+
+box-shadow:
+0 0 0 4px rgba(
+99,
+102,
+241,
+.08
+);
+
+}
+
+/* =========================================
+SAVE BUTTON
+========================================= */
+
+#save-profile-btn{
+
+width:100%;
+
+margin-top:10px;
+
+}
+
+/* =========================================
+ACTIVITY SUMMARY
+========================================= */
+
+.activity-summary h2{
+
+margin-bottom:20px;
+
+font-size:1.4rem;
+
+}
+
+.activity-summary p{
+
+padding:14px;
+
+margin-bottom:12px;
+
+border-radius:16px;
+
+background:
+rgba(
+99,
+102,
+241,
+.05
+);
+
+border:
+1px solid rgba(
+99,
+102,
+241,
+.08
+);
+
+font-weight:600;
+
+color:#334155;
+
+}
+
+/* =========================================
+RESUME CARD
+========================================= */
+
+.resume-card{
+
+display:flex;
+
+flex-direction:column;
+
+gap:14px;
+
+}
+
+.resume-card h2{
+
+font-size:1.4rem;
+
+margin-bottom:5px;
+
+}
+
+#resume-score{
+
+font-size:2rem;
+
+font-weight:800;
+
+color:#0f172a;
+
+}
+
+#resume-name{
+
+color:#475569;
+
+font-weight:600;
+
+word-break:break-word;
+
+}
+
+#missing-skills{
+
+padding:14px;
+
+border-radius:14px;
+
+background:
+rgba(
+239,
+68,
+68,
+.06
+);
+
+border:
+1px solid rgba(
+239,
+68,
+68,
+.10
+);
+
+color:#b91c1c;
+
+font-size:.95rem;
+
+word-break:break-word;
+
+}
+
+/* =========================================
+RESUME BUTTON SPACING
+========================================= */
+
+#analyze-resume-btn,
+#download-resume-btn{
+
+width:100%;
+
+}
+
+.resume-btn{
+
+text-align:center;
+
+width:100%;
+
+}
+
+/* =========================================
+ANIMATION
+========================================= */
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:
+translateY(25px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:
+translateY(0);
+
+}
+
+}
+
+/* =========================================
+RESPONSIVE
+========================================= */
+
+@media(max-width:1100px){
+
+.profile-grid{
+
+grid-template-columns:1fr;
+
+grid-template-areas:
+"profile"
+"info"
+"activity"
+"resume";
+
+}
+
+}
+
+@media(max-width:768px){
+
+.profile-card,
+.info-card,
+.activity-summary,
+.resume-card{
+
+padding:20px;
+
+}
+
+.profile-card img{
+
+width:140px;
+height:140px;
+
+}
+
+#profile-name{
+
+font-size:1.3rem;
+
+}
+
+#resume-score{
+
+font-size:1.6rem;
+
+}
+
+.resume-btn,
+#analyze-resume-btn,
+#download-resume-btn,
+#save-profile-btn,
+#remove-photo-btn{
+
+width:100%;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.profile-card img{
+
+width:120px;
+height:120px;
+
+}
+
+#profile-name{
+
+font-size:1.15rem;
+
+}
+
+.info-card h2,
+.activity-summary h2,
+.resume-card h2{
+
+font-size:1.2rem;
+
+}
+
+}
+
+/* =========================================
+BUTTON GROUP FIX
+========================================= */
+
+.profile-card{
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+gap:12px;
+
+}
+
+.upload-btn,
+#remove-photo-btn{
+
+width:100%;
+
+text-align:center;
+
+}
+
+.resume-card{
+
+display:flex;
+
+flex-direction:column;
+
+gap:14px;
+
+}
+
+.resume-suggestions{
+
+overflow-wrap:break-word;
+
+word-break:break-word;
+
+}
+
+#suggestions-list{
+
+padding-left:20px;
+
+}

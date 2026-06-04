@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    User Management
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="admin.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="user.css"
+  >
+  <link
+href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+rel="stylesheet"
+/>
+
+</head>
+
+<body>
+
+  <div class="sidebar">
+
+    <div class="sidebar-top">
+
+      <h2 class="logo">
+
+        ScholarHub
+
+      </h2>
+
+      <p class="admin-badge">
+
+        ADMIN PANEL
+
+      </p>
+
+      <ul>
+
+        <li>
+
+          <a href="admin.html">
+
+            Dashboard
+
+          </a>
+
+        </li>
+
+        <li class="active">
+
+          <a href="users.html">
+
+            Users
+
+          </a>
+
+        </li>
+
+      
+      </ul>
+
+    </div>
+
+    <div class="sidebar-bottom">
+
+      <button id="logout-all-btn">
+
+        Logout All Devices
+
+      </button>
+
+      <button id="logout-btn">
+
+        Logout
+
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <div class="main-content">
+
+    <nav class="navbar">
+      <button id="menu-toggle">
+        ☰
+      </button> 
+
+      <h2>
+
+        User Management
+
+      </h2>
+
+    </nav>
+
+
+    <!-- TOP CARDS -->
+
+    <section class="user-stats">
+
+      <div class="user-card">
+
+        <h3>
+
+          Total Users
+
+        </h3>
+
+        <h1 id="total-users">
+
+          0
+
+        </h1>
+
+      </div>
+
+
+      <div class="user-card">
+
+        <h3>
+
+          Verified Users
+
+        </h3>
+
+        <h1 id="verified-users">
+
+          0
+
+        </h1>
+
+      </div>
+
+
+      <div class="user-card">
+
+        <h3>
+
+          Admins
+
+        </h3>
+
+        <h1 id="admin-users">
+
+          0
+
+        </h1>
+
+      </div>
+
+    </section>
+
+
+    <!-- SEARCH -->
+
+    <section class="search-section">
+
+      <input
+
+        type="text"
+
+        id="search-user"
+
+        placeholder="Search by username or email"
+
+      >
+
+    </section>
+
+  <section class="add-user-section">
+
+  <button
+    id="add-user-btn"
+    class="add-user-btn"
+  >
+    + Add User
+  </button>
+
+  <button
+    id="bulk-delete-btn"
+    class="delete-btn"
+  >
+    Delete Selected
+  </button>
+
+</section>
+
+
+    <!-- TABLE -->
+
+    <section class="table-section">
+
+  <table>
+
+
+<thead>
+
+  <tr>
+
+    <th>
+
+      <input
+        type="checkbox"
+        id="select-all"
+      >
+
+    </th>
+
+    <th>
+      Username
+    </th>
+
+    <th>
+      Email
+    </th>
+
+    <th>
+      Role
+    </th>
+
+    <th>
+      Verified
+    </th>
+
+    <th>
+      Actions
+    </th>
+
+  </tr>
+
+</thead>
+
+<tbody id="users-table-body">
+
+</tbody>
+
+
+  </table>
+
+</section>
+
+    <!-- PAGINATION -->
+
+    <section class="pagination">
+
+  <button id="prev-btn">
+    Previous
+  </button>
+
+  <span id="page-number">
+    Page 1 of 1
+  </span>
+
+  <button id="next-btn">
+    Next
+  </button>
+
+</section>
+
+  </div>
+
+  <div
+  id="user-modal"
+  class="modal"
+>
+
+  <div class="modal-content">
+
+    <h2>
+
+      Add New User
+
+    </h2>
+
+    <input
+      type="text"
+      id="new-username"
+      placeholder="Username"
+    >
+
+    <input
+      type="email"
+      id="new-email"
+      placeholder="Email"
+    >
+
+    <input
+      type="password"
+      id="new-password"
+      placeholder="Password"
+    >
+
+    <select id="new-role">
+
+      <option value="user">
+
+        User
+
+      </option>
+
+      <option value="admin">
+
+        Admin
+
+      </option>
+
+    </select>
+
+    <div class="modal-buttons">
+
+      <button
+        id="save-user-btn"
+      >
+
+        Save User
+
+      </button>
+
+      <button
+        id="close-modal-btn"
+      >
+
+        Cancel
+
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+  <script src="sidebar.js"></script>
+  <script src="users.js"></script>
+
+</body>
+
+</html>

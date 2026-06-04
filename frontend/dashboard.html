@@ -1,0 +1,164 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Dashboard</title>
+
+    <link rel="stylesheet" href="dashboard.css" />
+  </head>
+
+  <body>
+
+    <div class="bg-orb orb1"></div>
+    <div class="bg-orb orb2"></div>
+    <div class="bg-orb orb3"></div>
+    <!-- SIDEBAR -->
+
+    <div class="sidebar">
+      <div class="sidebar-top">
+        <h2 class="logo">ScholarHub</h2>
+
+        <ul>
+          <li class="active">
+            <a href="dashboard.html"> Dashboard </a>
+          </li>
+
+          <li>
+            <a href="profile.html"> Profile </a>
+          </li>
+
+          <li>
+            <a href="notifications.html">
+              Notifications
+            </a>
+          </li>
+
+          <li>
+            <a href="security.html"> Security </a>
+          </li>
+
+         
+        </ul>
+      </div>
+
+      <!-- BOTTOM BUTTONS -->
+
+      <div class="sidebar-bottom">
+        <button id="logout-all-btn">Logout All Devices</button>
+
+        <button id="logout-btn">Logout</button>
+      </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+
+    <div class="main-content">
+      <!-- NAVBAR -->
+
+      <nav class="navbar">
+        <button id="menu-toggle">
+          ☰
+        </button>
+        <h2>My Dashboard</h2>
+      </nav>
+
+      <!-- DASHBOARD -->
+
+<section class="dashboard">
+
+  <div class="hero-card">
+
+    <h1 id="welcome-text">
+      Welcome Back 👋
+    </h1>
+
+    <p>
+      Manage your ScholarHub account from one place.
+    </p>
+
+  </div>
+
+  <div class="stats-grid">
+
+    <div class="stat-card">
+      <h3>Profile Completion</h3>
+      <h2 id="profile-completion">80%</h2>
+    </div>
+
+    <div class="stat-card">
+      <h3>Resume Score</h3>
+      <h2 id="resume-score">0/100</h2>
+    </div>
+
+    <div class="stat-card">
+      <h3>Activities</h3>
+      <h2 id="activity-count">0</h2>
+    </div>
+
+    <div class="stat-card">
+      <h3>Notifications</h3>
+      <h2 id="notification-count">0</h2>
+    </div>
+
+    <div class="stat-card">
+
+  <h3>Last Login</h3>
+
+  <h2 id="last-login-card">
+    --
+  </h2>
+
+</div>
+<div class="stat-card">
+
+  <h3>Account Health</h3>
+
+  <h2 id="account-health">
+    0%
+  </h2>
+
+</div>
+
+  </div>
+
+  <div class="dashboard-grid">
+
+    <div class="activity-card">
+
+      <h2>Recent Activity</h2>
+
+      <ul id="activity-list"></ul>
+
+    </div>
+
+    <div class="quick-actions-card">
+
+      <h2>Quick Actions</h2>
+
+      <button id="edit-profile-btn">
+        Edit Profile
+      </button>
+
+      <button id="upload-resume-btn">
+        Upload Resume
+      </button>
+
+      <button id="security-btn">
+        Security Settings
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+    </div>
+
+    <script src="dashboard.js"></script>
+    <script src="sidebar.js"></script>
+  </body>
+</html>

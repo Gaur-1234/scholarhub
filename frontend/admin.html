@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    ScholarHub Admin
+  </title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="admin.css"
+  >
+
+</head>
+
+<body>
+
+  <!-- SIDEBAR -->
+
+  <div class="sidebar">
+
+    <div class="sidebar-top">
+
+      <h2 class="logo">
+        ScholarHub
+      </h2>
+
+      <p class="admin-badge">
+        ADMIN PANEL
+      </p>
+
+      <ul>
+
+        <li class="active">
+          <a href="admin.html">
+            Dashboard
+          </a>
+        </li>
+
+        <li>
+          <a href="users.html">
+            Users
+          </a>
+        </li>
+
+      </ul>
+
+    </div>
+
+    <div class="sidebar-bottom">
+
+      <button id="logout-all-btn">
+        Logout All Devices
+      </button>
+
+      <button id="logout-btn">
+        Logout
+      </button>
+
+    </div>
+
+  </div>
+
+  <!-- MAIN CONTENT -->
+
+  <div class="main-content">
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+      <button id="menu-toggle">
+        ☰
+      </button>
+
+      <h2>
+        Admin Dashboard
+      </h2>
+
+    </nav>
+
+    <!-- WELCOME CARD -->
+
+    <section class="content-card">
+
+      <h1 id="welcome-text">
+        Welcome Admin
+      </h1>
+
+      <p>
+        Manage ScholarHub platform from here.
+      </p>
+
+    </section>
+
+    <!-- NOTIFICATION CARD -->
+
+    <section class="notification-card">
+
+      <h2>
+        Send Notification
+      </h2>
+
+      <div class="notification-form">
+
+        <select id="notification-user">
+
+          <option value="">
+            Select User
+          </option>
+
+        </select>
+
+        <textarea
+          id="notification-message"
+          placeholder="Enter notification message..."
+        ></textarea>
+
+        <label class="broadcast-label">
+
+          <input
+            type="checkbox"
+            id="broadcast-all"
+          >
+
+          Send To All Users
+
+        </label>
+
+        <button
+          id="send-notification-btn"
+          class="primary-btn"
+        >
+          Send Notification
+        </button>
+
+      </div>
+
+    </section>
+
+  </div>
+
+  <script src="sidebar.js"></script>
+  <script src="admin.js"></script>
+
+</body>
+
+</html>

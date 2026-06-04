@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Notifications
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="dashboard.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="notifications.css"
+  >
+
+</head>
+
+<body>
+
+  <div class="bg-orb orb1"></div>
+  <div class="bg-orb orb2"></div>
+  <div class="bg-orb orb3"></div>
+
+  <!-- SIDEBAR -->
+
+  <div class="sidebar">
+
+    <div class="sidebar-top">
+
+      <h2 class="logo">
+        ScholarHub
+      </h2>
+
+      <ul>
+
+        <li>
+          <a href="dashboard.html">
+            Dashboard
+          </a>
+        </li>
+
+        <li>
+          <a href="profile.html">
+            Profile
+          </a>
+        </li>
+
+        <li class="active">
+          <a href="notifications.html">
+            Notifications
+          </a>
+        </li>
+
+        <li>
+          <a href="security.html">
+            Security
+          </a>
+        </li>
+
+      </ul>
+
+    </div>
+
+    <div class="sidebar-bottom">
+
+      <button id="logout-all-btn">
+        Logout All Devices
+      </button>
+
+      <button id="logout-btn">
+        Logout
+      </button>
+
+    </div>
+
+  </div>
+
+  <!-- MAIN CONTENT -->
+
+  <div class="main-content">
+
+    <nav class="navbar">
+
+      <button id="menu-toggle">
+        ☰
+      </button>
+
+      <h2>
+        Notifications
+      </h2>
+
+    </nav>
+
+    <!-- NOTIFICATIONS CARD -->
+
+    <section class="notification-card">
+
+      <h2>
+        Your Notifications
+      </h2>
+
+      <div id="notification-list"></div>
+
+    </section>
+
+  </div>
+
+  <!-- MODAL -->
+
+  <div
+    id="notification-modal"
+    class="notification-modal"
+    style="display:none;"
+  >
+
+    <div class="modal-content">
+
+      <span
+        id="close-modal"
+        class="close-modal"
+      >
+        &times;
+      </span>
+
+      <h3>
+        Notification
+      </h3>
+
+      <div
+        id="modal-message"
+        class="modal-message"
+      ></div>
+
+    </div>
+
+  </div>
+
+  <script src="sidebar.js"></script>
+  <script src="notifications.js"></script>
+
+</body>
+
+</html>

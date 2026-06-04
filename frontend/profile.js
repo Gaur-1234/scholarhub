@@ -35,30 +35,20 @@ let currentResume = "";
 
 downloadResumeBtn.addEventListener(
   "click",
-
   () => {
 
     if (!currentResume) {
-
-      alert(
-        "No Resume Uploaded"
-      );
-
+      alert("No Resume Uploaded");
       return;
-
     }
 
-  const link = document.createElement("a");
-link.href = currentResume;
-link.target = "_blank";
-link.download = "resume.pdf";
-document.body.appendChild(link);
-link.click();
-document.body.removeChild(link);
+    window.open(
+      `https://scholarhub-backend-w94c.onrender.com/uploads/${currentResume}`,
+      "_blank"
+    );
 
   }
 );
-
  // ==========================
 // LOAD PROFILE DATA
 // ==========================

@@ -815,11 +815,18 @@ console.log(
   "CLOUDINARY URL:",
   cloudinaryResult.secure_url
 );
+
+console.log("FILE:", req.file);
+
+console.log("CLOUDINARY:", {
+  resource_type: cloudinaryResult.resource_type,
+  format: cloudinaryResult.format,
+  secure_url: cloudinaryResult.secure_url
+});
     const pdfData =
       await pdfParse(
         pdfBuffer
       );
-
     const text =
       pdfData.text.toLowerCase();
 

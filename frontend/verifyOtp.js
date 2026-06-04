@@ -19,7 +19,7 @@ otpForm.addEventListener(
     const otp = document.getElementById("otp").value;
 
     const response = await fetch(
-      "http://localhost:5000/api/auth/verify-otp",
+      "http://https://scholarhub-backend-w94c.onrender.com/api/auth/verify-otp",
 
       {
         method: "POST",
@@ -76,7 +76,7 @@ resendBtn.addEventListener(
     const email = document.getElementById("email").value;
 
     const response = await fetch(
-      "http://localhost:5000/api/auth/resend-signup-otp",
+      "http://https://scholarhub-backend-w94c.onrender.com/api/auth/resend-signup-otp",
 
       {
         method: "POST",

@@ -14,7 +14,7 @@ document.addEventListener(
 
     const response =
       await fetch(
-        "http://localhost:5000/api/auth/profile",
+        "http://https://scholarhub-backend-w94c.onrender.com/api/auth/profile",
         {
 
           headers: {
@@ -165,7 +165,7 @@ updatePasswordBtn.addEventListener(
 
     const response =
       await fetch(
-        "http://localhost:5000/api/auth/change-password",
+        "http://https://scholarhub-backend-w94c.onrender.com/api/auth/change-password",
         {
 
           method: "PUT",
@@ -229,7 +229,7 @@ deleteBtn.addEventListener(
 
     const response =
       await fetch(
-        "http://localhost:5000/api/auth/delete-account",
+        "http://https://scholarhub-backend-w94c.onrender.com/api/auth/delete-account",
         {
 
           method: "DELETE",

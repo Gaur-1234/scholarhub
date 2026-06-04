@@ -21,7 +21,7 @@ return;
 
 const response =
 await fetch(
-"http://localhost:5000/api/auth/profile",
+"http://https://scholarhub-backend-w94c.onrender.com/api/auth/profile",
 {
 headers:{
 Authorization:
@@ -136,7 +136,7 @@ try{
 
 await fetch(
 
-`http://localhost:5000/api/auth/notification/${id}/read`,
+`http://https://scholarhub-backend-w94c.onrender.com/api/auth/notification/${id}/read`,
 
 {
 method:"PUT",

@@ -10,7 +10,7 @@ if (!token) {
 
 fetch(
 
-  "http://localhost:5000/api/auth/profile",
+  "http://https://scholarhub-backend-w94c.onrender.com/api/auth/profile",
 
   {
 
@@ -56,7 +56,7 @@ try{
 const response =
 await fetch(
 
-"http://localhost:5000/api/auth/admin/users",
+"http://https://scholarhub-backend-w94c.onrender.com/api/auth/admin/users",
 
 {
 
@@ -143,7 +143,7 @@ document.getElementById(
 const response =
 await fetch(
 
-"http://localhost:5000/api/auth/admin/send-notification",
+"http://https://scholarhub-backend-w94c.onrender.com/api/auth/admin/send-notification",
 
 {
 

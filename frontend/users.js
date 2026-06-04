@@ -9,7 +9,7 @@ let currentSearch = "";
 async function loadStats() {
 try {
 const response = await fetch(
-"http://localhost:5000/api/auth/admin/stats",
+"http://https://scholarhub-backend-w94c.onrender.com/api/auth/admin/stats",
 {
 headers: {
 authorization: userToken,
@@ -38,7 +38,7 @@ console.log(error);
 async function loadUsers() {
 try {
 const response = await fetch(
-`http://localhost:5000/api/auth/admin/users?page=${currentPage}&search=${currentSearch}`,
+`http://https://scholarhub-backend-w94c.onrender.com/api/auth/admin/users?page=${currentPage}&search=${currentSearch}`,
 {
 headers: {
 authorization: userToken,
@@ -155,7 +155,7 @@ return;
 
 try {
 const response = await fetch(
-`http://localhost:5000/api/auth/admin/user/${id}`,
+`http://https://scholarhub-backend-w94c.onrender.com/api/auth/admin/user/${id}`,
 {
 method: "DELETE",
 headers: {
@@ -180,7 +180,7 @@ console.log(error);
 async function makeAdmin(id) {
 try {
 const response = await fetch(
-`http://localhost:5000/api/auth/admin/make-admin/${id}`,
+`http://https://scholarhub-backend-w94c.onrender.com/api/auth/admin/make-admin/${id}`,
 {
 method: "PUT",
 headers: {
@@ -207,7 +207,7 @@ async function removeAdmin(id) {
 
     const response = await fetch(
 
-      `http://localhost:5000/api/auth/admin/remove-admin/${id}`,
+      `http://https://scholarhub-backend-w94c.onrender.com/api/auth/admin/remove-admin/${id}`,
 
       {
 
@@ -356,7 +356,7 @@ console.log(
 
   const response = await fetch(
 
-    "http://localhost:5000/api/auth/admin/add-user",
+    "http://https://scholarhub-backend-w94c.onrender.com/api/auth/admin/add-user",
 
     {
 
@@ -540,7 +540,7 @@ document
   const response =
   await fetch(
 
-    "http://localhost:5000/api/auth/admin/bulk-delete",
+    "http://https://scholarhub-backend-w94c.onrender.com/api/auth/admin/bulk-delete",
 
     {
 

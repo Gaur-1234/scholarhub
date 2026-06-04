@@ -13,7 +13,7 @@ if (!token) {
 // =========================
 
 fetch(
-  "http://localhost:5000/api/auth/profile",
+  "http://https://scholarhub-backend-w94c.onrender.com/api/auth/profile",
 
   {
     headers: {
@@ -267,7 +267,7 @@ logoutAllBtn.addEventListener(
   async () => {
     try {
       const response = await fetch(
-        "http://localhost:5000/api/auth/logout-all",
+        "http://https://scholarhub-backend-w94c.onrender.com/api/auth/logout-all",
 
         {
           method: "POST",

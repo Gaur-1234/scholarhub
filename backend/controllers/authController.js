@@ -804,13 +804,13 @@ const updateResume = async (req, res) => {
       );
 
 const cloudinaryResult =
-  await cloudinary.uploader.upload(
-    req.file.path,
-    {
-      resource_type: "raw",
-      folder: "resumes"
-    }
-  );
+await cloudinary.uploader.upload(
+  req.file.path,
+  {
+    resource_type: "auto",
+    folder: "resumes"
+  }
+);
 console.log(
   "CLOUDINARY URL:",
   cloudinaryResult.secure_url

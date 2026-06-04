@@ -19,7 +19,7 @@ if (logoutBtn) {
       localStorage.clear();
 
       window.location.href =
-      "login.html";
+      "index.html";
 
     }
 
@@ -72,7 +72,7 @@ if (logoutAllBtn) {
         localStorage.clear();
 
         window.location.href =
-        "login.html";
+        "index.html";
 
       }
 

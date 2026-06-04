@@ -256,7 +256,7 @@ deleteBtn.addEventListener(
     );
 
     window.location.href =
-      "login.html";
+      "index.html";
 
   }
 );

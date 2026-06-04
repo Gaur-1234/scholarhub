@@ -13,7 +13,7 @@ localStorage.getItem(
 if(!token){
 
 window.location.href =
-"login.html";
+"index.html";
 
 return;
 

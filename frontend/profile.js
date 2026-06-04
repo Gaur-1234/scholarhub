@@ -6,10 +6,6 @@
 
 document.addEventListener("DOMContentLoaded", async () => {
 
-    const missingSkillsElement =
-  document.getElementById(
-    "missing-skills"
-  );
 
 const downloadResumeBtn =
   document.getElementById(
@@ -563,6 +559,11 @@ const resumeScoreElement =
 const resumeNameElement =
   document.getElementById(
     "resume-name"
+  );
+
+  const missingSkillsElement =
+  document.getElementById(
+    "missing-skills"
   );
 analyzeResumeBtn.addEventListener(
   "click",

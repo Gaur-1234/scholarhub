@@ -622,12 +622,16 @@ await fetch(
   "https://scholarhub-backend-w94c.onrender.com/api/auth/resume",
   {
     method: "POST",
-    mode: "cors",
 
-    headers: {
-      Authorization:
-      `Bearer ${token}`
-    },
+  headers: {
+
+  "Authorization":
+  `Bearer ${token}`,
+
+  "Accept":
+  "application/json"
+
+},
 
     body: formData
   }

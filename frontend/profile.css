@@ -606,3 +606,8 @@ word-break:break-word;
 padding-left:20px;
 
 }
+
+.hidden-file-input{
+  position: absolute;
+  left: -9999px;
+}

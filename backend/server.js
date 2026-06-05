@@ -11,6 +11,7 @@ const path = require("path");
 const authRoutes = require("./routes/auth.routes");
 
 const app = express();
+app.set("trust proxy", 1);
 
 // MIDDLEWARE
 app.use(

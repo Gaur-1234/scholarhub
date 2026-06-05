@@ -584,6 +584,22 @@ analyzeResumeBtn.addEventListener(
       const file =
       fileInput.files[0];
 
+      // =========================
+// MOBILE PDF NOTE
+// =========================
+
+if (
+  file.type !== "application/pdf"
+) {
+
+  alert(
+    "Please select a PDF from your Downloads folder. Google Drive files may not upload correctly on some mobile devices."
+  );
+
+  return;
+
+}
+
       const token =
       localStorage.getItem(
         "token"
@@ -763,10 +779,16 @@ console.log(
 
       }
 
-      alert(
-        data.message ||
-        "Resume Analyzed Successfully"
-      );
+   alert(
+  data.message ||
+  "Resume Analyzed Successfully"
+);
+
+setTimeout(() => {
+
+  window.location.reload();
+
+}, 1000);
 
     }
 

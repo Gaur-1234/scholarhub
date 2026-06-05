@@ -49,12 +49,6 @@ mongoose.connect(process.env.MONGO_URI)
     error
   );
 });
-// ROUTES
-app.use(
-  "/api/auth",
-
-  authRoutes,
-);
 
 // SERVER
 const PORT =

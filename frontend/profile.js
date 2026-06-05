@@ -780,14 +780,12 @@ console.log(
 catch(error){
 
   console.error(
-    "FULL ERROR:",
+    "RESUME ERROR:",
     error
   );
 
   alert(
-    error.name +
-    " : " +
-    error.message
+    `${error.name}\n${error.message}`
   );
 
 }

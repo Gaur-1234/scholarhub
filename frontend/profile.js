@@ -616,19 +616,6 @@ analyzeResumeBtn.addEventListener(
         file
       );
 
-      console.log(
-  "FILE INFO:",
-  file.name,
-  file.size,
-  file.type
-);
-
-console.log(
-  "TOKEN:",
-  token
-);
-
-
 
 const response =
 await fetch(

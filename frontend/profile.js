@@ -640,89 +640,107 @@ analyzeResumeBtn.addEventListener(
       resumeNameElement.textContent =
       data.resumeName;
 
-     // =========================
-// MISSING SKILLS
-// =========================
+      // =========================
+      // MISSING SKILLS
+      // =========================
 
-const missingSkillsElement =
-document.getElementById(
-  "missing-skills"
+      const missingSkillsElement =
+      document.getElementById(
+        "missing-skills"
+      );
+
+      if (
+        missingSkillsElement &&
+        data.missingSkills
+      ) {
+
+        missingSkillsElement.textContent =
+        "Missing Skills: " +
+        data.missingSkills.join(", ");
+
+      }
+
+      // =========================
+      // RESUME SUGGESTIONS
+      // =========================
+
+      const suggestionList =
+      document.getElementById(
+        "suggestions-list"
+      );
+
+      if(suggestionList){
+
+        suggestionList.innerHTML = "";
+
+        const suggestions = [];
+
+        if(
+          data.missingSkills &&
+          data.missingSkills.length > 0
+        ){
+
+          suggestions.push(
+            "Include missing ATS keywords: " +
+            data.missingSkills.join(", ")
+          );
+
+        }
+
+        if(data.resumeScore >= 80){
+
+          suggestions.push(
+            "Resume is ATS friendly."
+          );
+
+          suggestions.push(
+            "Add measurable achievements in projects."
+          );
+
+          suggestions.push(
+            "Use action verbs like Developed, Built, Designed."
+          );
+
+        }
+
+        if(data.resumeScore < 60){
+
+          suggestions.push(
+            "Add more technical skills and projects."
+          );
+
+          suggestions.push(
+            "Improve ATS keyword coverage."
+          );
+
+        }
+
+        suggestions.forEach(item=>{
+
+          suggestionList.innerHTML +=
+          `<li>${item}</li>`;
+
+        });
+
+      }
+
+      currentResume =
+      data.resumeUrl;
+
+    }
+
+    catch(error) {
+
+      console.log(
+        "ERROR:",
+        error
+      );
+
+    }
+
+  }
+
 );
-
-if (
-  missingSkillsElement &&
-  data.missingSkills
-) {
-
-  missingSkillsElement.textContent =
-  "Missing Skills: " +
-  data.missingSkills.join(", ");
-
-}
-// =========================
-// RESUME SUGGESTIONS
-// =========================
-
-const suggestionList =
-document.getElementById(
-  "suggestions-list"
-);
-
-if(suggestionList){
-
-  suggestionList.innerHTML = "";
-
-  const suggestions = [];
-
-  if(
-    data.missingSkills &&
-    data.missingSkills.length > 0
-  ){
-
-    suggestions.push(
-      "Include missing ATS keywords: " +
-      data.missingSkills.join(", ")
-    );
-
-  }
-
-  if(data.resumeScore >= 80){
-
-    suggestions.push(
-      "Resume is ATS friendly."
-    );
-
-    suggestions.push(
-      "Add measurable achievements in projects."
-    );
-
-    suggestions.push(
-      "Use action verbs like Developed, Built, Designed."
-    );
-
-  }
-
-  if(data.resumeScore < 60){
-
-    suggestions.push(
-      "Add more technical skills and projects."
-    );
-
-    suggestions.push(
-      "Improve ATS keyword coverage."
-    );
-
-  }
-
-  suggestions.forEach(item=>{
-
-    suggestionList.innerHTML +=
-    `<li>${item}</li>`;
-
-  });
-
-}
-
 // =========================
 // HAMBURGER MENU SYSTEM
 // =========================

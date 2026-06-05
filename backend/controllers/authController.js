@@ -893,6 +893,8 @@ req.file.filename;
     console.log(
   user.resumeMissingSkills
 );
+
+console.log("SENDING RESPONSE");
 res.status(200).json({
 
   message:

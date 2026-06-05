@@ -628,6 +628,35 @@ console.log(
   token
 );
 
+// =========================
+// DEBUG TOKEN
+// =========================
+
+console.log(
+  "TOKEN CHECK:",
+  token
+);
+
+alert(
+  "TOKEN: " +
+  token
+);
+
+console.log(
+  "FILE:",
+  file.name
+);
+
+console.log(
+  "SIZE:",
+  file.size
+);
+
+console.log(
+  "TYPE:",
+  file.type
+);
+
 const response =
 await fetch(
   "https://scholarhub-backend-w94c.onrender.com/api/auth/resume",

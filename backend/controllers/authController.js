@@ -777,6 +777,18 @@ const updateResume = async (req, res) => {
 
   try {
 
+    console.log("===== RESUME ROUTE HIT =====");
+
+console.log(
+  "USER:",
+  req.user?.email
+);
+
+console.log(
+  "FILE:",
+  req.file
+);
+
     const user =
       await User.findById(
         req.user.id
@@ -803,10 +815,19 @@ const updateResume = async (req, res) => {
         req.file.path
       );
 
+    console.log(
+  "PDF PATH:",
+  req.file.path
+);
+
     const pdfData =
       await pdfParse(
         pdfBuffer
       );
+
+  console.log(
+  "PDF PARSED SUCCESSFULLY"
+);
     const text =
       pdfData.text.toLowerCase();
 

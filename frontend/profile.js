@@ -540,25 +540,20 @@ removePhotoBtn.addEventListener(
 // RESUME ANALYZER
 // ==========================
 
-const resumeUpload =
-  document.getElementById(
-    "resume-upload"
-  );
-
 const analyzeResumeBtn =
-  document.getElementById(
-    "analyze-resume-btn"
-  );
+document.getElementById(
+  "analyze-resume-btn"
+);
 
 const resumeScoreElement =
-  document.getElementById(
-    "resume-score"
-  );
+document.getElementById(
+  "resume-score"
+);
 
 const resumeNameElement =
-  document.getElementById(
-    "resume-name"
-  );
+document.getElementById(
+  "resume-name"
+);
 
 analyzeResumeBtn.addEventListener(
   "click",
@@ -567,14 +562,16 @@ analyzeResumeBtn.addEventListener(
 
     try {
 
-      console.log(
-        "Button Clicked"
+      const fileInput =
+      document.getElementById(
+        "resume-upload"
       );
 
-      const file =
-        resumeUpload.files[0];
-
-      if (!file) {
+      if(
+        !fileInput ||
+        !fileInput.files ||
+        fileInput.files.length === 0
+      ){
 
         alert(
           "Select Resume First"
@@ -584,13 +581,35 @@ analyzeResumeBtn.addEventListener(
 
       }
 
+      const file =
+      fileInput.files[0];
+
       const token =
-        localStorage.getItem(
-          "token"
+      localStorage.getItem(
+        "token"
+      );
+
+      if(!token){
+
+        alert(
+          "Please Login Again"
         );
 
+        window.location.href =
+        "index.html";
+
+        return;
+
+      }
+
+      analyzeResumeBtn.disabled =
+      true;
+
+      analyzeResumeBtn.innerText =
+      "Analyzing...";
+
       const formData =
-        new FormData();
+      new FormData();
 
       formData.append(
         "resume",
@@ -598,47 +617,38 @@ analyzeResumeBtn.addEventListener(
       );
 
       const response =
-        await fetch(
-          "https://scholarhub-backend-w94c.onrender.com/api/auth/resume",
-          {
+      await fetch(
+        "https://scholarhub-backend-w94c.onrender.com/api/auth/resume",
+        {
+          method: "POST",
 
-            method: "POST",
+          headers: {
+            Authorization:
+            `Bearer ${token}`
+          },
 
-            headers: {
-
-              Authorization:
-              `Bearer ${token}`
-
-            },
-
-            body:
-            formData
-
-          }
-        );
-
-      console.log(
-        "Response:",
-        response
+          body: formData
+        }
       );
 
       const data =
-        await response.json();
+      await response.json();
 
-      console.log(
-        "Data:",
-        data
-      );
+      if(!response.ok){
 
-      alert(
-        data.message
-      );
+        throw new Error(
+          data.message ||
+          "Resume Analysis Failed"
+        );
+
+      }
 
       resumeScoreElement.textContent =
       `${data.resumeScore}/100`;
 
       resumeNameElement.textContent =
-      data.resumeName;
+      data.resumeName ||
+      file.name;
 
       // =========================
       // MISSING SKILLS
@@ -649,19 +659,21 @@ analyzeResumeBtn.addEventListener(
         "missing-skills"
       );
 
-      if (
-        missingSkillsElement &&
-        data.missingSkills
-      ) {
+      if(missingSkillsElement){
 
         missingSkillsElement.textContent =
         "Missing Skills: " +
-        data.missingSkills.join(", ");
+        (
+          data.missingSkills &&
+          data.missingSkills.length > 0
+          ? data.missingSkills.join(", ")
+          : "None"
+        );
 
       }
 
       // =========================
-      // RESUME SUGGESTIONS
+      // SUGGESTIONS
       // =========================
 
       const suggestionList =
@@ -687,7 +699,9 @@ analyzeResumeBtn.addEventListener(
 
         }
 
-        if(data.resumeScore >= 80){
+        if(
+          data.resumeScore >= 80
+        ){
 
           suggestions.push(
             "Resume is ATS friendly."
@@ -703,7 +717,9 @@ analyzeResumeBtn.addEventListener(
 
         }
 
-        if(data.resumeScore < 60){
+        if(
+          data.resumeScore < 60
+        ){
 
           suggestions.push(
             "Add more technical skills and projects."
@@ -715,26 +731,55 @@ analyzeResumeBtn.addEventListener(
 
         }
 
-        suggestions.forEach(item=>{
+        suggestions.forEach(
+          (item)=>{
 
-          suggestionList.innerHTML +=
-          `<li>${item}</li>`;
+            suggestionList.innerHTML +=
+            `<li>${item}</li>`;
 
-        });
+          }
+        );
 
       }
 
-      currentResume =
-      data.resumeUrl;
+      if(
+        typeof currentResume !==
+        "undefined"
+      ){
+
+        currentResume =
+        data.resumeUrl || "";
+
+      }
+
+      alert(
+        data.message ||
+        "Resume Analyzed Successfully"
+      );
 
     }
 
-    catch(error) {
+    catch(error){
 
       console.log(
-        "ERROR:",
+        "RESUME ERROR:",
         error
       );
+
+      alert(
+        error.message ||
+        "Resume Analysis Failed"
+      );
+
+    }
+
+    finally{
+
+      analyzeResumeBtn.disabled =
+      false;
+
+      analyzeResumeBtn.innerText =
+      "Analyze Resume";
 
     }
 

@@ -616,20 +616,38 @@ analyzeResumeBtn.addEventListener(
         file
       );
 
-      const response =
-      await fetch(
-        "https://scholarhub-backend-w94c.onrender.com/api/auth/resume",
-        {
-          method: "POST",
+      console.log(
+  "FILE INFO:",
+  file.name,
+  file.size,
+  file.type
+);
 
-          headers: {
-            Authorization:
-            `Bearer ${token}`
-          },
+console.log(
+  "TOKEN:",
+  token
+);
 
-          body: formData
-        }
-      );
+const response =
+await fetch(
+  "https://scholarhub-backend-w94c.onrender.com/api/auth/resume",
+  {
+    method: "POST",
+    mode: "cors",
+
+    headers: {
+      Authorization:
+      `Bearer ${token}`
+    },
+
+    body: formData
+  }
+);
+
+console.log(
+  "STATUS:",
+  response.status
+);
 
       const data =
       await response.json();
@@ -759,19 +777,20 @@ analyzeResumeBtn.addEventListener(
 
     }
 
-    catch(error){
+catch(error){
 
-      console.log(
-        "RESUME ERROR:",
-        error
-      );
+  console.error(
+    "FULL ERROR:",
+    error
+  );
 
-      alert(
-        error.message ||
-        "Resume Analysis Failed"
-      );
+  alert(
+    error.name +
+    " : " +
+    error.message
+  );
 
-    }
+}
 
     finally{
 

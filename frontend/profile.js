@@ -545,6 +545,47 @@ const resumeUpload =
     "resume-upload"
   );
 
+  // =========================
+// RESUME FILE DEBUG
+// =========================
+
+resumeUpload.addEventListener(
+  "change",
+  () => {
+
+    console.log(
+      "FILE SELECTED:",
+      resumeUpload.files
+    );
+
+    if (
+      resumeUpload.files &&
+      resumeUpload.files.length > 0
+    ) {
+
+      alert(
+        "Selected: " +
+        resumeUpload.files[0].name
+      );
+
+      document.getElementById(
+        "resume-name"
+      ).textContent =
+      resumeUpload.files[0].name;
+
+    }
+
+    else {
+
+      alert(
+        "No file detected"
+      );
+
+    }
+
+  }
+);
+
 const analyzeResumeBtn =
   document.getElementById(
     "analyze-resume-btn"

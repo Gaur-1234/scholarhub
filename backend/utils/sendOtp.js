@@ -15,7 +15,7 @@ const sendOtp = async (
     await resend.emails.send({
 
       from:
-      "ScholarHub <onboarding@resend.dev>",
+      "ScholarHub <noreply@gaurautomation.com>",
 
       to: email,
 

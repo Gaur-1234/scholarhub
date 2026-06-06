@@ -1,44 +1,21 @@
-const nodemailer = require("nodemailer");
+const { Resend } = require("resend");
 
-const sendOtp = async (email, otp) => {
+const resend = new Resend(
+  process.env.RESEND_API_KEY
+);
+
+const sendOtp = async (
+  email,
+  otp
+) => {
 
   try {
 
-    const transporter = nodemailer.createTransport({
+    const response =
+    await resend.emails.send({
 
-      host: "smtp.gmail.com",
-
-      port: 587,
-
-      secure: false,
-
-      auth: {
-
-        user: process.env.EMAIL_USER,
-
-        pass: process.env.EMAIL_PASS
-
-      },
-
-      tls: {
-
-        rejectUnauthorized: false
-
-      }
-
-    });
-
-    // SMTP TEST
-
-    await transporter.verify();
-
-    console.log(
-      "SMTP SERVER READY"
-    );
-
-    const mailOptions = {
-
-      from: process.env.EMAIL_USER,
+      from:
+      "ScholarHub <onboarding@resend.dev>",
 
       to: email,
 
@@ -89,16 +66,11 @@ const sendOtp = async (email, otp) => {
 
       `
 
-    };
-
-    const info =
-    await transporter.sendMail(
-      mailOptions
-    );
+    });
 
     console.log(
       "OTP EMAIL SENT:",
-      info.messageId
+      response
     );
 
     return true;

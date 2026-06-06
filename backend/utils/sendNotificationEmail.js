@@ -1,28 +1,8 @@
-const nodemailer = require("nodemailer");
+const { Resend } = require("resend");
 
-const transporter = nodemailer.createTransport({
-
-  host: "smtp.gmail.com",
-
-  port: 587,
-
-  secure: false,
-
-  auth: {
-
-    user: process.env.EMAIL_USER,
-
-    pass: process.env.EMAIL_PASS,
-
-  },
-
-  tls: {
-
-    rejectUnauthorized: false
-
-  }
-
-});
+const resend = new Resend(
+  process.env.RESEND_API_KEY
+);
 
 const sendNotificationEmail = async (
   email,
@@ -30,39 +10,88 @@ const sendNotificationEmail = async (
   message
 ) => {
 
-  await transporter.sendMail({
-    from: process.env.EMAIL_USER,
-    to: email,
-    subject: "ScholarHub Notification",
-    html: `
-      <div style="font-family:Arial,sans-serif">
-        <h2>Hello ${username},</h2>
+  try {
 
-        <p>You have received a new notification from ScholarHub.</p>
+    const response =
+    await resend.emails.send({
 
-        <div style="
-          background:#f4f4f4;
-          padding:15px;
-          border-radius:8px;
-          margin:15px 0;
-        ">
+      from:
+      "ScholarHub <onboarding@resend.dev>",
+
+      to: email,
+
+      subject:
+      "ScholarHub Notification",
+
+      html: `
+
+      <div
+        style="
+          font-family:Arial,sans-serif
+        "
+      >
+
+        <h2>
+          Hello ${username},
+        </h2>
+
+        <p>
+          You have received a
+          new notification from
+          ScholarHub.
+        </p>
+
+        <div
+          style="
+            background:#f4f4f4;
+            padding:15px;
+            border-radius:8px;
+            margin:15px 0;
+          "
+        >
           ${message}
         </div>
 
         <p>
-          Login to ScholarHub to view more details.
+          Login to ScholarHub
+          to view more details.
         </p>
 
         <br>
 
         <p>
-          Regards,<br>
+          Regards,
+          <br>
           ScholarHub Team
         </p>
+
       </div>
-    `,
-  });
+
+      `
+
+    });
+
+    console.log(
+      "NOTIFICATION EMAIL SENT:",
+      response
+    );
+
+    return true;
+
+  }
+
+  catch (error) {
+
+    console.error(
+      "NOTIFICATION EMAIL ERROR:",
+      error
+    );
+
+    throw error;
+
+  }
 
 };
 
-module.exports = sendNotificationEmail;
+module.exports =
+sendNotificationEmail;

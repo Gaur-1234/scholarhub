@@ -1004,18 +1004,20 @@ const getAllUsers = async (req, res) => {
     const totalUsers =
       await User.countDocuments(query);
 
-    const users =
-      await User.find(query)
+   const users =
+  await User.find(query)
 
-      .select(
-        "-password -otp -otpExpiry"
-      )
+  .select(
+    "username email role isVerified"
+  )
 
-      .skip(
-        (page - 1) * limit
-      )
+  .lean()
 
-      .limit(limit);
+  .skip(
+    (page - 1) * limit
+  )
+
+  .limit(limit);
 
     res.status(200).json({
 

@@ -121,7 +121,7 @@ otpLoginBtn.addEventListener(
           email,
         );
 
-        window.location.href = "otpindex.html";
+        window.location.href ="otplogin.html";
       }
     } catch (error) {
       console.log(error);

@@ -12,22 +12,39 @@ The platform provides secure authentication, email verification, password recove
 
 ---
 
- 📸 Screenshots
+## 📸 Screenshots
 
- Home Page
+### User Dashboard
 
-User Dashboard
+![User Dashboard](dashboard.png)
 
-(Add Screenshot)
+### Resume Analyzer
 
-Resume Analyzer
+![Resume Analyzer](resume-analyzer.png)
 
-(Add Screenshot)
+### Profile Management
 
-Admin Dashboard
+![Profile Management](profile.png)
 
-(Add Screenshot)
+### Security Settings
 
+![Security Settings](security.png)
+
+### Login Page
+
+![Login Page](login.png)
+
+### Signup Page
+
+![Signup Page](signup.png)
+
+### Admin Dashboard
+
+![Admin Dashboard](admin-dashboard.png)
+
+### User Management
+
+![User Management](user.png)
 ---
 
  ✨ Features

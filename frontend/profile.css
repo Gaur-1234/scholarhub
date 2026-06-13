@@ -682,3 +682,97 @@ background:#4f46e5;
 color:white;
 font-weight:bold;
 }
+
+
+/* ==========================
+AI SUGGESTIONS
+========================== */
+
+.resume-suggestions{
+margin-top:20px;
+padding:20px;
+background:#ffffff;
+border-radius:16px;
+border:1px solid #e5e7eb;
+box-shadow:0 8px 25px rgba(0,0,0,0.06);
+}
+
+.resume-suggestions h3{
+color:#4f46e5;
+margin-bottom:15px;
+font-size:18px;
+}
+
+#suggestions-list{
+list-style:none;
+padding:0;
+}
+
+#suggestions-list li{
+margin-bottom:12px;
+padding:12px 15px;
+background:#f8fafc;
+border-left:4px solid #6366f1;
+border-radius:10px;
+line-height:1.6;
+transition:0.3s;
+}
+
+#suggestions-list li:hover{
+transform:translateX(5px);
+}
+
+/* ==========================
+SKILL PROGRESS
+========================== */
+
+.skill-progress-card{
+margin-top:25px;
+}
+
+.skill-progress-card h3{
+color:#4f46e5;
+margin-bottom:15px;
+}
+
+.skill-item{
+margin-bottom:18px;
+}
+
+.skill-top{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:8px;
+font-weight:600;
+}
+
+.skill-top span:first-child
+
+.skill-top span:last-child
+
+.skill-bar{
+width:100%;
+height:12px;
+background:#e2e8f0;
+border-radius:50px;
+overflow:hidden;
+}
+
+.skill-fill{
+height:100%;
+border-radius:50px;
+background:linear-gradient(
+90deg,
+#6366f1,
+#8b5cf6
+);
+transition:width 0.8s ease;
+box-shadow:
+0 0 10px rgba(
+99,
+102,
+241,
+0.4
+);
+}

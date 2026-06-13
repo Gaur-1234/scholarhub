@@ -158,6 +158,7 @@ try {
     `Password Changes : ${
       data.user.passwordChangeCount || 0
     }`;
+  
 // ==========================
 // MISSING SKILLS
 // ==========================
@@ -240,72 +241,34 @@ data.user.resumeVerdict ||
 }
 
 // ==========================
-// RESUME SUGGESTIONS
+// GEMINI SUGGESTIONS
 // ==========================
 
 const suggestionList =
 document.getElementById(
-  "suggestions-list"
+"suggestions-list"
 );
 
 if(suggestionList){
 
-  suggestionList.innerHTML = "";
+suggestionList.innerHTML = "";
 
-  const suggestions = [];
+(
+data.user.resumeSuggestions || []
+).forEach(item => {
 
-  if(
-    data.user.resumeMissingSkills &&
-    data.user.resumeMissingSkills.length > 0
-  ){
 
-    suggestions.push(
-      "Include missing ATS keywords: " +
-      data.user.resumeMissingSkills.join(", ")
-    );
+suggestionList.innerHTML +=
+`<li>${item}</li>`;
 
-  }
 
-  if(
-    data.user.resumeScore >= 80
-  ){
-
-    suggestions.push(
-      "Resume is ATS friendly."
-    );
-
-    suggestions.push(
-      "Add measurable achievements in projects."
-    );
-
-    suggestions.push(
-      "Use action verbs like Developed, Built, Designed."
-    );
-
-  }
-
-  if(
-    data.user.resumeScore < 60
-  ){
-
-    suggestions.push(
-      "Add more technical skills and projects."
-    );
-
-    suggestions.push(
-      "Improve ATS keyword coverage."
-    );
-
-  }
-
-  suggestions.forEach(item => {
-
-    suggestionList.innerHTML +=
-    `<li>${item}</li>`;
-
-  });
+});
 
 }
+
+// ==========================
+// SKILL PROGRESS
+// ==========================
 
 const skillContainer =
 document.getElementById(
@@ -333,18 +296,19 @@ data.user.resumeMissingSkills || [];
 
 allSkills.forEach((skill)=>{
 
+
 let value = 90;
 
 const foundMissing =
 missingSkills.some(
-s =>
-s.toLowerCase() ===
-skill.toLowerCase()
+  s =>
+  s.toLowerCase() ===
+  skill.toLowerCase()
 );
 
 if(foundMissing){
 
-value = 25;
+  value = 25;
 
 }
 
@@ -352,60 +316,30 @@ skillContainer.innerHTML += `
 
 <div class="skill-item">
 
-<div class="skill-top">
+  <div class="skill-top">
 
-<span>${skill.toUpperCase()}</span>
+    <span>${skill.toUpperCase()}</span>
 
-<span>${value}%</span>
+    <span>${value}%</span>
 
-</div>
+  </div>
 
-<div class="skill-bar">
+  <div class="skill-bar">
 
-<div
-class="skill-fill"
-style="width:${value}%"
->
+    <div
+    class="skill-fill"
+    style="width:${value}%"
+    >
+    </div>
 
-</div>
-
-</div>
+  </div>
 
 </div>
 
 `;
 
+
 });
-}
-currentResume =
-data.user.resumeUrl || "";
-
-if(
-  data.user.profileImage &&
-  data.user.profileImage !== ""
-){
-
-  profileImage.src =
-  data.user.profileImage;
-
-}
-else{
-
-  profileImage.src =
-  "./images/default-avatar.png";
-
-}
-
-} // if(data.user) close
-
-} // try close
-
-catch (error) {
-
-  console.log(
-    "PROFILE ERROR:",
-    error
-  );
 
 }
 
@@ -435,21 +369,22 @@ if (uploadInput) {
         );
 
         return;
+
       }
 
       const reader =
         new FileReader();
 
       reader.onload =
-        function (e) {
+      function (e) {
 
-          const imageData =
-            e.target.result;
+        const imageData =
+        e.target.result;
 
-          profileImage.src =
-            imageData;
+        profileImage.src =
+        imageData;
 
-        };
+      };
 
       reader.readAsDataURL(
         file
@@ -460,7 +395,20 @@ if (uploadInput) {
 
 }
 
-});
+} // if(data.user)
+
+} // try
+
+catch (error) {
+
+  console.log(
+    "PROFILE ERROR:",
+    error
+  );
+
+}
+
+}); // DOMContentLoaded ends here
 // ==========================
 // SAVE PROFILE
 // ==========================

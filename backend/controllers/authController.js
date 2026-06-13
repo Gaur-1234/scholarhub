@@ -850,12 +850,75 @@ console.log(
   aiAnalysis
 );
 
+// SAVE ANALYSIS
+
+user.resumeUrl =
+  req.file.filename;
+
+user.resumeScore =
+  aiAnalysis.atsScore || 0;
+
+user.resumeMissingSkills =
+  aiAnalysis.missingSkills || [];
+
+user.resumeStrengths =
+  aiAnalysis.strengths || [];
+
+user.resumeWeaknesses =
+  aiAnalysis.weaknesses || [];
+
+user.resumeSuggestions =
+  aiAnalysis.suggestions || [];
+
+user.resumeSummary =
+  aiAnalysis.summary || "";
+
+user.resumeVerdict =
+  aiAnalysis.verdict || "";
+
+user.resumeLastAnalyzed =
+  new Date();
+
+user.activityLogs.unshift({
+
+  action:
+  "AI Resume Analysis Completed"
+
+});
+
+await user.save();
+
 return res.status(200).json({
 
   message:
-  "Gemini Test Success",
+  "Resume Analyzed Successfully",
 
-  aiAnalysis
+  resumeScore:
+  user.resumeScore,
+
+  resumeName:
+  req.file.originalname,
+
+  resumeUrl:
+  user.resumeUrl,
+
+  missingSkills:
+  user.resumeMissingSkills,
+
+  strengths:
+  user.resumeStrengths,
+
+  weaknesses:
+  user.resumeWeaknesses,
+
+  suggestions:
+  user.resumeSuggestions,
+
+  summary:
+  user.resumeSummary,
+
+  verdict:
+  user.resumeVerdict
 
 });
 

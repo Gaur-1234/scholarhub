@@ -635,3 +635,50 @@ padding-left:20px;
   color: #f4c542;
 
 }
+
+.ai-analysis-card{
+margin-top:20px;
+padding:20px;
+background:#f8fafc;
+border-radius:12px;
+border:1px solid #e2e8f0;
+}
+
+.ai-analysis-card h3{
+margin-top:15px;
+margin-bottom:10px;
+color:#4f46e5;
+}
+
+.ai-list{
+padding-left:20px;
+}
+
+.ai-list li{
+margin-bottom:8px;
+line-height:1.5;
+}
+
+.strengths li{
+color:#15803d;
+}
+
+.weaknesses li{
+color:#dc2626;
+}
+
+.ai-summary{
+line-height:1.7;
+padding:12px;
+background:white;
+border-radius:8px;
+}
+
+.ai-verdict{
+display:inline-block;
+padding:8px 16px;
+border-radius:20px;
+background:#4f46e5;
+color:white;
+font-weight:bold;
+}

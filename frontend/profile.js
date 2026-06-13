@@ -408,7 +408,7 @@ catch (error) {
 
 }
 
-}); // DOMContentLoaded ends here
+
 // ==========================
 // SAVE PROFILE
 // ==========================
@@ -969,3 +969,4 @@ if(menuToggle && sidebar){
   );
 
 }
+}); // DOMContentLoaded ends here

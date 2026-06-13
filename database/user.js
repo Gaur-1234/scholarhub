@@ -42,26 +42,54 @@ const userSchema = new mongoose.Schema(
     type: String,
     default: ""
   },
+// RESUME
 
-  // RESUME
-  resumeUrl: {
-    type: String,
-    default: ""
-  },
-
-  resumeScore: {
-    type: Number,
-    default: 0
-  },
-
-  resumeMissingSkills: {
-  type: [String],
-  default: []
+resumeUrl: {
+type: String,
+default: ""
 },
-passwordChangeCount: {
-  type: Number,
-  default: 0
+
+resumeScore: {
+type: Number,
+default: 0
 },
+
+resumeMissingSkills: {
+type: [String],
+default: []
+},
+
+// GEMINI ANALYSIS
+
+resumeStrengths: {
+type: [String],
+default: []
+},
+
+resumeWeaknesses: {
+type: [String],
+default: []
+},
+
+resumeSuggestions: {
+type: [String],
+default: []
+},
+
+resumeVerdict: {
+type: String,
+default: ""
+},
+
+resumeSummary: {
+type: String,
+default: ""
+},
+
+resumeLastAnalyzed: {
+type: Date
+},
+
   // PROFILE DETAILS
   bio: {
     type: String,

@@ -5,6 +5,10 @@ const jwt = require("jsonwebtoken");
 const axios = require("axios");
 const fs = require("fs");
 const pdfParse = require("pdf-parse");
+const analyzeResume =
+require(
+"../services/geminiResumeAnalyzer"
+);
 
 
 const sendOtp = require("../utils/sendOtp");
@@ -775,9 +779,10 @@ if (profileImage !== undefined) {
 
 const updateResume = async (req, res) => {
 
-  try {
+try {
 
-    console.log("===== RESUME ROUTE HIT =====");
+
+console.log("===== RESUME ROUTE HIT =====");
 
 console.log(
   "USER:",
@@ -789,142 +794,97 @@ console.log(
   req.file
 );
 
-    const user =
-      await User.findById(
-        req.user.id
-      );
+const user =
+  await User.findById(
+    req.user.id
+  );
 
-    if (!user) {
+if (!user) {
 
-      return res.status(404).json({
-        message: "User not found"
-      });
+  return res.status(404).json({
+    message: "User not found"
+  });
 
-    }
+}
 
-    if (!req.file) {
+if (!req.file) {
 
-      return res.status(400).json({
-        message: "No Resume Uploaded"
-      });
+  return res.status(400).json({
+    message: "No Resume Uploaded"
+  });
 
-    }
+}
 
-    const pdfBuffer =
-      fs.readFileSync(
-        req.file.path
-      );
+const pdfBuffer =
+  fs.readFileSync(
+    req.file.path
+  );
 
-    console.log(
+console.log(
   "PDF PATH:",
   req.file.path
 );
 
-    const pdfData =
-      await pdfParse(
-        pdfBuffer
-      );
+const pdfData =
+  await pdfParse(
+    pdfBuffer
+  );
 
-  console.log(
+console.log(
   "PDF PARSED SUCCESSFULLY"
 );
-    const text =
-      pdfData.text.toLowerCase();
 
-    const skills = [
+const text =
+  pdfData.text.toLowerCase();
 
-      "html",
-      "css",
-      "javascript",
-      "react",
-      "node",
-      "express",
-      "mongodb",
-      "git",
-      "github"
+const aiAnalysis =
+  await analyzeResume(
+    text
+  );
 
-    ];
-
-    let score = 0;
-
-    const missingSkills = [];
-
-    skills.forEach(skill => {
-
-      if (
-        text.includes(skill)
-      ) {
-
-        score += 10;
-
-      }
-
-      else {
-
-        missingSkills.push(
-          skill
-        );
-
-      }
-
-    });
-
-    if (score > 100) {
-
-      score = 100;
-
-    }
-
-  user.resumeUrl =
-req.file.filename;
-
-    user.resumeScore =
-      score;
-    user.resumeMissingSkills =
-      missingSkills;
-    user.activityLogs.unshift({
-
-      action:
-      "Resume Uploaded"
-
-    });
-
-    await user.save();
-    console.log(
-  user.resumeMissingSkills
+console.log(
+  "GEMINI RESPONSE:"
 );
 
-console.log("SENDING RESPONSE");
-res.status(200).json({
+console.log(
+  aiAnalysis
+);
+
+return res.status(200).json({
 
   message:
-  "Resume Analyzed",
+  "Gemini Test Success",
 
-  resumeScore:
-  score,
-
-  resumeName:
-  req.file.originalname,
-
-  resumeUrl:
-req.file.filename,
-
-  missingSkills
+  aiAnalysis
 
 });
 
-  }
 
- catch (error) {
-  console.error("RESUME ERROR:", error);
+}
 
-  res.status(500).json({
-    message: error.message,
-    stack: error.stack
-  });
+catch (error) {
+
+
+console.error(
+  "RESUME ERROR:",
+  error
+);
+
+res.status(500).json({
+
+  message:
+  error.message,
+
+  stack:
+  error.stack
+
+});
+
+
 }
 
 };
+
 // =========================
 // LOGOUT ALL DEVICES
 // =========================

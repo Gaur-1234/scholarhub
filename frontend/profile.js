@@ -158,7 +158,27 @@ try {
     `Password Changes : ${
       data.user.passwordChangeCount || 0
     }`;
-  
+
+// ==========================
+// LOAD PROFILE PHOTO
+// ==========================
+
+if(
+  data.user.profileImage &&
+  data.user.profileImage !== ""
+){
+
+  profileImage.src =
+  data.user.profileImage;
+
+}
+else{
+
+  profileImage.src =
+  "./images/default-avatar.png";
+
+}
+
 // ==========================
 // MISSING SKILLS
 // ==========================
@@ -266,103 +286,29 @@ suggestionList.innerHTML +=
 
 }
 
-// ==========================
-// SKILL PROGRESS
-// ==========================
-
-const skillContainer =
-document.getElementById(
-"skill-progress-list"
-);
-
-if(skillContainer){
-
-skillContainer.innerHTML = "";
-
-const allSkills = [
-"html",
-"css",
-"javascript",
-"node",
-"express",
-"mongodb",
-"react",
-"git",
-"github"
-];
-
-const missingSkills =
-data.user.resumeMissingSkills || [];
-
-allSkills.forEach((skill)=>{
-
-
-let value = 90;
-
-const foundMissing =
-missingSkills.some(
-  s =>
-  s.toLowerCase() ===
-  skill.toLowerCase()
-);
-
-if(foundMissing){
-
-  value = 25;
-
-}
-
-skillContainer.innerHTML += `
-
-<div class="skill-item">
-
-  <div class="skill-top">
-
-    <span>${skill.toUpperCase()}</span>
-
-    <span>${value}%</span>
-
-  </div>
-
-  <div class="skill-bar">
-
-    <div
-    class="skill-fill"
-    style="width:${value}%"
-    >
-    </div>
-
-  </div>
-
-</div>
-
-`;
-
-
-});
-
-}
 
 // ==========================
 // IMAGE UPLOAD
 // ==========================
 
-if (uploadInput) {
+if(uploadInput){
 
   uploadInput.addEventListener(
     "change",
-    (event) => {
+    (event)=>{
 
       const file =
-        event.target.files[0];
+      event.target.files[0];
 
-      if (!file) return;
+      if(!file){
+        return;
+      }
 
-      if (
+      if(
         !file.type.startsWith(
           "image/"
         )
-      ) {
+      ){
 
         alert(
           "Please select a valid image file."
@@ -373,16 +319,13 @@ if (uploadInput) {
       }
 
       const reader =
-        new FileReader();
+      new FileReader();
 
       reader.onload =
-      function (e) {
-
-        const imageData =
-        e.target.result;
+      function(e){
 
         profileImage.src =
-        imageData;
+        e.target.result;
 
       };
 
@@ -395,16 +338,20 @@ if (uploadInput) {
 
 }
 
+// ==========================
+// END PROFILE LOAD
+// ==========================
+
 } // if(data.user)
 
 } // try
 
-catch (error) {
+catch(error){
 
-  console.log(
-    "PROFILE ERROR:",
-    error
-  );
+console.log(
+"PROFILE ERROR:",
+error
+);
 
 }
 
@@ -414,77 +361,95 @@ catch (error) {
 // ==========================
 
 const saveBtn =
-  document.getElementById(
-    "save-profile-btn"
-  );
+document.getElementById(
+"save-profile-btn"
+);
+
+if(saveBtn){
 
 saveBtn.addEventListener(
-  "click",
+"click",
 
-  async () => {
+async ()=>{
 
-    try {
+try{
 
-      const token =
-        localStorage.getItem(
-          "token"
-        );
-
-      const username =
-        document.getElementById(
-          "username"
-        ).value;
-      const email =
-        document.getElementById(
-          "email"
-        ).value;
-
-     const profileImage =
-document.getElementById(
-  "profile-image"
-).src;
-      const response =
-        await fetch(
-          "https://scholarhub-backend-w94c.onrender.com/api/auth/profile",
-          {
-            method: "PUT",
-
-            headers: {
-
-              "Content-Type":
-              "application/json",
-
-              Authorization:
-              `Bearer ${token}`
-
-            },
-
-            body: JSON.stringify({
-
-              username,
-              email,
-              profileImage
-
-            })
-
-          }
-        );
-
-      const data =
-        await response.json();
-
-      alert(data.message);
-
-    }
-
-    catch (error) {
-
-      console.log(error);
-
-    }
-
-  }
+const token =
+localStorage.getItem(
+"token"
 );
+
+const username =
+document.getElementById(
+"username"
+).value;
+
+const email =
+document.getElementById(
+"email"
+).value;
+
+const profileImage =
+document.getElementById(
+"profile-image"
+).src;
+
+saveBtn.disabled = true;
+saveBtn.innerText =
+"Saving...";
+
+const response =
+await fetch(
+"https://scholarhub-backend-w94c.onrender.com/api/auth/profile",
+{
+method:"PUT",
+
+headers:{
+"Content-Type":
+"application/json",
+
+Authorization:
+`Bearer ${token}`
+},
+
+body:JSON.stringify({
+username,
+email,
+profileImage
+})
+}
+);
+
+const data =
+await response.json();
+
+alert(
+data.message
+);
+
+}
+catch(error){
+
+console.log(error);
+
+alert(
+"Failed to save profile"
+);
+
+}
+finally{
+
+saveBtn.disabled = false;
+
+saveBtn.innerText =
+"Save Changes";
+
+}
+
+}
+);
+
+}
 
 const removePhotoBtn =
 document.getElementById(

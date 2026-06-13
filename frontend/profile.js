@@ -169,6 +169,76 @@ missingSkillsElement.textContent =
   || "None"
 );
 
+const strengthsList =
+document.getElementById(
+"strengths-list"
+);
+
+if(strengthsList){
+
+strengthsList.innerHTML = "";
+
+(
+data.user.resumeStrengths || []
+).forEach(item => {
+
+
+strengthsList.innerHTML +=
+`<li>${item}</li>`;
+
+
+});
+
+}
+
+const weaknessesList =
+document.getElementById(
+"weaknesses-list"
+);
+
+if(weaknessesList){
+
+weaknessesList.innerHTML = "";
+
+(
+data.user.resumeWeaknesses || []
+).forEach(item => {
+
+
+weaknessesList.innerHTML +=
+`<li>${item}</li>`;
+
+
+});
+
+}
+
+const summaryElement =
+document.getElementById(
+"resume-summary"
+);
+
+if(summaryElement){
+
+summaryElement.textContent =
+data.user.resumeSummary ||
+"No Analysis Available";
+
+}
+
+const verdictElement =
+document.getElementById(
+"resume-verdict"
+);
+
+if(verdictElement){
+
+verdictElement.textContent =
+data.user.resumeVerdict ||
+"Not Available";
+
+}
+
 // ==========================
 // RESUME SUGGESTIONS
 // ==========================

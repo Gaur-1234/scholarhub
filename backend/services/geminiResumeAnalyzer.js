@@ -12,10 +12,24 @@ async (resumeText) => {
 
   try {
 
-    const model =
-    genAI.getGenerativeModel({
-      model: "gemini-2.5-flash"
-    });
+   let model;
+
+try{
+
+  model =
+  genAI.getGenerativeModel({
+    model: "gemini-2.5-flash"
+  });
+
+}
+catch{
+
+  model =
+  genAI.getGenerativeModel({
+    model: "gemini-1.5-flash"
+  });
+
+}
 
     const prompt = `
 
@@ -75,16 +89,54 @@ ${resumeText}
 
   }
 
-  catch (error) {
+catch (error) {
 
-    console.log(
-      "GEMINI ERROR:",
-      error
-    );
+  console.log(
+    "GEMINI ERROR:",
+    error
+  );
 
-    throw error;
+  // Gemini busy fallback
+
+  if(
+    error.message &&
+    (
+      error.message.includes("503") ||
+      error.message.includes("Service Unavailable")
+    )
+  ){
+
+    return {
+
+      atsScore: 60,
+
+      strengths: [
+        "Resume uploaded successfully"
+      ],
+
+      weaknesses: [
+        "AI service temporarily unavailable"
+      ],
+
+      missingSkills: [],
+
+      suggestions: [
+        "Please try analysis again in a few minutes"
+      ],
+
+      summary:
+      "Gemini is currently experiencing high demand.",
+
+      verdict:
+      "Needs Improvement"
+
+    };
 
   }
+
+  throw error;
+
+}
 
 };
 

@@ -528,15 +528,26 @@ document.getElementById(
   "analyze-resume-btn"
 );
 
-const resumeScoreElement =
 document.getElementById(
   "resume-score"
-);
+).textContent =
+`${data.user.resumeScore}/100`;
 
-const resumeNameElement =
 document.getElementById(
   "resume-name"
-);
+).textContent =
+data.user.resumeUrl ||
+"No Resume";
+
+currentResume =
+data.user.resumeUrl || "";
+
+document.getElementById(
+  "login-count"
+).textContent =
+`Login Count : ${
+  data.user.loginHistory?.length || 0
+}`;
 
 analyzeResumeBtn.addEventListener(
   "click",

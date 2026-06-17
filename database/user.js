@@ -13,10 +13,17 @@ const userSchema = new mongoose.Schema(
     unique: true
   },
 
-  password: {
-    type: String,
-    required: true
-  },
+password: {
+  type: String,
+  required: function () {
+    return !this.googleAuth;
+  }
+},
+
+  googleAuth: {
+  type: Boolean,
+  default: false
+},
 
   role: {
     type: String,

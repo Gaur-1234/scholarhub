@@ -229,7 +229,16 @@ const login = async (req, res) => {
         message: "Please verify OTP first",
       });
     }
+if(user.googleAuth){
 
+  return res.status(400).json({
+
+    message:
+    "Please login with Google"
+
+  });
+
+}
     const isMatch = await bcrypt.compare(
   password,
   user.password,
@@ -341,6 +350,11 @@ await user.save();
   }
 };
 
+
+//// =========================
+// Google Login
+// =========================
+
 const googleLogin = async (req,res)=>{
 
 try{
@@ -384,10 +398,11 @@ payload.picture,
 
 isVerified:true,
 
+googleAuth:true,
+
 role:"user"
 
 });
-
 await user.save();
 
 }

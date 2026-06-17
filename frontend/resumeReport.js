@@ -137,52 +137,80 @@ if(downloadBtn){
 
 downloadBtn.addEventListener(
 "click",
-()=>{
+
+async ()=>{
 
 const element =
-document.querySelector(
-".container"
+document.getElementById(
+"report-content"
 );
+
+downloadBtn.disabled = true;
 
 downloadBtn.innerHTML =
 "Downloading...";
 
 const options = {
 
-margin:0.5,
+margin:[5,5],
 
 filename:
 "ScholarHub-Resume-Report.pdf",
 
 image:{
 type:"jpeg",
-quality:1
+quality:0.98
 },
 
 html2canvas:{
-scale:2
+scale:1.5,
+useCORS:true,
+scrollY:0
+},
+
+pagebreak:{
+mode:[
+"avoid-all",
+"css",
+"legacy"
+]
 },
 
 jsPDF:{
-unit:"in",
+unit:"mm",
 format:"a4",
 orientation:"portrait"
 }
 
 };
 
-html2pdf()
+try{
+
+await html2pdf()
 .set(options)
 .from(element)
-.save()
-.then(()=>{
+.save();
+
+}
+catch(error){
+
+console.log(
+"PDF ERROR:",
+error
+);
+
+}
+finally{
+
+downloadBtn.disabled = false;
 
 downloadBtn.innerHTML =
 "📄 Download Report";
 
-});
+}
 
 }
+
 );
 
 }

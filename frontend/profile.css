@@ -445,6 +445,65 @@ width:100%;
 
 }
 
+#view-report-btn{
+
+width:100%;
+
+padding:14px 18px;
+
+border:none;
+
+border-radius:16px;
+
+cursor:pointer;
+
+font-size:15px;
+
+font-weight:700;
+
+color:white;
+
+background:
+linear-gradient(
+135deg,
+#06b6d4,
+#3b82f6
+);
+
+transition:.3s;
+
+box-shadow:
+0 10px 25px rgba(
+59,
+130,
+246,
+.20
+);
+
+}
+
+#view-report-btn:hover{
+
+transform:
+translateY(-4px);
+
+box-shadow:
+0 18px 35px rgba(
+59,
+130,
+246,
+.30
+);
+
+}
+
+#view-report-btn:active{
+
+transform:
+scale(.97);
+
+}
+
 /* =========================================
 ANIMATION
 ========================================= */

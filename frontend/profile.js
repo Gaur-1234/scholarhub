@@ -936,4 +936,26 @@ if(menuToggle && sidebar){
   );
 
 }
+// ==========================
+// VIEW FULL REPORT
+// ==========================
+
+const viewReportBtn =
+document.getElementById(
+"view-report-btn"
+);
+
+if(viewReportBtn){
+
+viewReportBtn.addEventListener(
+"click",
+()=>{
+
+window.location.href =
+"resumeReport.html";
+
+}
+);
+
+}
 }); // DOMContentLoaded ends here

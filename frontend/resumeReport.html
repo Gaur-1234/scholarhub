@@ -2,86 +2,211 @@
 <html lang="en">
 
 <head>
+  <meta charset="UTF-8">
 
-<meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-<meta
-name="viewport"
-content="width=device-width, initial-scale=1.0"
->
+  <title>Resume Analysis Report</title>
 
-<title>Resume Report</title>
+  <link
+    rel="stylesheet"
+    href="dashboard.css"
+  >
 
-<link
-rel="stylesheet"
-href="resumeReport.css"
->
-
+  <link
+    rel="stylesheet"
+    href="resumeReport.css"
+  >
 </head>
 
 <body>
 
-<div class="container">
+  <!-- SIDEBAR -->
 
-<h1>
-AI Resume Analysis Report
-</h1>
+  <div class="sidebar">
 
-<div class="score-card">
+    <div class="sidebar-top">
 
-<h2 id="report-score">
-0 / 100
-</h2>
+      <h2 class="logo">
+        ScholarHub
+      </h2>
 
-<p id="report-verdict">
-Not Available
-</p>
+      <ul>
 
-</div>
+        <li>
+          <a href="dashboard.html">
+            Dashboard
+          </a>
+        </li>
 
-<div class="card">
+        <li>
+          <a href="profile.html">
+            Profile
+          </a>
+        </li>
 
-<h3>Strengths</h3>
+        <li class="active">
+          <a href="resumeReport.html">
+            Resume Report
+          </a>
+        </li>
 
-<ul id="strengths-list"></ul>
+        <li>
+          <a href="notifications.html">
+            Notifications
+          </a>
+        </li>
 
-</div>
+        <li>
+          <a href="security.html">
+            Security
+          </a>
+        </li>
 
-<div class="card">
+      </ul>
 
-<h3>Weaknesses</h3>
+    </div>
 
-<ul id="weaknesses-list"></ul>
+    <div class="sidebar-bottom">
 
-</div>
+      <button id="logout-all-btn">
+        Logout All Devices
+      </button>
 
-<div class="card">
+      <button id="logout-btn">
+        Logout
+      </button>
 
-<h3>Missing Skills</h3>
+    </div>
 
-<ul id="missing-skills-list"></ul>
+  </div>
 
-</div>
+  <!-- MAIN CONTENT -->
 
-<div class="card">
+  <div class="main-content">
 
-<h3>AI Summary</h3>
+    <!-- NAVBAR -->
 
-<p id="report-summary"></p>
+    <nav class="navbar">
 
-</div>
+      <button id="menu-toggle">
+        ☰
+      </button>
 
-<div class="card">
+      <h2>
+        Resume Analysis Report
+      </h2>
 
-<h3>Suggestions</h3>
+    </nav>
 
-<ul id="suggestions-list"></ul>
+    <!-- REPORT CONTENT -->
 
-</div>
+    <section class="dashboard">
 
-</div>
+      <div class="container">
 
-<script src="resumeReport.js"></script>
+        <h1>
+          AI Resume Analysis Report
+        </h1>
+
+        <!-- SCORE CARD -->
+
+        <div class="score-card">
+
+          <h2 id="report-score">
+            0/100
+          </h2>
+
+          <p id="report-verdict">
+            Not Available
+          </p>
+
+        </div>
+
+        <!-- STRENGTHS -->
+
+        <div class="card">
+
+          <h3>
+            Strengths
+          </h3>
+
+          <ul id="strengths-list">
+
+          </ul>
+
+        </div>
+
+        <!-- WEAKNESSES -->
+
+        <div class="card">
+
+          <h3>
+            Weaknesses
+          </h3>
+
+          <ul id="weaknesses-list">
+
+          </ul>
+
+        </div>
+
+        <!-- MISSING SKILLS -->
+
+        <div class="card">
+
+          <h3>
+            Missing Skills
+          </h3>
+
+          <ul id="missing-skills-list">
+
+          </ul>
+
+        </div>
+
+        <!-- SUMMARY -->
+
+        <div class="card">
+
+          <h3>
+            AI Summary
+          </h3>
+
+          <p id="report-summary">
+
+          </p>
+
+        </div>
+
+        <!-- SUGGESTIONS -->
+
+        <div class="card">
+
+          <h3>
+            Suggestions
+          </h3>
+
+          <ul id="suggestions-list">
+
+          </ul>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </div>
+
+  <!-- SCRIPTS -->
+
+  <script src="sidebar.js"></script>
+
+  <script src="resumeReport.js"></script>
 
 </body>
 

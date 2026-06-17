@@ -128,4 +128,63 @@ console.log(error);
 
 }
 
+const downloadBtn =
+document.getElementById(
+"download-report-btn"
+);
+
+if(downloadBtn){
+
+downloadBtn.addEventListener(
+"click",
+()=>{
+
+const element =
+document.querySelector(
+".container"
+);
+
+downloadBtn.innerHTML =
+"Downloading...";
+
+const options = {
+
+margin:0.5,
+
+filename:
+"ScholarHub-Resume-Report.pdf",
+
+image:{
+type:"jpeg",
+quality:1
+},
+
+html2canvas:{
+scale:2
+},
+
+jsPDF:{
+unit:"in",
+format:"a4",
+orientation:"portrait"
+}
+
+};
+
+html2pdf()
+.set(options)
+.from(element)
+.save()
+.then(()=>{
+
+downloadBtn.innerHTML =
+"📄 Download Report";
+
+});
+
+}
+);
+
+}
+
 loadReport();

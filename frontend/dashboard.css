@@ -12,28 +12,24 @@ Inter,
 "Segoe UI",
 sans-serif;
 }
-
 body{
 
 display:flex;
 
 min-height:100vh;
 
-background:
-linear-gradient(
-135deg,
-#eef4ff 0%,
-#f8faff 50%,
-#f4f7ff 100%
-);
+background:var(--bg-color);
 
-color:#1e293b;
+color:var(--text-color);
 
 overflow-x:hidden;
 
 position:relative;
 
+transition:.3s;
+
 }
+
 
 /* =========================================
 ANIMATED BACKGROUND
@@ -225,8 +221,7 @@ justify-content:space-between;
 
 padding:28px 20px;
 
-background:
-rgba(255,255,255,.65);
+background:var(--card-bg);
 
 backdrop-filter:
 blur(25px);
@@ -255,7 +250,7 @@ font-size:1.8rem;
 
 font-weight:800;
 
-color:#111827;
+color:var(--text-color);
 
 margin-bottom:40px;
 
@@ -285,7 +280,7 @@ text-decoration:none;
 
 font-weight:600;
 
-color:#475569;
+color:var(--secondary-text);
 
 transition:.3s;
 
@@ -388,7 +383,17 @@ padding:30px;
 }
 
 .navbar{
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
 margin-bottom:25px;
+
+width:100%;
+
 }
 #menu-toggle{
 
@@ -402,7 +407,7 @@ font-size:30px;
 
 cursor:pointer;
 
-color:#111827;
+color:var(--text-color);
 
 }
 .navbar h2{
@@ -411,7 +416,7 @@ font-size:2rem;
 
 font-weight:800;
 
-color:#0f172a;
+color:var(--text-color);
 
 }
 
@@ -427,8 +432,7 @@ margin-bottom:25px;
 
 border-radius:30px;
 
-background:
-rgba(255,255,255,.75);
+background:var(--card-bg);
 
 backdrop-filter:
 blur(25px);
@@ -464,16 +468,13 @@ line-height:1.1;
 
 margin-bottom:10px;
 
-color:#0f172a;
+color:var(--text-color);
 
 }
 
 .hero-card p{
-
 font-size:1rem;
-
-color:#64748b;
-
+color:var(--secondary-text);
 }
 /* =========================================
 STATS
@@ -513,8 +514,7 @@ padding:25px;
 
 border-radius:24px;
 
-background:
-rgba(255,255,255,.75);
+background:var(--card-bg);
 
 backdrop-filter:
 blur(20px);
@@ -635,7 +635,7 @@ font-size:1rem;
 
 font-weight:600;
 
-color:#64748b;
+color:var(--secondary-text);
 
 margin-bottom:15px;
 
@@ -647,7 +647,7 @@ font-size:2.2rem;
 
 font-weight:800;
 
-color:#0f172a;
+color:var(--text-color);
 
 }
 
@@ -711,8 +711,7 @@ padding:25px;
 
 border-radius:28px;
 
-background:
-rgba(255,255,255,.75);
+background:var(--card-bg);
 
 backdrop-filter:
 blur(20px);
@@ -807,7 +806,7 @@ border:
 
 font-weight:700;
 
-color:#1e293b;
+color:var(--text-color);
 
 }
 
@@ -817,7 +816,7 @@ font-size:.85rem;
 
 margin-top:5px;
 
-color:#64748b;
+color:var(--secondary-text);
 
 }
 
@@ -993,8 +992,24 @@ display:flex;
 
 align-items:center;
 
-gap:15px;
+justify-content:space-between;
 
 }
+
+}
+
+.theme-btn{
+
+border:none;
+
+background:none;
+
+font-size:22px;
+
+cursor:pointer;
+
+margin-left:auto;
+
+color:var(--text-color);
 
 }

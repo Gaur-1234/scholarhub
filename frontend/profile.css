@@ -44,8 +44,7 @@ CARDS
 .activity-summary,
 .resume-card{
 
-background:
-rgba(255,255,255,.75);
+background:var(--card-bg);
 
 backdrop-filter:
 blur(20px);
@@ -137,13 +136,13 @@ font-weight:800;
 
 margin-bottom:8px;
 
-color:#0f172a;
+color:var(--text-color);
 
 }
 
 #profile-role{
 
-color:#64748b;
+color:var(--secondary-text);
 
 font-weight:600;
 
@@ -241,7 +240,7 @@ font-size:1.4rem;
 
 margin-bottom:20px;
 
-color:#0f172a;
+color:var(--text-color);
 
 }
 
@@ -260,8 +259,7 @@ margin-bottom:8px;
 font-size:.95rem;
 
 font-weight:600;
-
-color:#475569;
+color:var(--secondary-text);
 
 }
 
@@ -273,12 +271,11 @@ padding:14px;
 
 border-radius:14px;
 
-border:
-1px solid #e2e8f0;
+background:var(--bg-color);
 
-background:#f8fafc;
+border:1px solid var(--border-color);
 
-color:#1e293b;
+color:var(--text-color);
 
 outline:none;
 
@@ -315,15 +312,6 @@ margin-top:10px;
 /* =========================================
 ACTIVITY SUMMARY
 ========================================= */
-
-.activity-summary h2{
-
-margin-bottom:20px;
-
-font-size:1.4rem;
-
-}
-
 .activity-summary p{
 
 padding:14px;
@@ -350,10 +338,9 @@ border:
 
 font-weight:600;
 
-color:#334155;
+color:var(--text-color);
 
 }
-
 /* =========================================
 RESUME CARD
 ========================================= */
@@ -373,6 +360,7 @@ gap:14px;
 font-size:1.4rem;
 
 margin-bottom:5px;
+color:var(--text-color);
 
 }
 
@@ -382,13 +370,13 @@ font-size:2rem;
 
 font-weight:800;
 
-color:#0f172a;
+color:var(--text-color);
 
 }
 
 #resume-name{
 
-color:#475569;
+color:var(--text-color);
 
 font-weight:600;
 
@@ -750,9 +738,9 @@ AI ANALYSIS CARD
 .ai-analysis-card{
   margin-top:20px;
   padding:20px;
-  background:#ffffff;
+  background:var(--card-bg);
   border-radius:18px;
-  border:1px solid #e5e7eb;
+  border:1px solid var(--border-color);
   box-shadow:0 8px 25px rgba(0,0,0,.06);
 }
 
@@ -808,11 +796,11 @@ SUMMARY
 
 .ai-summary{
   padding:16px;
-  background:#f8fafc;
+  background:var(--bg-color);
   border-radius:14px;
   line-height:1.8;
-  color:#334155;
-  border:1px solid #e2e8f0;
+  color:var(--text-color);
+  border:1px solid var(--border-color);
 }
 
 /* =========================================
@@ -840,10 +828,9 @@ AI SUGGESTIONS
 .resume-suggestions{
   margin-top:25px;
   padding:20px;
-  background:#ffffff;
+  background:var(--card-bg);
   border-radius:18px;
-  border:1px solid #e5e7eb;
-  box-shadow:0 8px 25px rgba(0,0,0,.06);
+  border:1px solid var(--border-color);
 }
 
 .resume-suggestions h3{

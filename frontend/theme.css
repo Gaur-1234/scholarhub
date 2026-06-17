@@ -1,0 +1,43 @@
+:root{
+
+--bg-color:#f8fafc;
+
+--card-bg:#ffffff;
+
+--text-color:#111827;
+
+--secondary-text:#64748b;
+
+--sidebar-bg:#1e293b;
+
+--navbar-bg:#ffffff;
+
+--border-color:#e5e7eb;
+
+--shadow:
+0 10px 25px rgba(0,0,0,.08);
+
+}
+
+/* DARK MODE */
+
+body.dark-mode{
+
+--bg-color:#0f172a;
+
+--card-bg:#1e293b;
+
+--text-color:#f8fafc;
+
+--secondary-text:#cbd5e1;
+
+--sidebar-bg:#020617;
+
+--navbar-bg:#111827;
+
+--border-color:#334155;
+
+--shadow:
+0 10px 25px rgba(0,0,0,.4);
+
+}

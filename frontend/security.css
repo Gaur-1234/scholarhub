@@ -45,8 +45,7 @@ COMMON CARDS
 .login-history-card,
 .danger-zone-card{
 
-background:
-rgba(255,255,255,.75);
+background:var(--card-bg);
 
 backdrop-filter:
 blur(20px);
@@ -104,8 +103,7 @@ font-weight:800;
 
 margin-bottom:20px;
 
-color:#0f172a;
-
+color:var(--text-color);
 }
 
 /* =========================================
@@ -130,10 +128,9 @@ margin-bottom:14px;
 
 border-radius:14px;
 
-border:
-1px solid #e2e8f0;
+border:1px solid var(--border-color);
 
-background:#f8fafc;
+background:var(--bg-color);
 
 outline:none;
 

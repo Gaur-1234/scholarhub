@@ -4,8 +4,7 @@ NOTIFICATIONS PAGE
 
 .notification-card{
 
-background:
-rgba(255,255,255,.75);
+background:var(--card-bg);
 
 backdrop-filter:
 blur(20px);
@@ -51,7 +50,7 @@ font-size:2rem;
 
 font-weight:700;
 
-color:#0f172a;
+color:var(--text-color);
 
 margin-bottom:20px;
 
@@ -81,10 +80,9 @@ padding:20px;
 
 border-radius:20px;
 
-background:#f8fafc;
+background:var(--bg-color);
 
-border:
-1px solid #e2e8f0;
+border:1px solid var(--border-color);
 
 cursor:pointer;
 
@@ -115,13 +113,13 @@ font-weight:700;
 
 margin-bottom:8px;
 
-color:#0f172a;
+color:var(--text-color);
 
 }
 
 .notification-item p{
 
-color:#475569;
+color:var(--secondary-text);
 
 line-height:1.6;
 
@@ -133,7 +131,7 @@ display:block;
 
 margin-top:12px;
 
-color:#94a3b8;
+color:var(--secondary-text);
 
 font-size:.85rem;
 
@@ -170,7 +168,7 @@ z-index:9999;
 
 .modal-content{
 
-background:white;
+background:var(--card-bg);
 
 width:100%;
 
@@ -200,7 +198,7 @@ font-size:1.4rem;
 
 margin-bottom:15px;
 
-color:#0f172a;
+color:var(--text-color);
 
 }
 
@@ -214,7 +212,7 @@ font-weight:700;
 
 cursor:pointer;
 
-color:#64748b;
+color:var(--text-color);
 
 transition:.3s;
 
@@ -234,7 +232,7 @@ line-height:1.8;
 
 white-space:pre-wrap;
 
-color:#334155;
+color:var(--text-color);
 
 }
 

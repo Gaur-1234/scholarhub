@@ -43,6 +43,7 @@ const {
   forgotPassword,
   resetPassword,
   login,
+  googleLogin,
   profile,
   
 removeProfilePhoto,
@@ -121,6 +122,11 @@ router.post(
   loginLimiter,
 
   login,
+);
+
+router.post(
+  "/google-login",
+  googleLogin
 );
 
 // SEND LOGIN OTP

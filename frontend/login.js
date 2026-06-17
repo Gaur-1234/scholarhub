@@ -128,3 +128,89 @@ otpLoginBtn.addEventListener(
     }
   },
 );
+
+
+async function handleGoogleLogin(response){
+
+try{
+
+const res =
+await fetch(
+
+"https://scholarhub-backend-w94c.onrender.com/api/auth/google-login",
+
+{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+
+credential:
+response.credential
+
+})
+
+}
+
+);
+
+const data =
+await res.json();
+
+if(data.token){
+
+localStorage.setItem(
+
+"token",
+
+data.token
+
+);
+
+const payload =
+JSON.parse(
+atob(
+data.token.split(".")[1]
+)
+);
+
+if(payload.role === "admin"){
+
+window.location.href =
+"admin.html";
+
+}
+else{
+
+window.location.href =
+"dashboard.html";
+
+}
+
+}
+else{
+
+alert(
+data.message ||
+"Google Login Failed"
+);
+
+}
+
+}
+
+catch(error){
+
+console.log(error);
+
+alert(
+"Google Login Failed"
+);
+
+}
+
+}

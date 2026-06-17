@@ -488,3 +488,34 @@ height:52px;
 }
 
 }
+
+.divider{
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+margin:18px 0;
+
+font-size:14px;
+
+color:#64748b;
+
+}
+
+.divider::before,
+.divider::after{
+
+content:"";
+
+flex:1;
+
+height:1px;
+
+background:#d1d5db;
+
+margin:0 10px;
+
+}

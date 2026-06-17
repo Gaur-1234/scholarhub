@@ -1,6 +1,11 @@
 const bcrypt = require("bcryptjs");
 
 const jwt = require("jsonwebtoken");
+const {
+OAuth2Client
+} = require(
+"google-auth-library"
+);
 
 const axios = require("axios");
 const fs = require("fs");
@@ -16,6 +21,11 @@ const sendNotificationEmail =
 require("../utils/sendNotificationEmail");
 
 const User = require("../../database/user");
+
+const client =
+new OAuth2Client(
+process.env.GOOGLE_CLIENT_ID
+);
 
 
 
@@ -331,6 +341,103 @@ await user.save();
   }
 };
 
+const googleLogin = async (req,res)=>{
+
+try{
+
+const { credential } =
+req.body;
+
+const ticket =
+await client.verifyIdToken({
+
+idToken:credential,
+
+audience:
+process.env.GOOGLE_CLIENT_ID
+
+});
+
+const payload =
+ticket.getPayload();
+
+const email =
+payload.email;
+
+let user =
+await User.findOne({
+email
+});
+
+if(!user){
+
+user =
+new User({
+
+username:
+payload.name,
+
+email,
+
+profileImage:
+payload.picture,
+
+isVerified:true,
+
+role:"user"
+
+});
+
+await user.save();
+
+}
+
+const token =
+jwt.sign(
+
+{
+id:user._id,
+username:user.username,
+email:user.email,
+role:user.role,
+isVerified:user.isVerified,
+tokenVersion:
+user.tokenVersion
+},
+
+process.env.JWT_SECRET,
+
+{
+expiresIn:"1h"
+}
+
+);
+
+res.status(200).json({
+
+message:
+"Google Login Successful",
+
+token
+
+});
+
+}
+
+catch(error){
+
+console.log(error);
+
+res.status(500).json({
+
+message:
+"Google Login Failed"
+
+});
+
+}
+
+};
 // =========================
 // SEND LOGIN OTP
 // =========================
@@ -1705,6 +1812,7 @@ module.exports = {
   verifyOtp,
   resendSignupOtp,
   login,
+  googleLogin,
   sendLoginOtp,
   verifyLoginOtp,
   forgotPassword,

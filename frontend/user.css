@@ -17,7 +17,9 @@ margin-bottom:25px;
 
 .user-card{
 
-background:#fff;
+background:var(--card-bg);
+
+border:1px solid var(--border-color);
 
 padding:28px;
 
@@ -95,7 +97,8 @@ font-size:15px;
 
 font-weight:600;
 
-color:#64748b;
+
+color:var(--secondary-text);
 
 margin-bottom:12px;
 
@@ -107,7 +110,7 @@ font-size:42px;
 
 font-weight:700;
 
-color:#111827;
+color:var(--text-color);
 
 }
 
@@ -127,7 +130,7 @@ width:100%;
 
 padding:16px 20px;
 
-border:1px solid #dbe3ef;
+border:1px solid var(--border-color);
 
 border-radius:14px;
 
@@ -135,9 +138,17 @@ font-size:15px;
 
 outline:none;
 
-background:#fff;
+background:var(--card-bg);
+
+color:var(--text-color);
 
 transition:.3s;
+
+}
+
+#search-user::placeholder{
+
+color:var(--secondary-text);
 
 }
 
@@ -242,7 +253,10 @@ translateY(-2px);
 
 .table-section{
 
-background:#fff;
+
+background:var(--card-bg);
+
+border:1px solid var(--border-color);
 
 border-radius:20px;
 
@@ -251,6 +265,12 @@ overflow-x:auto;
 box-shadow:
 0 10px 25px
 rgba(0,0,0,.06);
+
+}
+
+td{
+
+color:var(--text-color);
 
 }
 
@@ -302,7 +322,7 @@ border-bottom:
 
 tbody tr:hover{
 
-background:#f8fafc;
+background:rgba(99,102,241,.08);
 
 }
 
@@ -328,7 +348,7 @@ margin-bottom:6px;
 
 .make-admin-btn{
 
-background:#2563eb;
+background:var(--primary-color);
 
 color:white;
 
@@ -336,7 +356,7 @@ color:white;
 
 .remove-admin-btn{
 
-background:#f59e0b;
+background:var(--warning-color);
 
 color:white;
 
@@ -344,7 +364,7 @@ color:white;
 
 .delete-user-btn{
 
-background:#ef4444;
+background:var(--danger-color);
 
 color:white;
 
@@ -380,7 +400,7 @@ border-radius:10px;
 
 cursor:pointer;
 
-background:#2563eb;
+background:var(--primary-color);
 
 color:white;
 
@@ -392,7 +412,7 @@ font-weight:600;
 
 font-weight:600;
 
-color:#374151;
+color:var(--text-color);
 
 }
 
@@ -427,7 +447,7 @@ z-index:2000;
 
 .modal-content{
 
-background:#fff;
+background:var(--card-bg);
 
 width:100%;
 
@@ -453,7 +473,7 @@ gap:15px;
 
 margin-bottom:10px;
 
-color:#111827;
+color:var(--text-color);
 
 }
 
@@ -462,7 +482,11 @@ color:#111827;
 
 padding:14px;
 
-border:1px solid #dbe3ef;
+border:1px solid var(--border-color);
+
+background:var(--bg-color);
+
+color:var(--text-color);
 
 border-radius:10px;
 
@@ -474,8 +498,9 @@ font-size:15px;
 
 .modal-content input:focus,
 .modal-content select:focus{
+background:var(--card-bg);
 
-border-color:#6366f1;
+border:1px solid var(--border-color);
 
 }
 
@@ -514,6 +539,12 @@ linear-gradient(
 
 }
 
+.modal-content input::placeholder{
+
+color:var(--secondary-text);
+
+}
+
 #close-modal-btn{
 
 flex:1;
@@ -528,7 +559,7 @@ cursor:pointer;
 
 font-weight:600;
 
-color:#fff;
+color:var(--text-color);
 
 background:
 linear-gradient(

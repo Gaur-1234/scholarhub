@@ -131,6 +131,9 @@ border-radius:14px;
 border:1px solid var(--border-color);
 
 background:var(--bg-color);
+color:var(--text-color);
+
+caret-color:var(--caret-color);
 
 outline:none;
 
@@ -142,7 +145,7 @@ transition:.3s;
 
 .password-card input:focus{
 
-border-color:#6366f1;
+border-color:var(--border-color);
 
 box-shadow:
 0 0 0 4px rgba(
@@ -151,6 +154,12 @@ box-shadow:
 241,
 .08
 );
+
+}
+
+.password-card input::placeholder{
+
+color:var(--secondary-text);
 
 }
 
@@ -170,7 +179,7 @@ font-size:15px;
 
 font-weight:700;
 
-color:white;
+color:var(--text-color);
 
 background:
 linear-gradient(
@@ -220,7 +229,7 @@ border:
 
 font-weight:600;
 
-color:#334155;
+color:var(--text-color);
 
 word-break:break-word;
 
@@ -264,7 +273,7 @@ border:
 .08
 );
 
-color:#334155;
+color:var(--text-color);
 
 font-weight:500;
 
@@ -306,7 +315,7 @@ border:
 
 margin-bottom:20px;
 
-color:#64748b;
+color:var(--text-color);
 
 line-height:1.6;
 
@@ -328,7 +337,7 @@ font-size:15px;
 
 font-weight:700;
 
-color:white;
+color:var(--text-color);
 
 background:
 linear-gradient(
@@ -427,7 +436,9 @@ padding:16px;
 padding:12px;
 
 font-size:14px;
+color:var(--text-color);
 
+caret-color:var(--caret-color);
 }
 
 }

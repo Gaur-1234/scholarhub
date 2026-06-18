@@ -14,6 +14,13 @@
 
 --border-color:#e5e7eb;
 
+
+--primary-color:#6366f1;
+--secondary-color:#8b5cf6;
+
+--danger-color:#ef4444;
+--warning-color:#f59e0b;
+
 --shadow:
 0 10px 25px rgba(0,0,0,.08);
 
@@ -36,6 +43,8 @@ body.dark-mode{
 --navbar-bg:#111827;
 
 --border-color:#334155;
+--caret-color:#6366f1;
+
 
 --shadow:
 0 10px 25px rgba(0,0,0,.4);

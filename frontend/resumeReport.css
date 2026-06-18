@@ -7,15 +7,13 @@ font-family:"Inter",sans-serif;
 
 body{
 
-background:
-linear-gradient(
-135deg,
-#eef4ff,
-#f8faff,
-#f4f7ff
-);
+background:var(--bg-color);
+
+color:var(--text-color);
 
 min-height:100vh;
+
+transition:.3s;
 
 }
 
@@ -53,7 +51,7 @@ font-size:2.2rem;
 
 font-weight:800;
 
-color:#111827;
+color:var(--text-color);
 
 margin-bottom:10px;
 
@@ -61,7 +59,7 @@ margin-bottom:10px;
 
 .score-card{
 
-background:white;
+background:var(--card-bg);
 
 padding:35px;
 
@@ -88,7 +86,7 @@ font-size:3rem;
 
 font-weight:800;
 
-color:#4f46e5;
+color:var(--text-color);
 
 margin-bottom:8px;
 
@@ -100,14 +98,13 @@ font-size:1.1rem;
 
 font-weight:600;
 
-color:#64748b;
+color:var(--secondary-text);
 
 }
 
 .card{
 
-background:white;
-
+background:var(--card-bg);
 padding:25px;
 
 border-radius:20px;
@@ -133,7 +130,7 @@ font-size:1.2rem;
 
 font-weight:700;
 
-color:#4f46e5;
+color:var(--text-color);
 
 }
 
@@ -149,7 +146,7 @@ margin-bottom:10px;
 
 line-height:1.7;
 
-color:#334155;
+color:var(--secondary-text);
 
 }
 
@@ -157,7 +154,7 @@ color:#334155;
 
 line-height:1.8;
 
-color:#334155;
+color:var(--secondary-text);
 
 }
 
@@ -185,7 +182,7 @@ font-size:16px;
 
 font-weight:700;
 
-color:white;
+color:var(--text-color);
 
 background:
 linear-gradient(
@@ -254,5 +251,29 @@ font-size:2.3rem;
 padding:20px;
 
 }
+
+}
+
+.card{
+
+border:1px solid var(--border-color);
+
+}
+
+.score-card{
+
+border:1px solid var(--border-color);
+
+}
+
+.card p{
+
+color:var(--text-color);
+
+}
+
+.card strong{
+
+color:var(--text-color);
 
 }

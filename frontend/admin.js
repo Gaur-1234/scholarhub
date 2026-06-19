@@ -337,3 +337,74 @@ if(menuToggle && sidebar){
   );
 
 }
+
+
+async function loadAnalytics(){
+
+try{
+
+const response =
+await fetch(
+
+"https://scholarhub-backend-w94c.onrender.com/api/auth/admin/analytics",
+
+{
+
+headers:{
+
+authorization:
+token
+
+}
+
+}
+
+);
+
+const data =
+await response.json();
+
+document.getElementById(
+"total-users"
+).innerText =
+data.totalUsers || 0;
+
+document.getElementById(
+"resumes-analyzed"
+).innerText =
+data.resumesAnalyzed || 0;
+
+document.getElementById(
+"avg-score"
+).innerText =
+`${data.averageScore || 0}%`;
+
+document.getElementById(
+"highest-score"
+).innerText =
+`${data.highestScore || 0}%`;
+
+document.getElementById(
+"lowest-score"
+).innerText =
+`${data.lowestScore || 0}%`;
+
+document.getElementById(
+"top-role"
+).innerText =
+data.topRole || "-";
+
+}
+
+catch(error){
+
+console.log(
+"Analytics Error:",
+error
+);
+
+}
+
+}
+
+loadAnalytics();

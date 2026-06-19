@@ -1836,6 +1836,141 @@ message:
 
 };
 
+const getAnalytics = async (req,res)=>{
+
+try{
+
+const totalUsers =
+await User.countDocuments();
+
+const resumesAnalyzed =
+await User.countDocuments({
+
+resumeScore:{
+$gt:0
+}
+
+});
+
+const users =
+await User.find({});
+
+let totalScore = 0;
+
+let highestScore = 0;
+
+let lowestScore = 100;
+
+let roleCount = {};
+
+users.forEach(user=>{
+
+if(user.resumeScore){
+
+totalScore +=
+user.resumeScore;
+
+if(
+user.resumeScore >
+highestScore
+){
+
+highestScore =
+user.resumeScore;
+
+}
+
+if(
+user.resumeScore <
+lowestScore
+){
+
+lowestScore =
+user.resumeScore;
+
+}
+
+}
+
+(user.recommendedJobs || [])
+.forEach(role=>{
+
+const roleName =
+role.role || role;
+
+roleCount[roleName] =
+(roleCount[roleName] || 0)
++ 1;
+
+});
+
+});
+
+const averageScore =
+
+resumesAnalyzed > 0
+
+? Math.round(
+totalScore /
+resumesAnalyzed
+)
+
+: 0;
+
+const topRole =
+
+Object.keys(roleCount)
+.length
+
+?
+
+Object.keys(roleCount)
+.reduce((a,b)=>
+
+roleCount[a] >
+roleCount[b]
+
+? a
+
+: b
+
+)
+
+: "No Data";
+
+res.json({
+
+totalUsers,
+
+resumesAnalyzed,
+
+averageScore,
+
+highestScore,
+
+lowestScore,
+
+topRole
+
+});
+
+}
+
+catch(error){
+
+console.log(error);
+
+res.status(500).json({
+
+message:
+"Server Error"
+
+});
+
+}
+
+};
+
 module.exports = {
 
   signup,
@@ -1855,6 +1990,7 @@ module.exports = {
   logoutAllDevices,
   getAllUsers,
   getUserStats,
+  getAnalytics,
   deleteAccount,
 
   deleteUser,

@@ -57,6 +57,7 @@ removeProfilePhoto,
 
   getAllUsers,
   getUserStats,
+  getAnalytics,
   deleteAccount,
   sendNotification,
   markNotificationRead,
@@ -220,6 +221,18 @@ router.get(
   auth,
   admin,
   getUserStats
+);
+
+router.get(
+
+"/admin/analytics",
+
+auth,
+
+admin,
+
+getAnalytics
+
 );
 
 router.delete(

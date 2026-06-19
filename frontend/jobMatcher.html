@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+Job Matcher
+</title>
+
+<link rel="stylesheet" href="theme.css">
+<link rel="stylesheet" href="dashboard.css">
+<link rel="stylesheet" href="jobMatcher.css">
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+<div class="sidebar-top">
+
+<h2 class="logo">
+ScholarHub
+</h2>
+
+<ul>
+
+<li>
+<a href="dashboard.html">
+Dashboard
+</a>
+</li>
+
+<li>
+<a href="profile.html">
+Profile
+</a>
+</li>
+
+<li>
+<a href="notifications.html">
+Notifications
+</a>
+</li>
+
+<li>
+<a href="resumeReport.html">
+Resume Report
+</a>
+</li>
+
+<li class="active">
+<a href="jobMatcher.html">
+Job Matcher
+</a>
+</li>
+
+<li>
+<a href="jobRecommendations.html">
+AI Recommendations
+</a>
+</li>
+
+<li>
+<a href="security.html">
+Security
+</a>
+</li>
+
+</ul>
+
+</div>
+
+<div class="sidebar-bottom">
+
+<button id="logout-all-btn">
+Logout All Devices
+</button>
+
+<button id="logout-btn">
+Logout
+</button>
+
+</div>
+
+</div>
+
+<div class="main-content">
+
+<nav class="navbar">
+
+<button id="menu-toggle">
+☰
+</button>
+
+<h2>
+AI Job Matcher
+</h2>
+
+<button
+id="theme-toggle"
+class="theme-btn">
+🌙
+</button>
+
+</nav>
+
+<section class="dashboard">
+
+<div class="matcher-container">
+
+<div class="hero-section">
+
+<h1>
+Find Your Best Career Match
+</h1>
+
+<p>
+AI compares your resume with industry roles and ranks the most suitable opportunities.
+</p>
+
+</div>
+
+<div class="overview-grid">
+
+<div class="overview-card">
+
+<h3>
+Total Matches
+</h3>
+
+<h1 id="total-matches">
+0
+</h1>
+
+</div>
+
+<div class="overview-card">
+
+<h3>
+Highest Match
+</h3>
+
+<h1 id="best-match">
+-
+</h1>
+
+</div>
+
+<div class="overview-card">
+
+<h3>
+Career Readiness
+</h3>
+
+<h1 id="career-readiness">
+-
+</h1>
+
+</div>
+
+</div>
+
+<div
+id="job-matches"
+class="job-matches-grid">
+
+</div>
+
+</div>
+
+</section>
+
+</div>
+
+<script src="theme.js"></script>
+<script src="sidebar.js"></script>
+<script src="jobMatcher.js"></script>
+
+</body>
+
+</html>

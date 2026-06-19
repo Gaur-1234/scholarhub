@@ -47,7 +47,15 @@ Format:
   "suggestions": [],
   "summary": "",
   "verdict": "",
-  "recommendedRoles": []
+    "recommendedRoles":[
+    {
+      "role":"",
+      "description":"",
+      "salaryRange":"",
+      "requiredSkills":[],
+      "growth":""
+    }
+  ]
 }
 
 Rules:
@@ -66,6 +74,13 @@ Rules:
 - recommendedRoles max 10
 Based on skills, projects, technologies and experience,
 recommend the top 10 most suitable software industry roles.
+For each role provide:
+
+- role
+- description
+- salaryRange
+- requiredSkills
+- growth
 
 Resume:
 

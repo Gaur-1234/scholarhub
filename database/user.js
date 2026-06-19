@@ -102,11 +102,10 @@ jobMatches: {
   default: []
 },
 
-recommendedJobs: {
-  type: [String],
-  default: []
+recommendedJobs:{
+type:Array,
+default:[]
 },
-
   // PROFILE DETAILS
   bio: {
     type: String,

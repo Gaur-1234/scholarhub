@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+AI Recommendations
+</title>
+
+<link rel="stylesheet" href="theme.css">
+<link rel="stylesheet" href="dashboard.css">
+<link rel="stylesheet" href="jobRecommendations.css">
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+<div class="sidebar-top">
+
+<h2 class="logo">
+ScholarHub
+</h2>
+
+<ul>
+
+<li>
+<a href="dashboard.html">
+Dashboard
+</a>
+</li>
+
+<li>
+<a href="profile.html">
+Profile
+</a>
+</li>
+
+<li>
+<a href="notifications.html">
+Notifications
+</a>
+</li>
+
+<li>
+<a href="resumeReport.html">
+Resume Report
+</a>
+</li>
+
+<li>
+<a href="jobMatcher.html">
+Job Matcher
+</a>
+</li>
+
+<li class="active">
+<a href="jobRecommendations.html">
+AI Recommendations
+</a>
+</li>
+
+<li>
+<a href="security.html">
+Security
+</a>
+</li>
+
+</ul>
+
+</div>
+
+<div class="sidebar-bottom">
+
+<button id="logout-all-btn">
+Logout All Devices
+</button>
+
+<button id="logout-btn">
+Logout
+</button>
+
+</div>
+
+</div>
+
+<div class="main-content">
+
+<nav class="navbar">
+
+<button id="menu-toggle">
+☰
+</button>
+
+<h2>
+AI Career Recommendations
+</h2>
+
+<button
+id="theme-toggle"
+class="theme-btn">
+🌙
+</button>
+
+</nav>
+
+<section class="dashboard">
+
+<div class="recommend-container">
+
+<div class="hero-section">
+
+<h1>
+Personalized Career Recommendations
+</h1>
+
+<p>
+AI-generated career opportunities based on your skills, ATS score and resume analysis.
+</p>
+
+</div>
+
+<div class="insights-grid">
+
+<div class="insight-card">
+
+<h3>
+Recommended Roles
+</h3>
+
+<h1 id="recommended-count">
+0
+</h1>
+
+</div>
+
+<div class="insight-card">
+
+<h3>
+Resume Score
+</h3>
+
+<h1 id="resume-score">
+0%
+</h1>
+
+</div>
+
+<div class="insight-card">
+
+<h3>
+Career Potential
+</h3>
+
+<h1 id="career-potential">
+High
+</h1>
+
+</div>
+
+</div>
+
+<div
+id="recommendation-grid"
+class="recommendation-grid">
+
+</div>
+
+</div>
+
+</section>
+
+</div>
+
+<script src="theme.js"></script>
+<script src="sidebar.js"></script>
+<script src="jobRecommendations.js"></script>
+
+</body>
+
+</html>

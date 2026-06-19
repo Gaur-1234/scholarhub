@@ -46,7 +46,8 @@ Format:
   "missingSkills": [],
   "suggestions": [],
   "summary": "",
-  "verdict": ""
+  "verdict": "",
+  "recommendedRoles": []
 }
 
 Rules:
@@ -62,6 +63,9 @@ Rules:
   Good Resume
   Average Resume
   Needs Improvement
+- recommendedRoles max 10
+Based on skills, projects, technologies and experience,
+recommend the top 10 most suitable software industry roles.
 
 Resume:
 

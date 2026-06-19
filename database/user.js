@@ -97,6 +97,16 @@ resumeLastAnalyzed: {
 type: Date
 },
 
+jobMatches: {
+  type: Array,
+  default: []
+},
+
+recommendedJobs: {
+  type: [String],
+  default: []
+},
+
   // PROFILE DETAILS
   bio: {
     type: String,

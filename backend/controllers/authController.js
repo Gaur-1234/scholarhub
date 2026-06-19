@@ -6,6 +6,8 @@ OAuth2Client
 } = require(
 "google-auth-library"
 );
+const calculateJobMatches =
+require("../services/jobMatcher");
 
 const axios = require("axios");
 const fs = require("fs");
@@ -972,6 +974,8 @@ console.log(
   aiAnalysis
 );
 
+const jobData =
+await calculateJobMatches(text);
 // SAVE ANALYSIS
 
 user.resumeUrl =
@@ -1001,6 +1005,13 @@ user.resumeVerdict =
 user.resumeLastAnalyzed =
   new Date();
 
+user.jobMatches =
+jobData.jobMatches || [];
+
+user.recommendedJobs =
+aiAnalysis.recommendedRoles || [];
+
+
 user.activityLogs.unshift({
 
   action:
@@ -1009,7 +1020,6 @@ user.activityLogs.unshift({
 });
 
 await user.save();
-
 return res.status(200).json({
 
   message:
@@ -1040,10 +1050,15 @@ return res.status(200).json({
   user.resumeSummary,
 
   verdict:
-  user.resumeVerdict
+  user.resumeVerdict,
+
+  jobMatches:
+  user.jobMatches,
+
+  recommendedJobs:
+  user.recommendedJobs
 
 });
-
 
 }
 

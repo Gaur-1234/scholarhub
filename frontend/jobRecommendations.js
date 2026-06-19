@@ -3,6 +3,8 @@ localStorage.getItem(
 "token"
 );
 
+let allRoles = [];
+
 async function loadRecommendations(){
 
 try{
@@ -23,6 +25,8 @@ await response.json();
 
 const jobs =
 data.user.recommendedJobs || [];
+
+allRoles = jobs;
 
 const score =
 data.user.resumeScore || 0;
@@ -56,45 +60,30 @@ document.getElementById(
 
 grid.innerHTML = "";
 
-jobs.forEach(job=>{
-
-let description =
-"Recommended based on your current resume profile and ATS analysis.";
-
-let readiness =
-score >= 85
-? "Highly Recommended"
-
-: score >= 70
-? "Recommended"
-
-: "Learning Path";
+jobs.forEach((job,index)=>{
 
 grid.innerHTML += `
 
 <div class="recommend-card">
 
 <h3>
-${job}
+${job.role}
 </h3>
 
-<p>
-${description}
+<p class="short-description">
+
+${job.description.substring(0,100)}...
+
 </p>
 
-<div class="role-tag">
+<button
+class="view-more-btn"
+onclick="openRoleModal(${index})"
+>
 
-Career Opportunity
+View More
 
-</div>
-
-<br><br>
-
-<div class="readiness">
-
-${readiness}
-
-</div>
+</button>
 
 </div>
 
@@ -112,3 +101,71 @@ console.log(error);
 }
 
 loadRecommendations();
+
+function openRoleModal(index){
+
+const role =
+allRoles[index];
+
+document.getElementById(
+"modal-role"
+).innerText =
+role.role;
+
+document.getElementById(
+"modal-description"
+).innerText =
+role.description;
+
+document.getElementById(
+"modal-salary"
+).innerText =
+role.salaryRange;
+
+document.getElementById(
+"modal-growth"
+).innerText =
+role.growth;
+
+const skills =
+document.getElementById(
+"modal-skills"
+);
+
+skills.innerHTML = "";
+
+(role.requiredSkills || [])
+.forEach(skill=>{
+
+skills.innerHTML +=
+`<li>${skill}</li>`;
+
+});
+
+document
+.getElementById(
+"role-modal"
+)
+.classList.add(
+"show"
+);
+
+}
+
+document
+.getElementById(
+"close-modal"
+)
+.addEventListener(
+"click",
+()=>{
+
+document
+.getElementById(
+"role-modal"
+)
+.classList.remove(
+"show"
+);
+
+});

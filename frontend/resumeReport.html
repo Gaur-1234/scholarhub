@@ -120,26 +120,357 @@
 
   <div class="container">
 
-
 <div id="report-content">
 
-  <h1>
-    AI Resume Analysis Report
-  </h1>
+
+
+  <div class="report-header">
+
+  <!-- PHOTO -->
+
+  <div class="header-photo">
+
+    <img
+      id="report-profile-image"
+      alt="Profile Image"
+    >
+
+  </div>
+
+  <!-- USER INFO -->
+
+  <div class="header-user">
+
+    <h2 id="report-name"></h2>
+
+    <p id="report-email"></p>
+
+    <p id="report-date"></p>
+
+  </div>
+
+  <!-- ATS INFO -->
+
+  <div class="header-grade">
+
+    <div>
+
+      <span>ATS Grade</span>
+
+      <strong id="candidate-grade"></strong>
+
+    </div>
+
+    <div>
+
+      <span>Job Readiness</span>
+
+      <strong id="candidate-readiness"></strong>
+
+    </div>
+
+  </div>
+
+  <!-- REPORT INFO -->
+
+  <div class="header-report">
+
+    <p id="report-id"></p>
+
+  </div>
+
+ </div>
+  <!-- TITLE -->
+
+  <div class="report-title">
+
+
+ <h1>
+  AI Resume Analysis Report
+ </h1>
+
+ <p>
+  Comprehensive resume evaluation powered by ScholarHub AI
+ </p>
+  </div>
+
+
+
 
   <!-- SCORE CARD -->
 
-  <div class="score-card">
+ <div class="score-card">
 
-    <h2 id="report-score">
-      0/100
-    </h2>
+  <div class="score-ring">
 
-    <p id="report-verdict">
-      Not Available
-    </p>
+    <svg width="220" height="220">
+
+      <circle
+        class="ring-bg"
+        cx="110"
+        cy="110"
+        r="90"
+      ></circle>
+
+      <circle
+        id="progress-ring"
+        class="ring-progress"
+        cx="110"
+        cy="110"
+        r="90"
+      ></circle>
+
+    </svg>
+
+    <div class="score-center">
+
+      <h2 id="report-score">
+        0%
+      </h2>
+
+      <span>
+        ATS Score
+      </span>
+
+    </div>
 
   </div>
+
+  <p id="report-verdict">
+    Not Available
+  </p>
+
+
+
+  </div>
+
+    <div id="ats-badge"
+     class="ats-badge">
+    </div>
+  <div class="assessment-card">
+
+  <h3>
+    Overall Assessment
+  </h3>
+
+  <div id="star-rating">
+
+  </div>
+
+  <h2 id="assessment-score">
+
+  </h2>
+
+  <p id="assessment-text">
+
+  </p>
+
+ </div>
+  <!-- ANALYTICS CARD -->
+ <div class="analytics-card">
+
+  <h3>
+    Resume Analytics
+  </h3>
+
+  <div class="analytics-grid">
+
+    <div class="analytics-item">
+
+      <h2 id="strength-count">
+        0
+      </h2>
+
+      <p>
+        Strengths
+      </p>
+
+    </div>
+
+    <div class="analytics-item">
+
+      <h2 id="weakness-count">
+        0
+      </h2>
+
+      <p>
+        Weaknesses
+      </p>
+
+    </div>
+
+    <div class="analytics-item">
+
+      <h2 id="skill-count">
+        0
+      </h2>
+
+      <p>
+        Missing Skills
+      </p>
+
+    </div>
+
+  </div>
+
+ </div>
+
+ <div class="grade-card">
+
+  <div class="grade-item">
+
+    <h3>
+      ATS Grade
+    </h3>
+
+    <h1 id="ats-grade">
+      -
+    </h1>
+
+  </div>
+
+  <div class="grade-item">
+
+    <h3>
+      Job Readiness
+    </h3>
+
+    <h1 id="job-readiness">
+      -
+    </h1>
+
+  </div>
+
+ </div>
+ <div class="card">
+
+  <h3>
+    Executive Summary
+  </h3>
+
+  <p id="executive-summary">
+
+  </p>
+
+ </div>
+ <div class="chart-card">
+
+  <h3>
+    Resume Insights
+  </h3>
+
+  <canvas id="resumeChart"></canvas>
+
+ </div>
+
+ <div class="card">
+
+  <h3>
+    Skill Breakdown
+  </h3>
+
+  <div class="skill-item">
+
+    <div class="skill-header">
+
+      <span>
+        Technical Skills
+      </span>
+
+      <span id="tech-score">
+        -
+      </span>
+
+    </div>
+
+    <div class="skill-bar">
+
+      <div
+        id="tech-bar"
+        class="skill-fill"
+      ></div>
+
+    </div>
+
+  </div>
+
+  <div class="skill-item">
+
+    <div class="skill-header">
+
+      <span>
+        Projects
+      </span>
+
+      <span id="project-score">
+        -
+      </span>
+
+    </div>
+
+    <div class="skill-bar">
+
+      <div
+        id="project-bar"
+        class="skill-fill"
+      ></div>
+
+    </div>
+
+  </div>
+
+  <div class="skill-item">
+
+    <div class="skill-header">
+
+      <span>
+        ATS Keywords
+      </span>
+
+      <span id="keyword-score">
+        -
+      </span>
+
+    </div>
+
+    <div class="skill-bar">
+
+      <div
+        id="keyword-bar"
+        class="skill-fill"
+      ></div>
+
+    </div>
+
+  </div>
+
+  <div class="skill-item">
+
+    <div class="skill-header">
+
+      <span>
+        Resume Structure
+      </span>
+
+      <span id="structure-score">
+        -
+      </span>
+
+    </div>
+
+    <div class="skill-bar">
+
+      <div
+        id="structure-bar"
+        class="skill-fill"
+      ></div>
+
+    </div>
+
+  </div>
+
+ </div>
+
 
   <!-- STRENGTHS -->
 
@@ -197,6 +528,19 @@
 
   </div>
 
+
+  <div class="card">
+
+  <h3>
+    Suitable Roles
+  </h3>
+
+  <ul id="roles-list">
+
+  </ul>
+
+ </div>
+
   <!-- SUGGESTIONS -->
 
   <div class="card">
@@ -211,7 +555,73 @@
 
   </div>
 
+ 
+
+ <div class="card recruiter-verdict">
+
+  <h3>
+    Final Recruiter Verdict
+  </h3>
+
+  <p id="recruiter-verdict">
+
+  </p>
+
+ </div>
+
+ <div class="card">
+
+  <h3>
+    Improvement Roadmap
+  </h3>
+
+  <div class="roadmap-grid">
+
+    <div class="roadmap-box">
+
+      <h4>
+        High Priority
+      </h4>
+
+      <ul id="high-priority"></ul>
+
+    </div>
+
+    <div class="roadmap-box">
+
+      <h4>
+        Medium Priority
+      </h4>
+
+      <ul id="medium-priority"></ul>
+
+    </div>
+
+    <div class="roadmap-box">
+
+      <h4>
+        Low Priority
+      </h4>
+
+      <ul id="low-priority"></ul>
+
+     </div>
+
+   </div>
+
+ </div>
+
+
 </div>
+
+ <div class="report-footer">
+
+  Generated by
+  ScholarHub AI Resume Analyzer
+
+</div>
+
+
 
 <!-- DOWNLOAD BUTTON -->
 
@@ -234,7 +644,8 @@
 
   <!-- SCRIPTS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-   <script src="resumeReport.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="resumeReport.js"></script>
   <script src="sidebar.js"></script>
   <script src="theme.js"></script>
 

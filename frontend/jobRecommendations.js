@@ -169,3 +169,137 @@ document
 );
 
 });
+
+
+// =========================
+// MOBILE HAMBURGER MENU
+// =========================
+
+const menuToggle =
+document.getElementById(
+"menu-toggle"
+);
+
+const sidebar =
+document.querySelector(
+".sidebar"
+);
+
+if(menuToggle && sidebar){
+
+// Open / Close Menu
+
+menuToggle.addEventListener(
+"click",
+(e)=>{
+
+e.stopPropagation();
+
+sidebar.classList.toggle(
+"active"
+);
+
+// Change Icon
+
+if(
+sidebar.classList.contains(
+"active"
+)
+){
+
+menuToggle.innerHTML =
+"✕";
+
+}
+else{
+
+menuToggle.innerHTML =
+"☰";
+
+}
+
+}
+);
+
+// Click Outside -> Close Menu
+
+document.addEventListener(
+"click",
+(e)=>{
+
+if(
+window.innerWidth <= 768 &&
+sidebar.classList.contains(
+"active"
+) &&
+!sidebar.contains(
+e.target
+)
+){
+
+sidebar.classList.remove(
+"active"
+);
+
+menuToggle.innerHTML =
+"☰";
+
+}
+
+}
+);
+
+// Click Sidebar Link -> Close Menu
+
+const sidebarLinks =
+document.querySelectorAll(
+".sidebar a"
+);
+
+sidebarLinks.forEach(link=>{
+
+link.addEventListener(
+"click",
+()=>{
+
+if(
+window.innerWidth <= 768
+){
+
+sidebar.classList.remove(
+"active"
+);
+
+menuToggle.innerHTML =
+"☰";
+
+}
+
+}
+);
+
+});
+
+// Window Resize
+
+window.addEventListener(
+"resize",
+()=>{
+
+if(
+window.innerWidth > 768
+){
+
+sidebar.classList.remove(
+"active"
+);
+
+menuToggle.innerHTML =
+"☰";
+
+}
+
+}
+);
+
+}

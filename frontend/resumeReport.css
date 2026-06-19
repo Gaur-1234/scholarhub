@@ -451,6 +451,7 @@ padding:25px;
 border-radius:20px;
 
 margin-top:20px;
+overflow:hidden;
 
 }
 
@@ -466,14 +467,17 @@ color:var(--text-color);
 
 #resumeChart{
 
-max-width:350px;
+width:100% !important;
+
+max-width:220px;
+
+height:auto !important;
 
 margin:auto;
 
 display:block;
 
 }
-
 .grade-card{
 
 display:grid;
@@ -1113,6 +1117,22 @@ width:100%;
 max-width:320px;
 
 text-align:center;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.chart-card{
+
+padding:15px;
+
+}
+
+#resumeChart{
+
+max-width:180px;
 
 }
 

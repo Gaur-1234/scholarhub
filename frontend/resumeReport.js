@@ -640,13 +640,15 @@ options:{
 responsive:true,
 
 plugins:{
-
 legend:{
-
-position:"bottom"
-
+position:"bottom",
+labels:{
+boxWidth:10,
+font:{
+size:10
 }
-
+}
+}
 }
 
 }

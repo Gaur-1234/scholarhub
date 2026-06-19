@@ -1,3 +1,5 @@
+let analyticsData = null;
+
 const token =
 localStorage.getItem("token");
 
@@ -364,6 +366,9 @@ token
 const data =
 await response.json();
 
+analyticsData = data;
+
+
 document.getElementById(
 "total-users"
 ).innerText =
@@ -393,6 +398,7 @@ document.getElementById(
 "top-role"
 ).innerText =
 data.topRole || "-";
+renderCharts();
 
 }
 
@@ -404,6 +410,158 @@ error
 );
 
 }
+
+}
+
+function renderCharts(){
+
+if(!analyticsData) return;
+
+/* ATS CHART */
+
+new Chart(
+
+document.getElementById(
+"atsChart"
+),
+
+{
+
+type:"doughnut",
+
+data:{
+
+labels:
+
+Object.keys(
+analyticsData.atsDistribution
+),
+
+datasets:[{
+
+data:
+
+Object.values(
+analyticsData.atsDistribution
+)
+
+}]
+
+},
+
+options:{
+
+responsive:true
+
+}
+
+}
+
+);
+
+/* TOP ROLES */
+
+new Chart(
+
+document.getElementById(
+"rolesChart"
+),
+
+{
+
+type:"bar",
+
+data:{
+
+labels:
+
+analyticsData.topRoles
+.map(r=>r.role),
+
+datasets:[{
+
+label:"Users",
+
+data:
+
+analyticsData.topRoles
+.map(r=>r.count)
+
+}]
+
+},
+
+options:{
+
+responsive:true,
+
+plugins:{
+
+legend:{
+
+display:false
+
+}
+
+}
+
+}
+
+}
+
+);
+
+/* MISSING SKILLS */
+
+new Chart(
+
+document.getElementById(
+"skillsChart"
+),
+
+{
+
+type:"bar",
+
+data:{
+
+labels:
+
+analyticsData.topMissingSkills
+.map(s=>s.skill),
+
+datasets:[{
+
+label:"Count",
+
+data:
+
+analyticsData.topMissingSkills
+.map(s=>s.count)
+
+}]
+
+},
+
+options:{
+
+responsive:true,
+
+plugins:{
+
+legend:{
+
+display:false
+
+}
+
+}
+
+}
+
+}
+
+);
 
 }
 

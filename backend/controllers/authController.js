@@ -1855,6 +1855,16 @@ $gt:0
 const users =
 await User.find({});
 
+let atsDistribution = {
+
+"90-100":0,
+"80-89":0,
+"70-79":0,
+"60-69":0,
+"Below 60":0
+
+};
+
 let totalScore = 0;
 
 let highestScore = 0;
@@ -1863,27 +1873,48 @@ let lowestScore = 100;
 
 let roleCount = {};
 
+let missingSkillCount = {};
+
 users.forEach(user=>{
+
+if(user.resumeScore >= 90){
+
+atsDistribution["90-100"]++;
+
+}
+else if(user.resumeScore >= 80){
+
+atsDistribution["80-89"]++;
+
+}
+else if(user.resumeScore >= 70){
+
+atsDistribution["70-79"]++;
+
+}
+else if(user.resumeScore >= 60){
+
+atsDistribution["60-69"]++;
+
+}
+else{
+
+atsDistribution["Below 60"]++;
+
+}
 
 if(user.resumeScore){
 
-totalScore +=
-user.resumeScore;
+totalScore += user.resumeScore;
 
-if(
-user.resumeScore >
-highestScore
-){
+if(user.resumeScore > highestScore){
 
 highestScore =
 user.resumeScore;
 
 }
 
-if(
-user.resumeScore <
-lowestScore
-){
+if(user.resumeScore < lowestScore){
 
 lowestScore =
 user.resumeScore;
@@ -1904,6 +1935,17 @@ roleCount[roleName] =
 
 });
 
+(user.resumeMissingSkills || [])
+.forEach(skill=>{
+
+missingSkillCount[skill] =
+
+(missingSkillCount[skill] || 0)
+
++ 1;
+
+});
+
 });
 
 const averageScore =
@@ -1919,8 +1961,7 @@ resumesAnalyzed
 
 const topRole =
 
-Object.keys(roleCount)
-.length
+Object.keys(roleCount).length
 
 ?
 
@@ -1938,6 +1979,40 @@ roleCount[b]
 
 : "No Data";
 
+const topRoles =
+
+Object.entries(roleCount)
+
+.sort((a,b)=>b[1]-a[1])
+
+.slice(0,5)
+
+.map(item=>({
+
+role:item[0],
+
+count:item[1]
+
+}));
+
+const topMissingSkills =
+
+Object.entries(
+missingSkillCount
+)
+
+.sort((a,b)=>b[1]-a[1])
+
+.slice(0,5)
+
+.map(item=>({
+
+skill:item[0],
+
+count:item[1]
+
+}));
+
 res.json({
 
 totalUsers,
@@ -1950,7 +2025,13 @@ highestScore,
 
 lowestScore,
 
-topRole
+topRole,
+
+atsDistribution,
+
+topRoles,
+
+topMissingSkills
 
 });
 

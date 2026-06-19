@@ -829,3 +829,74 @@ grid-template-columns:1fr;
 }
 
 }
+
+.charts-section{
+
+margin-top:30px;
+
+}
+
+.charts-section h2{
+
+margin-bottom:20px;
+
+color:var(--text-color);
+
+}
+
+.charts-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(3,1fr);
+
+gap:20px;
+
+}
+
+.chart-card{
+
+background:var(--card-bg);
+
+border:1px solid
+var(--border-color);
+
+border-radius:22px;
+
+padding:20px;
+
+box-shadow:
+var(--shadow);
+
+overflow:hidden;
+
+}
+
+.chart-card h3{
+
+margin-bottom:15px;
+
+text-align:center;
+
+color:var(--text-color);
+
+}
+
+.chart-card canvas{
+
+width:100% !important;
+
+max-height:300px;
+
+}
+
+@media(max-width:992px){
+
+.charts-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}

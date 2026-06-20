@@ -71,7 +71,7 @@ searchJobs,
 
 saveJob,
 getSavedJobs,
-
+removeSavedJob,
 applyJob,
 getAppliedJobs
 
@@ -196,6 +196,16 @@ router.get(
 "/saved-jobs",
 auth,
 getSavedJobs
+);
+
+router.delete(
+
+"/saved-job/:jobId",
+
+auth,
+
+removeSavedJob
+
 );
 
 router.post(

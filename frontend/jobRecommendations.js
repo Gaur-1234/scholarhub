@@ -76,21 +76,23 @@ ${job.description.substring(0,100)}...
 
 </p>
 
+<div class="action-buttons">
+
 <button
 class="view-more-btn"
 onclick="openRoleModal(${index})"
 >
-
 View More
-
 </button>
 
 <button
-class="apply-btn"
+class="apply-now-btn"
 onclick="searchJobs('${job.role}')"
 >
 Apply Now
 </button>
+
+</div>
 
 </div>
 
@@ -312,6 +314,16 @@ menuToggle.innerHTML =
 }
 
 function searchJobs(role){
+
+if(!role){
+
+alert(
+"No role selected"
+);
+
+return;
+
+}
 
 localStorage.setItem(
 "selectedRole",

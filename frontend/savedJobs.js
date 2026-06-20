@@ -167,9 +167,43 @@ link,
 
 async function removeSavedJob(jobId){
 
-alert(
-"Remove API next phase"
+try{
+
+const response =
+await fetch(
+
+`https://scholarhub-backend-w94c.onrender.com/api/auth/saved-job/${jobId}`,
+
+{
+
+method:"DELETE",
+
+headers:{
+
+Authorization:
+`Bearer ${token}`
+
+}
+
+}
+
 );
+
+const data =
+await response.json();
+
+alert(
+data.message
+);
+
+loadSavedJobs();
+
+}
+catch(error){
+
+console.log(error);
+
+}
 
 }
 

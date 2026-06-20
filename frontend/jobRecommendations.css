@@ -221,38 +221,7 @@ padding:15px;
 
 }
 
-.view-more-btn{
 
-margin-top:10px;
-
-padding:10px 18px;
-
-border:none;
-
-border-radius:12px;
-
-background:
-linear-gradient(
-135deg,
-var(--primary-color),
-var(--secondary-color)
-);
-
-color:white;
-
-font-weight:600;
-
-cursor:pointer;
-
-transition:.3s;
-
-}
-
-.view-more-btn:hover{
-
-transform:translateY(-2px);
-
-}
 
 .role-modal{
 
@@ -429,3 +398,73 @@ line-height:1.2;
 
 }
 
+.action-buttons{
+
+display:flex;
+
+gap:10px;
+
+margin-top:15px;
+
+}
+
+.view-more-btn,
+.apply-now-btn{
+
+border:none;
+
+padding:12px 20px;
+
+border-radius:12px;
+
+cursor:pointer;
+
+font-weight:700;
+
+font-size:14px;
+
+min-width:95px;
+
+height:42px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+transition:.3s;
+
+color:white;
+
+}
+
+.view-more-btn{
+
+background:
+linear-gradient(
+135deg,
+var(--primary-color),
+var(--secondary-color)
+);
+
+}
+
+.apply-now-btn{
+
+background:
+linear-gradient(
+135deg,
+#22c55e,
+#16a34a
+);
+
+}
+
+.view-more-btn:hover,
+.apply-now-btn:hover{
+
+transform:
+translateY(-3px);
+
+}

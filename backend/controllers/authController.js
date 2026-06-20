@@ -2195,6 +2195,52 @@ message:
 
 };
 
+const removeSavedJob = async (req,res)=>{
+
+try{
+
+const { jobId } = req.params;
+
+await User.findByIdAndUpdate(
+
+req.user.id,
+
+{
+
+$pull:{
+
+savedJobs:{
+job_id:jobId
+}
+
+}
+
+}
+
+);
+
+res.json({
+
+message:"Job removed successfully"
+
+});
+
+}
+
+catch(error){
+
+console.log(error);
+
+res.status(500).json({
+
+message:"Server Error"
+
+});
+
+}
+
+};
+
 const applyJob = async(req,res)=>{
 
 try{
@@ -2312,6 +2358,7 @@ searchJobs,
 
 saveJob,
 getSavedJobs,
+removeSavedJob,
 
 applyJob,
 getAppliedJobs

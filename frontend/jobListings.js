@@ -3,6 +3,8 @@ localStorage.getItem(
 "token"
 );
 
+let allJobs = [];
+
 const selectedRole =
 localStorage.getItem(
 "selectedRole"
@@ -44,6 +46,7 @@ Authorization:
 
 const jobs =
 await response.json();
+allJobs = jobs;
 console.log(jobs);
 document.getElementById(
 "jobs-count"
@@ -64,7 +67,7 @@ return;
 
 }
 
-jobs.forEach(job=>{
+jobs.forEach((job,index)=>{
 
 grid.innerHTML += `
 
@@ -115,17 +118,16 @@ job.job_description
 
 </p>
 
-<div class="job-actions">
 <button
 class="apply-btn"
-onclick='applyJob(${JSON.stringify(job)})'
+onclick="applyJob(${index})"
 >
 Apply Now
 </button>
 
 <button
 class="save-btn"
-onclick='saveJob(${JSON.stringify(job)})'
+onclick="saveJob(${index})"
 >
 Save
 </button>
@@ -156,7 +158,10 @@ Failed To Load Jobs
 
 }
 
-async function applyJob(job){
+async function applyJob(index){
+
+const job =
+allJobs[index];
 
 try{
 
@@ -170,8 +175,7 @@ method:"POST",
 
 headers:{
 
-"Content-Type":
-"application/json",
+"Content-Type":"application/json",
 
 Authorization:
 `Bearer ${token}`
@@ -201,8 +205,10 @@ console.log(error);
 }
 
 }
+async function saveJob(index){
 
-async function saveJob(job){
+const job =
+allJobs[index];
 
 try{
 
@@ -217,8 +223,7 @@ method:"POST",
 
 headers:{
 
-"Content-Type":
-"application/json",
+"Content-Type":"application/json",
 
 Authorization:
 `Bearer ${token}`

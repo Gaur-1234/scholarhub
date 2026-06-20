@@ -116,28 +116,18 @@ job.job_description
 </p>
 
 <div class="job-actions">
-
 <button
 class="apply-btn"
-onclick="applyJob(
-'${job.job_apply_link || ""}'
-)"
+onclick='applyJob(${JSON.stringify(job)})'
 >
-
 Apply Now
-
 </button>
 
 <button
 class="save-btn"
-onclick="saveJob(
-'${job.job_title || ""}',
-'${job.employer_name || ""}'
-)"
+onclick='saveJob(${JSON.stringify(job)})'
 >
-
 Save
-
 </button>
 
 </div>
@@ -166,36 +156,94 @@ Failed To Load Jobs
 
 }
 
-function applyJob(link){
+async function applyJob(job){
 
-if(!link){
+try{
 
-alert(
-"No application link available"
-);
+await fetch(
 
-return;
+"https://scholarhub-backend-w94c.onrender.com/api/auth/apply-job",
+
+{
+
+method:"POST",
+
+headers:{
+
+"Content-Type":
+"application/json",
+
+Authorization:
+`Bearer ${token}`
+
+},
+
+body:JSON.stringify(job)
 
 }
 
+);
+
+if(job.job_apply_link){
+
 window.open(
-link,
+job.job_apply_link,
 "_blank"
 );
 
 }
 
-function saveJob(
-title,
-company
-){
+}
+catch(error){
 
-alert(
+console.log(error);
 
-`${title}
-saved successfully`
+}
+
+}
+
+async function saveJob(job){
+
+try{
+
+const response =
+await fetch(
+
+"https://scholarhub-backend-w94c.onrender.com/api/auth/save-job",
+
+{
+
+method:"POST",
+
+headers:{
+
+"Content-Type":
+"application/json",
+
+Authorization:
+`Bearer ${token}`
+
+},
+
+body:JSON.stringify(job)
+
+}
 
 );
+
+const data =
+await response.json();
+
+alert(
+data.message
+);
+
+}
+catch(error){
+
+console.log(error);
+
+}
 
 }
 

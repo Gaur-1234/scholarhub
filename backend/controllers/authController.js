@@ -2115,6 +2115,169 @@ message:
 
 };
 
+
+const saveJob = async(req,res)=>{
+
+try{
+
+const user =
+await User.findById(
+req.user.id
+);
+
+const job =
+req.body;
+
+const exists =
+user.savedJobs.some(
+item =>
+item.job_id ===
+job.job_id
+);
+
+if(!exists){
+
+user.savedJobs.push(job);
+
+await user.save();
+
+}
+
+res.status(200).json({
+
+message:
+"Job Saved"
+
+});
+
+}
+
+catch(error){
+
+console.log(error);
+
+res.status(500).json({
+
+message:
+"Server Error"
+
+});
+
+}
+
+};
+
+const getSavedJobs = async(req,res)=>{
+
+try{
+
+const user =
+await User.findById(
+req.user.id
+);
+
+res.json(
+user.savedJobs || []
+);
+
+}
+
+catch(error){
+
+res.status(500).json({
+
+message:
+"Server Error"
+
+});
+
+}
+
+};
+
+const applyJob = async(req,res)=>{
+
+try{
+
+const user =
+await User.findById(
+req.user.id
+);
+
+const job =
+req.body;
+
+const exists =
+user.appliedJobs.some(
+item =>
+item.job_id ===
+job.job_id
+);
+
+if(!exists){
+
+job.status =
+"Applied";
+
+job.appliedDate =
+new Date();
+
+user.appliedJobs.push(job);
+
+await user.save();
+
+}
+
+res.json({
+
+message:
+"Application Tracked"
+
+});
+
+}
+
+catch(error){
+
+res.status(500).json({
+
+message:
+"Server Error"
+
+});
+
+}
+
+};
+
+const getAppliedJobs = async(req,res)=>{
+
+try{
+
+const user =
+await User.findById(
+req.user.id
+);
+
+res.json(
+user.appliedJobs || []
+);
+
+}
+
+catch(error){
+
+res.status(500).json({
+
+message:
+"Server Error"
+
+});
+
+}
+
+};
+
 module.exports = {
 
   signup,
@@ -2145,6 +2308,12 @@ module.exports = {
   removeAdmin,
   bulkDeleteUsers,
   addUser,
-  searchJobs
+searchJobs,
+
+saveJob,
+getSavedJobs,
+
+applyJob,
+getAppliedJobs
 
 };

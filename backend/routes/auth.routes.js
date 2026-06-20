@@ -66,8 +66,14 @@ removeProfilePhoto,
   makeAdmin,
   removeAdmin,
   bulkDeleteUsers,
- addUser,
-searchJobs
+addUser,
+searchJobs,
+
+saveJob,
+getSavedJobs,
+
+applyJob,
+getAppliedJobs
 
 } = require("../controllers/authController");
 // =========================
@@ -179,6 +185,31 @@ router.get(
 auth,
 searchJobs
 );
+
+router.post(
+"/save-job",
+auth,
+saveJob
+);
+
+router.get(
+"/saved-jobs",
+auth,
+getSavedJobs
+);
+
+router.post(
+"/apply-job",
+auth,
+applyJob
+);
+
+router.get(
+"/applied-jobs",
+auth,
+getAppliedJobs
+);
+
 
 router.put(
 "/profile",

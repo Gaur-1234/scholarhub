@@ -106,6 +106,16 @@ recommendedJobs:{
 type:Array,
 default:[]
 },
+
+savedJobs:{
+type:Array,
+default:[]
+},
+
+appliedJobs:{
+type:Array,
+default:[]
+},
   // PROFILE DETAILS
   bio: {
     type: String,

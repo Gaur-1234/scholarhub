@@ -9,12 +9,12 @@
 content="width=device-width, initial-scale=1.0">
 
 <title>
-AI Recommendations
+Live Job Listings
 </title>
 
 <link rel="stylesheet" href="theme.css">
 <link rel="stylesheet" href="dashboard.css">
-<link rel="stylesheet" href="jobRecommendations.css">
+<link rel="stylesheet" href="jobListings.css">
 
 </head>
 
@@ -60,18 +60,18 @@ Job Matcher
 </a>
 </li>
 
-<li class="active">
+<li>
 <a href="jobRecommendations.html">
 AI Recommendations
 </a>
 </li>
 
-<li>
+<li class="active">
 <a href="jobListings.html">
 Job Listings
 </a>
-
 </li>
+
 <li>
 <a href="security.html">
 Security
@@ -104,8 +104,8 @@ Logout
 ☰
 </button>
 
-<h2 class="page-title">
-AI Career Recommendations
+<h2>
+Live Job Listings
 </h2>
 
 <button
@@ -118,29 +118,41 @@ class="theme-btn">
 
 <section class="dashboard">
 
-<div class="recommend-container">
+<div class="jobs-container">
 
 <div class="hero-section">
 
 <h1>
-Personalized Career Recommendations
+Latest Job Opportunities
 </h1>
 
 <p>
-AI-generated career opportunities based on your skills, ATS score and resume analysis.
+Explore real-time opportunities based on your AI career recommendations and resume analysis.
 </p>
 
 </div>
 
-<div class="insights-grid">
+<div class="jobs-stats">
 
 <div class="insight-card">
 
 <h3>
-Recommended Roles
+Selected Role
 </h3>
 
-<h1 id="recommended-count">
+<h1 id="selected-role">
+-
+</h1>
+
+</div>
+
+<div class="insight-card">
+
+<h3>
+Jobs Found
+</h3>
+
+<h1 id="jobs-count">
 0
 </h1>
 
@@ -149,23 +161,11 @@ Recommended Roles
 <div class="insight-card">
 
 <h3>
-Resume Score
+Status
 </h3>
 
-<h1 id="resume-score">
-0%
-</h1>
-
-</div>
-
-<div class="insight-card">
-
-<h3>
-Career Potential
-</h3>
-
-<h1 id="career-potential">
-High
+<h1 id="job-status">
+Live
 </h1>
 
 </div>
@@ -173,81 +173,11 @@ High
 </div>
 
 <div
-id="recommendation-grid"
-class="recommendation-grid">
-
-</div>
-<div
-id="role-modal"
-class="role-modal"
->
-
-<div class="modal-content">
-
-<span
-id="close-modal"
-class="close-modal"
->
-
-&times;
-
-</span>
-
-<h2 id="modal-role">
-
-</h2>
-
-<div class="modal-section">
-
-<h3>
-Description
-</h3>
-
-<p id="modal-description">
-
-</p>
+id="jobs-grid"
+class="jobs-grid">
 
 </div>
 
-<div class="modal-section">
-
-<h3>
-Salary Range
-</h3>
-
-<p id="modal-salary">
-
-</p>
-
-</div>
-
-<div class="modal-section">
-
-<h3>
-Career Growth
-</h3>
-
-<p id="modal-growth">
-
-</p>
-
-</div>
-
-<div class="modal-section">
-
-<h3>
-Required Skills
-</h3>
-
-<ul id="modal-skills">
-
-</ul>
-
-</div>
-
-</div>
-
-</div>
 </div>
 
 </section>
@@ -256,7 +186,7 @@ Required Skills
 
 <script src="theme.js"></script>
 <script src="sidebar.js"></script>
-<script src="jobRecommendations.js"></script>
+<script src="jobListings.js"></script>
 
 </body>
 

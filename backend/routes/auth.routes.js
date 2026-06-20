@@ -66,7 +66,8 @@ removeProfilePhoto,
   makeAdmin,
   removeAdmin,
   bulkDeleteUsers,
-  addUser
+ addUser,
+searchJobs
 
 } = require("../controllers/authController");
 // =========================
@@ -168,17 +169,21 @@ markNotificationRead
 
 // PROFILE
 router.get(
-  "/profile",
+"/profile",
+auth,
+profile
+);
 
-  auth,
-
-  profile,
+router.get(
+"/jobs",
+auth,
+searchJobs
 );
 
 router.put(
-  "/profile",
-  auth,
-  updateProfile
+"/profile",
+auth,
+updateProfile
 );
 
 router.put(

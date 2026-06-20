@@ -85,6 +85,13 @@ View More
 
 </button>
 
+<button
+class="apply-btn"
+onclick="searchJobs('${job.role}')"
+>
+Apply Now
+</button>
+
 </div>
 
 `;
@@ -301,5 +308,17 @@ menuToggle.innerHTML =
 
 }
 );
+
+}
+
+function searchJobs(role){
+
+localStorage.setItem(
+"selectedRole",
+role
+);
+
+window.location.href =
+"jobListings.html";
 
 }

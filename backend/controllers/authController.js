@@ -2052,6 +2052,69 @@ message:
 
 };
 
+const searchJobs = async (req,res)=>{
+
+try{
+
+const role =
+req.query.role || "Software Developer";
+
+const response =
+await axios.get(
+
+"https://jsearch.p.rapidapi.com/search",
+
+{
+
+params:{
+
+query:role,
+
+page:"1",
+
+num_pages:"1"
+
+},
+
+headers:{
+
+"X-RapidAPI-Key":
+process.env.RAPID_API_KEY,
+
+"X-RapidAPI-Host":
+"jsearch.p.rapidapi.com"
+
+}
+
+}
+
+);
+
+res.status(200).json(
+response.data.data
+);
+
+}
+
+catch(error){
+
+console.log(
+"JOB API ERROR:",
+error.response?.data ||
+error.message
+);
+
+res.status(500).json({
+
+message:
+"Failed To Fetch Jobs"
+
+});
+
+}
+
+};
+
 module.exports = {
 
   signup,
@@ -2081,6 +2144,7 @@ module.exports = {
 
   removeAdmin,
   bulkDeleteUsers,
-  addUser
+  addUser,
+  searchJobs
 
 };

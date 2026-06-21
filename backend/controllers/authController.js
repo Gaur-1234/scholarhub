@@ -1874,6 +1874,15 @@ let lowestScore = 100;
 let roleCount = {};
 
 let missingSkillCount = {};
+let totalSavedJobs = 0;
+
+let totalApplications = 0;
+
+let savedRoleCount = {};
+
+let appliedRoleCount = {};
+
+let companyCount = {};
 
 users.forEach(user=>{
 
@@ -1946,6 +1955,44 @@ missingSkillCount[skill] =
 
 });
 
+(user.savedJobs || [])
+.forEach(job=>{
+
+totalSavedJobs++;
+
+const role =
+job.job_title || "Unknown";
+
+savedRoleCount[role] =
+(savedRoleCount[role] || 0) + 1;
+
+const company =
+job.employer_name || "Unknown";
+
+companyCount[company] =
+(companyCount[company] || 0) + 1;
+
+});
+
+(user.appliedJobs || [])
+.forEach(job=>{
+
+totalApplications++;
+
+const role =
+job.job_title || "Unknown";
+
+appliedRoleCount[role] =
+(appliedRoleCount[role] || 0) + 1;
+
+const company =
+job.employer_name || "Unknown";
+
+companyCount[company] =
+(companyCount[company] || 0) + 1;
+
+}); 
+
 });
 
 const averageScore =
@@ -2013,6 +2060,56 @@ count:item[1]
 
 }));
 
+const topSavedRoles =
+
+Object.entries(savedRoleCount)
+
+.sort((a,b)=>b[1]-a[1])
+
+.slice(0,5)
+
+.map(item=>({
+
+role:item[0],
+
+count:item[1]
+
+}));
+
+
+const topAppliedRoles =
+
+Object.entries(appliedRoleCount)
+
+.sort((a,b)=>b[1]-a[1])
+
+.slice(0,5)
+
+.map(item=>({
+
+role:item[0],
+
+count:item[1]
+
+}));
+
+
+const topCompanies =
+
+Object.entries(companyCount)
+
+.sort((a,b)=>b[1]-a[1])
+
+.slice(0,5)
+
+.map(item=>({
+
+company:item[0],
+
+count:item[1]
+
+}));
+
 res.json({
 
 totalUsers,
@@ -2031,7 +2128,17 @@ atsDistribution,
 
 topRoles,
 
-topMissingSkills
+topMissingSkills,
+
+totalSavedJobs,
+
+totalApplications,
+
+topSavedRoles,
+
+topAppliedRoles,
+
+topCompanies
 
 });
 

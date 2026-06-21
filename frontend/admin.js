@@ -574,7 +574,6 @@ display:false
 
 );
 
-}
 
 new Chart(
 
@@ -720,5 +719,7 @@ display:false
 }
 
 );
+
+}
 
 loadAnalytics();

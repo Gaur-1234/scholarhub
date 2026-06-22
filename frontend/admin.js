@@ -424,6 +424,51 @@ error
 
 }
 
+function getChartOptions(){
+
+const isMobile =
+window.innerWidth <= 768;
+
+return{
+
+responsive:true,
+
+maintainAspectRatio:false,
+
+plugins:{
+legend:{
+display:false
+}
+},
+
+scales:{
+
+x:{
+
+ticks:{
+
+display:!isMobile,
+
+autoSkip:false,
+
+maxRotation:isMobile ? 0 : 45,
+
+minRotation:isMobile ? 0 : 45,
+
+font:{
+size:10
+}
+
+}
+
+}
+
+}
+
+};
+
+}
+
 function renderCharts(){
 
 if(!analyticsData) return;
@@ -443,17 +488,15 @@ type:"doughnut",
 data:{
 
 labels:
-
 Object.keys(
-analyticsData.atsDistribution
+analyticsData.atsDistribution || {}
 ),
 
 datasets:[{
 
 data:
-
 Object.values(
-analyticsData.atsDistribution
+analyticsData.atsDistribution || {}
 )
 
 }]
@@ -461,9 +504,8 @@ analyticsData.atsDistribution
 },
 
 options:{
-
-responsive:true
-
+responsive:true,
+maintainAspectRatio:false
 }
 
 }
@@ -485,8 +527,7 @@ type:"bar",
 data:{
 
 labels:
-
-analyticsData.topRoles
+(analyticsData.topRoles || [])
 .map(r=>r.role),
 
 datasets:[{
@@ -494,29 +535,14 @@ datasets:[{
 label:"Users",
 
 data:
-
-analyticsData.topRoles
+(analyticsData.topRoles || [])
 .map(r=>r.count)
 
 }]
 
 },
 
-options:{
-
-responsive:true,
-
-plugins:{
-
-legend:{
-
-display:false
-
-}
-
-}
-
-}
+options:getChartOptions()
 
 }
 
@@ -537,8 +563,7 @@ type:"bar",
 data:{
 
 labels:
-
-analyticsData.topMissingSkills
+(analyticsData.topMissingSkills || [])
 .map(s=>s.skill),
 
 datasets:[{
@@ -546,34 +571,20 @@ datasets:[{
 label:"Count",
 
 data:
-
-analyticsData.topMissingSkills
+(analyticsData.topMissingSkills || [])
 .map(s=>s.count)
 
 }]
 
 },
 
-options:{
-
-responsive:true,
-
-plugins:{
-
-legend:{
-
-display:false
-
-}
-
-}
-
-}
+options:getChartOptions()
 
 }
 
 );
 
+/* SAVED ROLES */
 
 new Chart(
 
@@ -588,8 +599,7 @@ type:"bar",
 data:{
 
 labels:
-
-analyticsData.topSavedRoles
+(analyticsData.topSavedRoles || [])
 .map(r=>r.role),
 
 datasets:[{
@@ -597,32 +607,20 @@ datasets:[{
 label:"Saved",
 
 data:
-
-analyticsData.topSavedRoles
+(analyticsData.topSavedRoles || [])
 .map(r=>r.count)
 
 }]
 
 },
 
-options:{
-
-responsive:true,
-
-plugins:{
-
-legend:{
-display:false
-}
-
-}
-
-}
+options:getChartOptions()
 
 }
 
 );
 
+/* APPLIED ROLES */
 
 new Chart(
 
@@ -637,8 +635,7 @@ type:"bar",
 data:{
 
 labels:
-
-analyticsData.topAppliedRoles
+(analyticsData.topAppliedRoles || [])
 .map(r=>r.role),
 
 datasets:[{
@@ -646,31 +643,20 @@ datasets:[{
 label:"Applied",
 
 data:
-
-analyticsData.topAppliedRoles
+(analyticsData.topAppliedRoles || [])
 .map(r=>r.count)
 
 }]
 
 },
 
-options:{
-
-responsive:true,
-
-plugins:{
-
-legend:{
-display:false
-}
-
-}
-
-}
+options:getChartOptions()
 
 }
 
 );
+
+/* COMPANIES */
 
 new Chart(
 
@@ -685,8 +671,7 @@ type:"bar",
 data:{
 
 labels:
-
-analyticsData.topCompanies
+(analyticsData.topCompanies || [])
 .map(c=>c.company),
 
 datasets:[{
@@ -694,32 +679,20 @@ datasets:[{
 label:"Companies",
 
 data:
-
-analyticsData.topCompanies
+(analyticsData.topCompanies || [])
 .map(c=>c.count)
 
 }]
 
 },
 
-options:{
-
-responsive:true,
-
-plugins:{
-
-legend:{
-display:false
-}
-
-}
-
-}
+options:getChartOptions()
 
 }
 
 );
 
 }
+
 
 loadAnalytics();

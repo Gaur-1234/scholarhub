@@ -829,7 +829,6 @@ grid-template-columns:1fr;
 }
 
 }
-
 .charts-section{
 
 margin-top:30px;
@@ -871,6 +870,8 @@ var(--shadow);
 
 overflow:hidden;
 
+min-height:350px;
+
 }
 
 .chart-card h3{
@@ -881,15 +882,21 @@ text-align:center;
 
 color:var(--text-color);
 
+font-size:16px;
+
 }
 
 .chart-card canvas{
 
 width:100% !important;
 
-max-height:300px;
+height:260px !important;
+
+max-height:260px !important;
 
 }
+
+/* Tablet */
 
 @media(max-width:992px){
 
@@ -900,3 +907,41 @@ grid-template-columns:1fr;
 }
 
 }
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.chart-card{
+
+padding:15px;
+
+min-height:280px;
+
+}
+
+.chart-card h3{
+
+font-size:14px;
+
+}
+
+.chart-card canvas{
+
+height:220px !important;
+
+max-height:220px !important;
+
+}
+
+}
+@media(max-width:992px){
+
+.charts-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+

@@ -935,65 +935,54 @@ grid-template-columns:1fr;
 @media(max-width:768px){
 
 #menu-toggle{
-
 display:block;
-
 }
 
 .sidebar{
-
 position:fixed;
-
 top:0;
-
 left:-280px;
-
 width:260px;
-
 height:100vh;
-
 z-index:1000;
-
 display:flex;
-
 transition:.3s;
-
 }
 
 .sidebar.active{
-
 left:0;
-
 }
 
 .stats-grid{
-
 grid-template-columns:1fr;
-
 }
 
 .hero-card h1{
-
 font-size:2rem;
-
 }
 
 .main-content{
-
 width:100%;
-
 padding:20px;
-
 }
 
 .navbar{
-
 display:flex;
-
 align-items:center;
-
 justify-content:space-between;
+}
 
+.navbar-actions{
+gap:6px;
+}
+
+.install-btn{
+padding:6px 10px;
+font-size:11px;
+}
+
+.theme-btn{
+font-size:18px;
 }
 
 }
@@ -1008,15 +997,11 @@ font-size:22px;
 
 cursor:pointer;
 
-margin-left:auto;
-
 color:var(--text-color);
 
 }
 
 .install-btn{
-
-margin-left:auto;
 
 padding:10px 16px;
 
@@ -1109,5 +1094,17 @@ linear-gradient(
 );
 
 color:white;
+
+}
+
+.navbar-actions{
+
+margin-left:auto;
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
 
 }

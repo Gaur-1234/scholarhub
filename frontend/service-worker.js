@@ -1,4 +1,5 @@
-const CACHE_NAME = "scholarhub-v1";
+const CACHE_NAME =
+"scholarhub-v2";
 
 const STATIC_ASSETS = [
 
@@ -116,6 +117,22 @@ self.addEventListener(
 if(
 event.request.method !==
 "GET"
+){
+return;
+}
+
+if(
+!event.request.url.startsWith(
+"http"
+)
+){
+return;
+}
+
+if(
+event.request.url.startsWith(
+"chrome-extension://"
+)
 ){
 return;
 }

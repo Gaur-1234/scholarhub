@@ -1,3 +1,42 @@
+const existingToken =
+localStorage.getItem(
+"token"
+);
+
+if(existingToken){
+
+try{
+
+const payload =
+JSON.parse(
+atob(
+existingToken.split(".")[1]
+)
+);
+
+if(payload.role === "admin"){
+
+window.location.href =
+"admin.html";
+
+}
+else{
+
+window.location.href =
+"dashboard.html";
+
+}
+
+}
+catch(error){
+
+localStorage.removeItem(
+"token"
+);
+
+}
+
+}
 const loginForm = document.getElementById("login-form");
 
 const otpLoginBtn = document.getElementById("otp-login-btn");

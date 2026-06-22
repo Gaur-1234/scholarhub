@@ -1,158 +1,219 @@
-🚀 ScholarHub
+# 🚀 ScholarHub
 
-AI-Powered Career Development Platform
+### AI-Powered Career Development Platform
 
 ScholarHub is a full-stack web application designed to help students and job seekers improve their resumes, discover relevant opportunities, track applications, and gain career insights through AI-powered analysis.
 
-🌟 Features
-🔐 Authentication & Security
-User Registration & Login
-Google Authentication
-Email OTP Verification
-Forgot Password & Reset Password
-Change Password
-Logout From All Devices
-JWT-Based Authentication
-Role-Based Access Control (User/Admin)
-📄 AI Resume Analyzer
+---
+
+## 🌟 Features
+
+### 🔐 Authentication & Security
+
+* User Registration & Login
+* Google Authentication
+* Email OTP Verification
+* Forgot Password & Reset Password
+* Change Password
+* Logout From All Devices
+* JWT-Based Authentication
+* Role-Based Access Control (User/Admin)
+
+---
+
+## 📄 AI Resume Analyzer
 
 Upload your resume and receive detailed AI-powered feedback.
 
-Resume Analysis Includes:
-ATS Score Calculation
-Resume Summary
-Resume Strengths
-Resume Weaknesses
-Missing Skills Detection
-Improvement Suggestions
-Final Resume Verdict
-Resume Analysis History
-📊 Resume Report Dashboard
+### Resume Analysis Includes
+
+* ATS Score Calculation
+* Resume Summary
+* Resume Strengths
+* Resume Weaknesses
+* Missing Skills Detection
+* Improvement Suggestions
+* Final Resume Verdict
+* Resume Analysis History
+
+---
+
+## 📊 Resume Report Dashboard
 
 Detailed report generated after analysis.
 
-Report Features
-ATS Score Breakdown
-Resume Summary
-Skills Analysis
-Strength & Weakness Review
-Career Suggestions
-PDF Report Download
-🤖 AI Career Recommendations
+### Report Features
+
+* ATS Score Breakdown
+* Resume Summary
+* Skills Analysis
+* Strength & Weakness Review
+* Career Suggestions
+* PDF Report Download
+
+---
+
+## 🤖 AI Career Recommendations
 
 Personalized recommendations generated based on resume analysis.
 
-Recommendation Features
-Recommended Career Paths
-Required Skills
-Salary Insights
-Career Growth Information
-Industry-Based Suggestions
+### Recommendation Features
 
-Examples:
+* Recommended Career Paths
+* Required Skills
+* Salary Insights
+* Career Growth Information
+* Industry-Based Suggestions
 
-Full Stack Developer
-Backend Developer
-Frontend Developer
-Cloud Developer
-API Developer
-MERN Stack Developer
-💼 Live Job Listings
+### Example Roles
+
+* Full Stack Developer
+* Backend Developer
+* Frontend Developer
+* Cloud Developer
+* API Developer
+* MERN Stack Developer
+
+---
+
+## 💼 Live Job Listings
 
 Integrated job search functionality for discovering opportunities.
 
-Features
-Real-Time Job Listings
-Role-Based Search
-Apply Now Integration
-Dynamic Job Fetching
-Career-Oriented Filtering
-📌 Saved Jobs
+### Features
+
+* Real-Time Job Listings
+* Role-Based Search
+* Apply Now Integration
+* Dynamic Job Fetching
+* Career-Oriented Filtering
+
+---
+
+## 📌 Saved Jobs
 
 Bookmark opportunities for later review.
 
-Features
-Save Jobs
-View Saved Jobs
-Remove Saved Jobs
-Quick Apply Access
-📈 Application Tracker
+### Features
+
+* Save Jobs
+* View Saved Jobs
+* Remove Saved Jobs
+* Quick Apply Access
+
+---
+
+## 📈 Application Tracker
 
 Track your job application journey.
 
-Features
-Applied Job History
-Application Tracking
-Career Progress Monitoring
-Application Statistics
-🔔 Notification System
+### Features
+
+* Applied Job History
+* Application Tracking
+* Career Progress Monitoring
+* Application Statistics
+
+---
+
+## 🔔 Notification System
 
 Stay updated with important announcements.
 
-Features
-User Notifications
-Admin Broadcast Notifications
-Read/Unread Status Tracking
-🛡️ Admin Dashboard
+### Features
 
-Powerful analytics and management tools.
+* User Notifications
+* Admin Broadcast Notifications
+* Read / Unread Status Tracking
 
-Admin Features
-User Management
-View All Users
-Add Users
-Delete Users
-Bulk Delete Users
-Promote Admin
-Remove Admin Access
-Platform Analytics
-Total Users
-Resume Analytics
-ATS Analytics
-Highest ATS Score
-Lowest ATS Score
-Average ATS Score
-Job Analytics
-Most Recommended Roles
-Most Missing Skills
-Most Saved Roles
-Most Applied Roles
-Top Hiring Companies
-Visualization
+---
+
+## 🛡️ Admin Dashboard
+
+### User Management
+
+* View All Users
+* Add Users
+* Delete Users
+* Bulk Delete Users
+* Promote Admin
+* Remove Admin Access
+
+### Platform Analytics
+
+* Total Users
+* Resume Analytics
+* ATS Analytics
+* Highest ATS Score
+* Lowest ATS Score
+* Average ATS Score
+
+### Job Analytics
+
+* Most Recommended Roles
+* Most Missing Skills
+* Most Saved Roles
+* Most Applied Roles
+* Top Hiring Companies
+
+### Data Visualization
 
 Interactive charts powered by Chart.js
 
-ATS Distribution
-Recommended Roles Analysis
-Missing Skills Analysis
-Saved Jobs Analysis
-Applied Jobs Analysis
-Hiring Companies Analysis
-🛠 Tech Stack
-Frontend
-HTML5
-CSS3
-JavaScript (ES6)
-Backend
-Node.js
-Express.js
-Database
-MongoDB
-Mongoose
-Authentication
-JWT
-Google OAuth
-OTP Verification
-AI Integration
-Google Gemini API
-Deployment
-Vercel (Frontend)
-Render (Backend)
-Charts & Visualization
-Chart.js
-File Handling
-Multer
-📁 Project Structure
+* ATS Distribution
+* Recommended Roles Analysis
+* Missing Skills Analysis
+* Saved Jobs Analysis
+* Applied Jobs Analysis
+* Hiring Companies Analysis
+
+---
+
+## 🛠 Tech Stack
+
+### Frontend
+
+* HTML5
+* CSS3
+* JavaScript (ES6)
+
+### Backend
+
+* Node.js
+* Express.js
+
+### Database
+
+* MongoDB
+* Mongoose
+
+### Authentication
+
+* JWT
+* Google OAuth
+* OTP Verification
+
+### AI Integration
+
+* Google Gemini API
+
+### Deployment
+
+* Vercel
+* Render
+
+### Libraries & Tools
+
+* Chart.js
+* Multer
+* Nodemailer
+* bcrypt.js
+
+---
+
+## 📁 Project Structure
+
+```bash
 ScholarHub
 │
 ├── frontend
@@ -174,14 +235,33 @@ ScholarHub
 │   └── utils
 │
 └── database
-⚙️ Installation
-Clone Repository
-git clone https://github.com/your-username/scholarhub.git
-Navigate
-cd scholarhub
-Install Backend Dependencies
+```
+
+---
+
+## ⚙️ Installation
+
+### Clone Repository
+
+```bash
+git clone https://github.com/Gaur-1234/ScholarHub.git
+```
+
+### Navigate to Project
+
+```bash
+cd ScholarHub
+```
+
+### Install Dependencies
+
+```bash
 npm install
-Create Environment Variables
+```
+
+### Configure Environment Variables
+
+```env
 PORT=5000
 
 MONGO_URI=your_mongodb_uri
@@ -197,38 +277,55 @@ EMAIL_USER=your_email
 EMAIL_PASS=your_email_password
 
 RAPIDAPI_KEY=your_rapidapi_key
-Start Server
+```
+
+### Run Development Server
+
+```bash
 npm run dev
-🎯 Learning Outcomes
+```
+
+---
+
+## 🎯 Learning Outcomes
 
 This project helped strengthen knowledge of:
 
-Full Stack Web Development
-REST API Development
-Authentication & Authorization
-MongoDB Data Modeling
-AI Integration
-Resume Processing
-Job Search APIs
-Dashboard Development
-Data Analytics
-Responsive Design
-Deployment & Production Workflows
-🚀 Future Improvements
-Resume Version Comparison
-AI Interview Preparation
-Mock Interview System
-Cover Letter Generator
-Company Insights
-Email Notifications
-Advanced Job Matching Algorithm
-Mobile Application Version
-👨‍💻 Author
+* Full Stack Web Development
+* REST API Development
+* Authentication & Authorization
+* MongoDB Data Modeling
+* AI Integration
+* Resume Processing
+* Job Search APIs
+* Dashboard Development
+* Data Analytics
+* Responsive Design
+* Deployment & Production Workflows
 
-Gaurank Verma
+---
 
-GitHub: https://github.com/Gaur-1234
+## 🚀 Future Improvements
 
-LinkedIn:https://www.linkedin.com/in/gaurank-verma-5929482b9/
+* Resume Version Comparison
+* AI Interview Preparation
+* Mock Interview System
+* Cover Letter Generator
+* Company Insights
+* Email Notifications
+* Advanced Job Matching Algorithm
+* Mobile Application Version
 
-⭐ If you found this project interesting, consider giving it a star.
+---
+
+## 👨‍💻 Author
+
+### Gaurank Verma
+
+🔗 GitHub: https://github.com/Gaur-1234
+
+🔗 LinkedIn: https://www.linkedin.com/in/gaurank-verma-5929482b9/
+
+---
+
+⭐ If you found this project interesting, consider giving it a star!

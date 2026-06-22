@@ -10,6 +10,15 @@
 
    <link rel="stylesheet" href="theme.css" />
 <link rel="stylesheet" href="dashboard.css" />
+<link
+rel="manifest"
+href="manifest.json"
+/>
+
+<meta
+name="theme-color"
+content="#0f172a"
+/>
   </head>
 
   <body>
@@ -94,6 +103,15 @@ Application Tracker
       <!-- NAVBAR -->
 
       <nav class="navbar">
+
+        <button
+id="install-app-btn"
+class="install-btn"
+style="display:none"
+>
+Install App
+</button>
+
         <button id="menu-toggle">
           ☰
         </button>
@@ -202,5 +220,7 @@ Application Tracker
   <script src="dashboard.js"></script>
 <script src="sidebar.js"></script>
 <script src="theme.js"></script>
+<script src="pwa.js"></script>
+<script src="update.js"></script>
   </body>
 </html>

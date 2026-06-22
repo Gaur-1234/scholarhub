@@ -57,3 +57,36 @@ themeToggle.innerHTML =
 );
 
 }
+
+if(
+"serviceWorker"
+in navigator
+){
+
+window.addEventListener(
+"load",
+()=>{
+
+navigator.serviceWorker
+.register(
+"./service-worker.js"
+)
+
+.then(()=>{
+
+console.log(
+"ScholarHub PWA Ready"
+);
+
+})
+
+.catch(err=>{
+
+console.log(err);
+
+});
+
+}
+);
+
+}

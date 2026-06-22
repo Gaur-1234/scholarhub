@@ -1,6 +1,6 @@
 # 🚀 ScholarHub
 
-### AI-Powered Career Development Platform
+🚀 AI-Powered Career Development Platform with Resume Analysis, Job Matching, Analytics Dashboard, and Progressive Web App (PWA) Support.
 
 ScholarHub is a full-stack web application designed to help students and job seekers improve their resumes, discover relevant opportunities, track applications, and gain career insights through AI-powered analysis.
 
@@ -315,6 +315,33 @@ This project helped strengthen knowledge of:
 * Email Notifications
 * Advanced Job Matching Algorithm
 * Mobile Application Version
+
+---
+
+📱 Progressive Web App (PWA)
+
+ScholarHub can be installed as a Progressive Web App on mobile and desktop devices.
+
+PWA Features
+• Installable on Android, Windows, and supported browsers
+• Standalone app-like experience
+• Offline support through Service Worker caching
+• Automatic update detection
+• Custom application icons
+• Responsive mobile-first experience
+
+Installation
+
+1. Open ScholarHub in a supported browser.
+2. Click the Install App button.
+3. Confirm installation.
+4. Launch ScholarHub directly from your home screen or desktop.
+
+Benefits
+• Faster loading through caching
+• Native app-like experience
+• Improved accessibility
+• Cross-platform support without requiring a dedicated mobile application
 
 ---
 

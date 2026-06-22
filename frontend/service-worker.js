@@ -1,5 +1,5 @@
 const CACHE_NAME =
-"scholarhub-v2";
+"scholarhub-v3";
 
 const STATIC_ASSETS = [
 
